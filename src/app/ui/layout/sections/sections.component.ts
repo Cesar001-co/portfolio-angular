@@ -5,12 +5,12 @@ import { ProjectsComponent } from "../../sections/projects/projects.component";
 import { TechnologiesComponent } from "../../sections/technologies/technologies.component";
 
 @Component({
-  selector: 'app-main',
+  selector: 'app-sections',
   standalone: true,
   imports: [AboutMeComponent, EducationComponent, ProjectsComponent, TechnologiesComponent],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  templateUrl: './sections.component.html',
+  styleUrl: './sections.component.scss'
 })
-export class MainComponent {
+export class SectionsComponent {
 
 }
