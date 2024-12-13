@@ -7,7 +7,11 @@ import { NavBarComponent } from "../../layout/nav-bar/nav-bar.component";
   selector: 'app-main',
   standalone: true,
   imports: [FooterComponent, SectionsComponent, NavBarComponent],
-  template: '<app-nav-bar></app-nav-bar> <app-sections></app-sections> <app-footer></app-footer>',
+  template: `
+  <app-nav-bar></app-nav-bar>
+  <app-sections></app-sections>
+  <app-footer></app-footer>
+  `,
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
