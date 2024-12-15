@@ -1,26 +1,31 @@
 :root {
   //dark theme
-  --text: #cccccc;
-  --background: #05080a;
-  --primary: #68def3;
-  --secondary: #91e8f2;
+  --text-color: #cccccc;
+  --background-color: #05080a;
+  --primary-color: #68def3;
+  --secondary-color: #91e8f2;
   --accent: #4cdbe6;
 
+  --translucid: #cccccc40;
+
+  //fuentes de texto
   --font-family-primary: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 //light theme
 .lightmode {
-  --text: #333333;
-  --background: #f5f8fa;
-  --primary: #0c8297;
-  --secondary: #0d646e;
+  --text-color: #333333;
+  --background-color: #f5f8fa;
+  --primary-color: #0c8297;
+  --secondary-color: #0d646e;
   --accent: #19a8b3;
+
+  --translucid: #a9a9a940;
 }
 
 #theme-switch svg {
-  stroke: var(--text);
+  stroke: var(--text-color);
 }
 
 #theme-switch svg:first-child {
