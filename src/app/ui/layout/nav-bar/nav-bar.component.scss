@@ -91,32 +91,23 @@
     flex-wrap: wrap;
     justify-content: end;
 
+    .menu ul {
+        font-weight: bold;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .2s ease;
+    }
+
     .burger:hover {
         span {
             background: var(--accent);
         }
     }
-    .menu {
-        width: 100%;
-        justify-content: center;
-        
-        li {
-            padding: 1rem;
-        }
+
+    .menu a:hover {
+        color: var(--accent);
     }
 
-    .menu ul {
-        font-weight: bold;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height .5s ease ease-out;
-    }
-
-}
-
-.hamburger-container #theme-switch {
-    margin: 0 1rem;
-    display: none;
 }
 
 .open {

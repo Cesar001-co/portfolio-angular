@@ -1,7 +1,7 @@
 <nav class=" nav-container fixed w-full flex justify-center items-center z-[1000] px-0 py-2.5 left-0 top-4">
     <ul class="flex bg-[color:var(--translucid)] backdrop-blur-sm px-0 py-[0.3rem] rounded-[15px]">
         @for (item of navbarItems; track $index) {
-        <li>
+        <li class="title-secondary">
             <a href='#{{item.ref}}'>
                 {{item.section}}
             </a>
@@ -38,7 +38,7 @@
 </nav>
 <nav class="hamburger-container fixed top-0 z-1000 w-[100%]">
     <button id="theme-switch"
-        class="rounded-[50%] border transition-[border-color] duration-[0.5s] ease-[ease-in-out] p-px border-solid border-transparent"
+        class="hidden mx-4 my-0 rounded-[50%] border transition-[border-color] duration-[0.5s] ease-[ease-in-out] p-px border-solid border-transparent"
         (click)="changeTheme()">
         <!-- dark icon -->
         <svg class="transition-[stroke] duration-[1s]" width="22" height="22" viewBox="0 0 18 18" fill="none"
@@ -68,10 +68,10 @@
         <span></span>
         <span></span>
     </label>
-    <div class="menu">
-        <ul class="text-center">
+    <div class="menu w-full justify-center">
+        <ul class="text-center ">
             @for (item of navbarItems; track $index) {
-            <li>
+            <li class="text-[var(--text-color)] p-4">
                 <a href='#{{item.ref}}' (click)="closeMenu()">
                     {{item.section}}
                 </a>

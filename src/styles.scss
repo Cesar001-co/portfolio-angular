@@ -1,4 +1,6 @@
 @use 'styles/themes';
+@use 'styles/fonts';
+@use 'styles/buttons';
 
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
@@ -8,6 +10,4 @@
 body {
     background-color: var(--background-color);
     font-family: var(--font-family-primary);
-    color: var(--text-color);
-    height: 80rem;
 }

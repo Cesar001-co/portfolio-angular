@@ -1,0 +1,35 @@
+.title-primary {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.title-secondary {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.subtitle-prymary {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.subtitle-secondary {
+    font-size: 24px;
+    font-weight: lighter;
+    color: var(--text-color);
+}
+
+.text {
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+.description {
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--text-color);
+}
