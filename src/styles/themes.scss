@@ -13,8 +13,21 @@
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
-//light theme
-.lightmode {
+// [data-theme="dark"] {
+//   color-scheme: dark;
+
+//   --text-color: #cccccc;
+//   --background-color: #05080a;
+//   --primary-color: #68def3;
+//   --secondary-color: #91e8f2;
+//   --accent: #4cdbe6;
+
+//   --translucid: #cccccc40;
+// }
+
+[data-theme="light"] {
+  color-scheme: light;
+
   --text-color: #333333;
   --background-color: #f5f8fa;
   --primary-color: #0c8297;

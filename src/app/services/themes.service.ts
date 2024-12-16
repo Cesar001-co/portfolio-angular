@@ -9,12 +9,16 @@ export class ThemesService {
   ativeLightMode() {
     document.body.classList.remove('darkmode');
     document.body.classList.add('lightmode');
+
+    document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem('lightMode', 'active');
   }
 
   disableLightMode(){
     document.body.classList.remove('lightmode');
     document.body.classList.add('darkmode');
+
+    document.documentElement.removeAttribute("data-theme");
     localStorage.setItem('lightMode', 'null');
   }
 
