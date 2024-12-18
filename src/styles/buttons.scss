@@ -1,10 +1,41 @@
 .button-primary{
-    background-color: var(--accent);
-    color: var(--background-color);
-    border-radius: 15px;
-    
+    background-color: #19a8b3;
+    color: #ffffff;
+    border-radius: 16px;
+    font-weight: bold;
+    padding: 3px 7px;
+    gap: .5rem;
+
+    font-size: 14px;
+
+    border: solid 1px transparent;
+    transition: background .5s ease, border .5s ease ;
+    svg {
+        stroke: #ffffff;
+    }
+}
+
+.button-primary:hover {
+    background-color: #0d646e;
+    border: solid 1px var(--primary-color);
 }
 
 .button-secondary{
+    //0b2426
+    background-color: var(--button-secondary-bg);
+    border: solid 1px var(--button-secondary-cl);
+    border-radius: 17px;
+    color: var(--button-secondary-cl);
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3px 7px;
+    gap: .4rem;
+    transition: background .5s ease;
+    svg {
+        stroke: var(--button-secondary-cl);
+    }
+}
 
+.button-secondary:hover {
+    background-color: var(--button-secondary-hover);
 }

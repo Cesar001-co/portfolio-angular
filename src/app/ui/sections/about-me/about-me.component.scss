@@ -1,0 +1,63 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.copy-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    bottom: 125%;
+    /* Coloca el tooltip arriba del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.social-container{
+    gap: 1rem;
+    // flex-wrap: wrap;
+}
+
+//new
+section {
+    width: 100%;
+    // min-height: 90vh;
+}
+
+.main-container {
+    justify-content: space-between;
+    align-items: center;
+
+    .image {
+        width: 330px;
+        height: 80vh;
+        border-radius: 100%;
+        overflow: hidden;
+        box-shadow: 0 0 10px var(--accent);
+
+        img {
+            width: 100%;
+        }
+    }
+}
