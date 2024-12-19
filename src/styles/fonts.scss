@@ -1,35 +1,38 @@
 .title-primary {
-    font-size: 32px;
+    // 32 px
+    font-size: clamp(24px, 2.5vw, 32px);
     font-weight: bold;
     color: var(--primary-color);
 }
 
 .title-secondary {
-    font-size: 32px;
+    // 32 px
+    font-size: clamp(24px, 2.5vw, 32px);
     font-weight: bold;
     color: var(--text-color);
 }
 
 .subtitle-prymary {
-    font-size: 24px;
+    font-size: clamp(20px, 2vw, 24px);
     font-weight: bold;
     color: var(--primary-color);
 }
 
 .subtitle-secondary {
-    font-size: 24px;
+    font-size: clamp(20px, 2vw, 24px);
     font-weight: lighter;
     color: var(--text-color);
 }
 
 .text {
-    font-size: 16px;
+    font-size: clamp(14px, 1.5vw, 16px);
     font-weight: normal;
     color: var(--text-color);
 }
 
 .description {
-    font-size: 14px;
+    font-size: clamp(12px, 1.2vw, 14px);
     font-weight: normal;
     color: var(--text-color);
 }
+
