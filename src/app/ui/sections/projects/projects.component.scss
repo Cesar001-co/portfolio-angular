@@ -1,7 +1,30 @@
-.title svg{
+.title svg {
     stroke: var(--primary-color);
 }
 
-.links button svg{
+.links button svg {
     stroke: var(--primary-color);
+}
+
+.proyect {
+    margin: 1rem auto;
+    max-width: 400px;
+    padding: 0;
+
+    .preview {
+        border-radius: 12px;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        img {
+            transform: scale(1.1);
+            display: block;
+            max-height: 300px;
+            transition: transform ease .3s;
+        }
+    }
+
+    &:hover .preview img {
+        transform: scale(1.3);
+    }
 }
