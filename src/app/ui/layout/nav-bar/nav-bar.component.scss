@@ -32,6 +32,7 @@
     background: transparent;
     cursor: pointer;
     display: block;
+    z-index: 1000;
 }
 
 .burger input {
@@ -90,6 +91,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: end;
+    z-index: 1000;
 
     .menu ul {
         font-weight: bold;
@@ -112,7 +114,7 @@
 
 .open {
     background-color: var(--translucid);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
 
     #theme-switch {
         display: block;
