@@ -1,5 +1,6 @@
 .proyect {
     max-width: 400px;
+    width: 95%;
     padding: 0;
 
     .preview {
@@ -23,5 +24,32 @@
 
     &:hover .preview img {
         transform: scale(1.3);
+    }
+}
+
+.proyect-content {
+    .tech-container {
+        .tech{
+            border-radius: 15px;
+            padding: .3rem .4rem;
+            background-color: var(--proyect-tech-bg);
+            color: var(--proyect-tech-cl);
+            gap: 5px;
+            .icon{
+                width: 17px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .proyect {
+        .preview img {
+            aspect-ratio: 16/10;
+        }
+        .proyect-content {
+            margin: 0;
+        }
     }
 }

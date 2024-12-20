@@ -33,4 +33,8 @@ export class ProyectComponent {
   }
 
   constructor(private sanitizer: DomSanitizer) { }
+
+  openLink(link: string) {
+    window.open(link, '_blank');
+  }
 }

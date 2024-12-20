@@ -7,9 +7,19 @@
         </svg>
         <h2 class="title-primary">Proyects</h2>
     </div>
-    <div class="content flex">
+    @defer (on viewport) {
+    <div class="content flex justify-center">
         @for (proyect of mainProyects; track $index) {
-            <proyect class="proyect" [proyect]="proyect"></proyect>
+        <proyect class="proyect flex justify-center" [proyect]="proyect"></proyect>
         }
     </div>
+    } @placeholder {
+    <p>Future proyects</p>
+    } @loading (minimum 1s) {
+    <div class="flex-col gap-4 w-full flex items-center justify-center">
+        <div
+            class="w-19 h-19 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
+        </div>
+    </div>
+    }
 </section>

@@ -3,5 +3,11 @@
 }
 
 .proyect {
-    margin: 1rem auto;
+    margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+    .content {
+        flex-wrap: wrap;
+    }
 }
