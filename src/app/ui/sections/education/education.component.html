@@ -1,1 +1,29 @@
-<p>education works!</p>
+<section class="main-container" id="tech">
+    <div class="title flex gap-3 content-center">
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.5 28L38.5 21L31.5 14M10.5 14L3.5 21L10.5 28M25.375 7L16.625 35" stroke-width="4.375"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <h2 class="title-primary">Technologies</h2>
+    </div>
+    <div class="content">
+        <!-- techs -->
+        <div class="languages-container flex gap-2 m-4 flex-wrap">
+            @for (language of icons_lang; track $index) {
+            <div class="tech flex items-center justify-evenly ">
+                <div [innerHTML]="language.svg" class="icon"></div>
+                <span class="font-bold text-[14px]">{{language.name}}</span>
+            </div>
+            }
+        </div>
+        <!-- frameworks -->
+        <div class="frameworks-container flex gap-2 m-4 flex-wrap">
+            @for (language of icons_frame; track $index) {
+            <div class="tech flex items-center justify-evenly ">
+                <div [innerHTML]="language.svg" class="icon"></div>
+                <span class="font-bold text-[14px]">{{language.name}}</span>
+            </div>
+            }
+        </div>
+    </div>
+</section>
