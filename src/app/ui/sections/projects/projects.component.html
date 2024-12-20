@@ -8,7 +8,7 @@
         <h2 class="title-primary">Proyects</h2>
     </div>
     @defer (on viewport) {
-    <div class="content flex justify-center">
+    <div class="content flex justify-center mt-[2rem]">
         @for (proyect of mainProyects; track $index) {
         <proyect class="proyect flex justify-center" [proyect]="proyect"></proyect>
         }
