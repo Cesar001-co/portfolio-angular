@@ -13,7 +13,7 @@ export class NavBarComponent {
   navbarItems: any [] = [
     {ref: 'aboutme', section: 'About me'},
     {ref: 'tech', section: 'Techonogies'},
-    {ref: 'proyects', section: 'Proyects'},
+    {ref: 'projects', section: 'Projects'},
     // {ref: 'experience', section: 'Experience'},
     {ref: 'education', section: 'Education'}
   ]
