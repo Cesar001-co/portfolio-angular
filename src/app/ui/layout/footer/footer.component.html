@@ -1,1 +1,53 @@
-<p>footer works!</p>
+<footer>
+    <hr class="m-3">
+    <div class="content m-4">
+        <p class="title-primary m-1">Cesar Rodriguez</p>
+        <div class="social-container flex">
+            <div class="tooltip-container">
+                <button class="button-primary  flex items-center" (click)="copyEmail()">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M25.6666 8.16666L15.2016 14.8167C14.8415 15.0423 14.425 15.162 14 15.162C13.5749 15.162 13.1585 15.0423 12.7983 14.8167L2.33331 8.16666M4.66665 4.66666H23.3333C24.622 4.66666 25.6666 5.71133 25.6666 6.99999V21C25.6666 22.2887 24.622 23.3333 23.3333 23.3333H4.66665C3.37798 23.3333 2.33331 22.2887 2.33331 21V6.99999C2.33331 5.71133 3.37798 4.66666 4.66665 4.66666Z"
+                            stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p>{{email}}</p>
+                </button>
+                <span class="tooltip-text">Copy</span>
+            </div>
+            <button class="button-secondary flex items-center" (click)="openPDF()">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.3333 2.33334V7.00001C16.3333 7.61885 16.5791 8.21234 17.0167 8.64993C17.4543 9.08751 18.0478 9.33334 18.6666 9.33334H23.3333M17.5 21C17.5 20.0718 17.1312 19.1815 16.4748 18.5251C15.8185 17.8688 14.9282 17.5 14 17.5M14 17.5C13.0717 17.5 12.1815 17.8688 11.5251 18.5251C10.8687 19.1815 10.5 20.0718 10.5 21M14 17.5C15.2886 17.5 16.3333 16.4553 16.3333 15.1667C16.3333 13.878 15.2886 12.8333 14 12.8333C12.7113 12.8333 11.6666 13.878 11.6666 15.1667C11.6666 16.4553 12.7113 17.5 14 17.5ZM17.5 2.33334H6.99996C6.38112 2.33334 5.78763 2.57918 5.35004 3.01676C4.91246 3.45435 4.66663 4.04784 4.66663 4.66668V23.3333C4.66663 23.9522 4.91246 24.5457 5.35004 24.9833C5.78763 25.4208 6.38112 25.6667 6.99996 25.6667H21C21.6188 25.6667 22.2123 25.4208 22.6499 24.9833C23.0875 24.5457 23.3333 23.9522 23.3333 23.3333V8.16668L17.5 2.33334Z"
+                        stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <p>CV</p>
+            </button>
+            <!-- github button -->
+            <button class="button-secondary flex items-center" (click)="openLink('https://github.com/Cesar001-co')">
+                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.6572 25.8972V21.1886C17.8209 19.714 17.3981 18.2341 16.48 17.0686C20.0115 17.0686 23.5429 14.7143 23.5429 10.5943C23.6371 9.12286 23.2251 7.67497 22.3658 6.47428C22.6954 5.12057 22.6954 3.70799 22.3658 2.35428C22.3658 2.35428 21.1886 2.35428 18.8343 4.11999C15.7267 3.53142 12.5248 3.53142 9.41717 4.11999C7.06289 2.35428 5.88574 2.35428 5.88574 2.35428C5.5326 3.70799 5.5326 5.12057 5.88574 6.47428C5.02863 7.67012 4.61263 9.12614 4.7086 10.5943C4.7086 14.7143 8.24003 17.0686 11.7715 17.0686C11.3124 17.6454 10.971 18.3046 10.7709 19.0109C10.5708 19.7172 10.5119 20.4588 10.5943 21.1886M10.5943 21.1886V25.8972M10.5943 21.1886C5.2854 23.5429 4.7086 18.8343 2.35431 18.8343"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <!-- linkedin button -->
+            <button class="button-secondary flex items-center"
+                (click)="openLink('https://www.linkedin.com/in/cesar-rodriguez-b04451220')">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.6666 9.33334C20.5232 9.33334 22.3036 10.0708 23.6164 11.3836C24.9291 12.6964 25.6666 14.4768 25.6666 16.3333V24.5H21V16.3333C21 15.7145 20.7541 15.121 20.3166 14.6834C19.879 14.2458 19.2855 14 18.6666 14C18.0478 14 17.4543 14.2458 17.0167 14.6834C16.5791 15.121 16.3333 15.7145 16.3333 16.3333V24.5H11.6666V16.3333C11.6666 14.4768 12.4041 12.6964 13.7169 11.3836C15.0297 10.0708 16.8101 9.33334 18.6666 9.33334Z"
+                        stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M6.99998 10.5H2.33331V24.5H6.99998V10.5Z" stroke-width="1.16667" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M4.66665 7.00001C5.95531 7.00001 6.99998 5.95534 6.99998 4.66668C6.99998 3.37801 5.95531 2.33334 4.66665 2.33334C3.37798 2.33334 2.33331 3.37801 2.33331 4.66668C2.33331 5.95534 3.37798 7.00001 4.66665 7.00001Z"
+                        stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="rights flex items-center">
+                <p>© 2024 <a href="https://www.angularminds.com" target="_blank">Cesar Rodriguez</a>. Most of the
+                    Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>

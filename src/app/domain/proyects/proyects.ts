@@ -17,13 +17,5 @@ export const mainProyects: Proyect [] = [
         description: 'for Android SickPet is a mobile application created to manage the care of pets and animals by veterinary clinics and their owners.',
         techologies: ['Ionic', 'Firebase'],
         github: 'https://github.com/Cesar001-co/SickPetCode'
-    },
-    {
-        imgUrl: 'assets/section3/sickpet.jpg',
-        name: 'SickPet',
-        type: 'Mobil application',
-        description: 'for Android SickPet is a mobile application created to manage the care of pets and animals by veterinary clinics and their owners.',
-        techologies: ['Ionic', 'Firebase'],
-        github: 'https://github.com/Cesar001-co/SickPetCode'
     }
 ]
