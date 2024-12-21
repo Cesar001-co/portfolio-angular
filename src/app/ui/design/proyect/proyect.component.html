@@ -6,14 +6,9 @@
         <h3 class="subtitle-prymary">{{proyect.name}}</h3>
         <p class="description"><span class="font-bold">{{proyect.type}}</span> - {{proyect.description}}</p>
         <!-- tech -->
-        <div class="tech-container flex gap-2 mt-3 mb-3 flex-wrap">
-            @for (language of mergedIcons; track $index) {
-            <div class="tech flex items-center justify-evenly ">
-                <div [innerHTML]="language.svg" class="icon"></div>
-                <span class="font-bold text-[10px]">{{language.name}}</span>
-            </div>
-            }
-        </div>
+        @if (proyect.techologies) {
+            <tech-icons [tech]="proyect.techologies"></tech-icons>
+        }
         <div class="links flex gap-3">
             @if (proyect.github) {
             <button class="button-secondary flex items-center" (click)="openLink(proyect.github)">

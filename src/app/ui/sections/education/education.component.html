@@ -7,4 +7,26 @@
         </svg>
         <h2 class="title-primary">Education</h2>
     </div>
+    <div class="content">
+        @for (item of education; track $index) {
+        <div class="education flex">
+            <div class="dot  ml-4 mr-1">
+                <div class="line"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="education-content ml-3 mt-[1.2rem] mb-3">
+                <h3 class="subtitle-prymary">{{ item.title }}</h3>
+                <h4 class="subtitle-secondary font-bold">{{ item.institution }}
+                    @if (item.location) {
+                    <span>- {{ item.location }}</span>
+                    }
+                </h4>
+                <p class="text">{{ item.startYear }} - {{item.endYear}}</p>
+                @if (item.technologies) {
+                <tech-icons [tech]="item.technologies"></tech-icons>
+                }
+            </div>
+        </div>
+        }
+    </div>
 </section>

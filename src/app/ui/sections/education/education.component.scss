@@ -1,3 +1,41 @@
 .title svg {
     stroke: var(--primary-color);
 }
+
+.dot {
+    position: relative;
+    width: 10px;
+    height: auto;
+}
+
+.line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #e0e0e0;
+    /* Color de la línea */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent);
+    /* Color del círculo */
+    border-radius: 50%;
+    left: 50%;
+    top: 2.5rem;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+    .dot {
+        width: 10%;
+        margin-left: 0;
+    }
+    .education-content {
+        width: 90%;
+    }
+}
