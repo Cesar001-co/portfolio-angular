@@ -13,11 +13,13 @@ export class AboutMeComponent {
   copyMessage: string = '';
 
   copyEmail() {
-    const input = document.createElement('textarea');
-    input.value = this.email;
-    input.select();
+    const textarea = document.createElement('textarea');
+    textarea.value = this.email;
+    document.body.appendChild(textarea);
+    textarea.select();
     document.execCommand('copy');
-    alert("Mail copied to the clipboard.");
+    document.body.removeChild(textarea);
+    alert('Mail copied to the clipboard.');
   }
 
   openPDF() {
