@@ -7,7 +7,7 @@ export const educationList: Education [] = [
         location: 'Colombia',
         startYear: 2018,
         endYear: 2024,
-        technologies: ['Angular', 'Java', 'Ionic', 'Sql']
+        technologies: ['Angular', 'Java', 'Ionic', 'Sql', 'MySQL', 'Firebase']
     },
     {
         title: 'Full Stack Developer',
@@ -21,14 +21,14 @@ export const educationList: Education [] = [
         institution: 'Platzy',
         startYear: 2024,
         endYear: "Present",
-        technologies: ['Java', 'Spring Boot', 'Angular']
+        technologies: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL']
     },
     {
         title: 'Backend Development',
         institution: 'Udemy',
         startYear: 2024,
         endYear: "Present",
-        technologies: ['Java', 'Spring Boot', 'Angular']
+        technologies: ['Java', 'Spring Boot', 'Angular', 'MySQL']
     }
 
 ]
