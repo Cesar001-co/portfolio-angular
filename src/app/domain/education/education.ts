@@ -30,5 +30,4 @@ export const educationList: Education [] = [
         endYear: "Present",
         technologies: ['Java', 'Spring Boot', 'Angular', 'MySQL']
     }
-
 ]
