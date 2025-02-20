@@ -5,8 +5,8 @@
   "projects": {
     "portfolio": {
       "i18n":{
+        "sourceLocale": "en",
         "locales": {
-          "en": "src/locale/messages.en.xlf",
           "es": "src/locale/messages.es.xlf"
         }
       },
@@ -68,11 +68,13 @@
           "configurations": {
             "es": {
               "baseHref": "/es/",
-              "localize": ["es"]
+              "localize": ["es"],
+              "outputPath": "dist/portforlio/es"
             },
             "en": {
               "baseHref": "/en/",
-              "localize": ["en"]
+              "localize": ["en"],
+              "outputPath": "dist/portforlio/en"
             },
             "production": {
               "budgets": [
@@ -100,6 +102,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "es": {
+              "browserTarget": "portfolio:build:es"
+            },
+            "en": {
+              "browserTarget": "portfolio:build:en"
+            },
             "production": {
               "buildTarget": "portfolio:build:production"
             },
