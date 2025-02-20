@@ -5,9 +5,9 @@
   "projects": {
     "portfolio": {
       "i18n":{
-        "sourceLocale":"en",
         "locales": {
-          "es": "src/locale/messages.es.xlf"
+          "en": "src/locales/messages.en.xlf",
+          "es": "src/locales/messages.es.xlf"
         }
       },
       "projectType": "application",
@@ -45,7 +45,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["es"],
             "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -67,6 +66,14 @@
             "scripts": []
           },
           "configurations": {
+            "es": {
+              "baseHref": "/es/",
+              "localize": ["es"]
+            },
+            "en": {
+              "baseHref": "/en/",
+              "localize": ["en"]
+            },
             "production": {
               "budgets": [
                 {
