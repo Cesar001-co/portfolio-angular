@@ -11,11 +11,11 @@ import { ThemesService } from '../../../services/themes.service';
 export class NavBarComponent {
   userTheme: string | null = '';
   navbarItems: any [] = [
-    {ref: 'aboutme', section: 'About me'},
-    {ref: 'tech', section: 'Techonogies'},
-    {ref: 'projects', section: 'Projects'},
+    {ref: 'aboutme', section: $localize `About Me`},
+    {ref: 'tech', section: $localize `Technologies`},
+    {ref: 'projects', section: $localize `Projects`},
     // {ref: 'experience', section: 'Experience'},
-    {ref: 'education', section: 'Education'}
+    {ref: 'education', section: $localize `Education`},
   ]
   constructor (
     private _themesService: ThemesService

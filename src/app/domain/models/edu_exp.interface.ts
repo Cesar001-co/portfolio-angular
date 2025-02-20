@@ -3,7 +3,7 @@ export interface Education {
     institution: string;
     location?: string;
     startYear: number;
-    endYear: number | "Present";
+    endYear: number | null;
     technologies?: string[];
 }
 

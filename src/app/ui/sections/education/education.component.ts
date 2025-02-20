@@ -12,4 +12,8 @@ import { TechIconsComponent } from "../../design/tech-icons/tech-icons.component
 })
 export class EducationComponent {
   education: Education[] = educationList;
+
+  endYear(year: number | null): string {
+    return year ? year.toString() : $localize `Present`;
+  }
 }

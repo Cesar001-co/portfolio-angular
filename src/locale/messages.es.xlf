@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="379379763974612258" datatype="html">
+        <source>Informatic Engineer</source>
+        <target>Ingeniero en Informática</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/education/education.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6442425155039585894" datatype="html">
+        <source>Full Stack Developer</source>
+        <target>Desarrollador Full Stack</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/education/education.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1847661840893104039" datatype="html">
+        <source>Web &amp; Backend Development</source>
+        <target>Desarrollo Web &amp; Backend</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/education/education.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6565376258322439359" datatype="html">
+        <source>Backend Development</source>
+        <target>Desarrollo Backend</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/education/education.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5816652247575636191" datatype="html">
+        <source>Web Page</source>
+        <target>Página Web</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/proyects/proyects.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1070035586605889162" datatype="html">
+        <source>Development of a tool used to measure the usability of a software product based on the heuristic principles proposed by Jakob Nielsen.</source>
+        <target>Desarrollo de una herramienta utilizada para medir la usabilidad de un producto de software basado en los principios heurísticos propuestos por Jakob Nielsen.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/proyects/proyects.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2654745882874806538" datatype="html">
+        <source>Mobile application</source>
+        <target>Aplicación Móvil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/proyects/proyects.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4553614902329850530" datatype="html">
+        <source>for Android SickPet is a mobile application created to manage the care of pets and animals by veterinary clinics and their owners.</source>
+        <target>para Android SickPet es una aplicación móvil creada para gestionar el cuidado de mascotas y animales por clínicas veterinarias y sus propietarios.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/domain/proyects/proyects.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8405572660669764109" datatype="html">
+        <source>© 2024 <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://www.angularminds.com&quot; target=&quot;_blank&quot;&gt;"/>Cesar Rodriguez<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. Most of the Rights Reserved.</source>
+        <target>© 2024 <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://www.angularminds.com&quot; target=&quot;_blank&quot;&gt;"/>Cesar Rodriguez<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. La mayoría de los derechos reservados.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/layout/footer/footer.component.html</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6018686961415145811" datatype="html">
+        <source>About Me</source>
+        <target>Sobre Mi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/layout/nav-bar/nav-bar.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="152625797886681940" datatype="html">
+        <source>Technologies</source>
+        <target>Tecnologías</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/layout/nav-bar/nav-bar.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/sections/technologies/technologies.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7091571651222742304" datatype="html">
+        <source>Projects</source>
+        <target>Proyectos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/layout/nav-bar/nav-bar.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/sections/projects/projects.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8020402390620783618" datatype="html">
+        <source>Education</source>
+        <target>Educación</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/layout/nav-bar/nav-bar.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/sections/education/education.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="684905958893999040" datatype="html">
+        <source> Hi, my name is </source>
+        <target> Hola, mi nombre es </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/sections/about-me/about-me.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2853650348831175497" datatype="html">
+        <source>I’m a <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;title-primary&quot;&gt;"/>Full-stack Developer!<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target>Soy un <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;title-primary&quot;&gt;"/>Desarrollador Full Stack!<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/sections/about-me/about-me.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8030601466798077661" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;font-bold&quot;&gt;"/>Junior developer<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> and <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;font-bold&quot;&gt;"/>Informatic Engineer<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>, eager to grow and enhance my skills through new opportunities.</source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;font-bold&quot;&gt;"/>Desarrollador Junior<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> e <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;font-bold&quot;&gt;"/>Ingeniero en Informática<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>, ansioso por crecer y mejorar mis habilidades a través de nuevas oportunidades.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/sections/about-me/about-me.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6522877977962061564" datatype="html">
+        <source>Present</source>
+        <target>Presente</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ui/sections/education/education.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
