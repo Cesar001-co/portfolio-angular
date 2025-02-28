@@ -7,18 +7,18 @@
             </a>
         </li>
         }
-        <li>
+        <!-- <li>
             <button id="theme-switch"
                 class="rounded-[50%] border transition-[border-color] duration-[0.5s] ease-[ease-in-out] p-px border-solid border-transparent"
                 (click)="changeTheme()">
-                <!-- dark icon -->
+                dark icon
                 <svg class="transition-[stroke] duration-[1s]" width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M9 2.25C8.1049 3.14511 7.60203 4.35913 7.60203 5.625C7.60203 6.89087 8.1049 8.10489 9 9C9.89511 9.89511 11.1091 10.398 12.375 10.398C13.6409 10.398 14.8549 9.89511 15.75 9C15.75 10.335 15.3541 11.6401 14.6124 12.7501C13.8707 13.8601 12.8165 14.7253 11.5831 15.2362C10.3497 15.7471 8.99252 15.8808 7.68314 15.6203C6.37377 15.3599 5.17104 14.717 4.22703 13.773C3.28303 12.829 2.64015 11.6262 2.3797 10.3169C2.11925 9.00749 2.25292 7.65029 2.76382 6.41689C3.27471 5.18349 4.13987 4.12928 5.2499 3.38758C6.35994 2.64588 7.66498 2.25 9 2.25Z"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <!-- light icon -->
+                light icon
                 <svg class="transition-[stroke] duration-[1s]" width="18" height="18" viewBox="0 0 18 18" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_176_2)">
@@ -33,35 +33,12 @@
                     </defs>
                 </svg>
             </button>
-        </li>
+        </li> -->
     </ul>
 </nav>
+
 <nav class="hamburger-container fixed top-0 z-1000 w-[100%]">
-    <button id="theme-switch"
-        class="hidden mx-4 my-0 rounded-[50%] border transition-[border-color] duration-[0.5s] ease-[ease-in-out] p-px border-solid border-transparent"
-        (click)="changeTheme()">
-        <!-- dark icon -->
-        <svg class="transition-[stroke] duration-[1s]" width="22" height="22" viewBox="0 0 18 18" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M9 2.25C8.1049 3.14511 7.60203 4.35913 7.60203 5.625C7.60203 6.89087 8.1049 8.10489 9 9C9.89511 9.89511 11.1091 10.398 12.375 10.398C13.6409 10.398 14.8549 9.89511 15.75 9C15.75 10.335 15.3541 11.6401 14.6124 12.7501C13.8707 13.8601 12.8165 14.7253 11.5831 15.2362C10.3497 15.7471 8.99252 15.8808 7.68314 15.6203C6.37377 15.3599 5.17104 14.717 4.22703 13.773C3.28303 12.829 2.64015 11.6262 2.3797 10.3169C2.11925 9.00749 2.25292 7.65029 2.76382 6.41689C3.27471 5.18349 4.13987 4.12928 5.2499 3.38758C6.35994 2.64588 7.66498 2.25 9 2.25Z"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <!-- light icon -->
-        <svg class="transition-[stroke] duration-[1s]" width="22" height="22" viewBox="0 0 18 18" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_176_2)">
-                <path
-                    d="M9 1.5V3M9 15V16.5M3.6975 3.6975L4.755 4.755M13.245 13.245L14.3025 14.3025M1.5 9H3M15 9H16.5M4.755 13.245L3.6975 14.3025M14.3025 3.6975L13.245 4.755M12 9C12 10.6569 10.6569 12 9 12C7.34315 12 6 10.6569 6 9C6 7.34315 7.34315 6 9 6C10.6569 6 12 7.34315 12 9Z"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </g>
-            <defs>
-                <clipPath id="clip0_176_2">
-                    <rect width="18" height="18" fill="white" />
-                </clipPath>
-            </defs>
-        </svg>
-    </button>
+
     <label class="burger m-6" for="burger">
         <input type="checkbox" id="burger" (change)="openNav()">
         <span></span>
@@ -77,6 +54,67 @@
                 </a>
             </li>
             }
+        </ul>
+    </div>
+</nav>
+
+<nav class="settings fixed bottom-3 right-3 flex p-4">
+    <div class="trigger flex gap-2  items-end flex-col-reverse">
+        <div class="settings-btn flex items-center ">
+            <span class="settings-text" >Settings</span>
+            <button class="icon-container cursor-pointer outline-none duration-300">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.1319 15.404C12.5737 15.404 13.0112 15.317 13.4193 15.148C13.8274 14.9789 14.1983 14.7311 14.5107 14.4187C14.823 14.1064 15.0708 13.7355 15.2399 13.3274C15.4089 12.9192 15.4959 12.4818 15.4959 12.04C15.4959 11.5983 15.4089 11.1608 15.2399 10.7527C15.0708 10.3445 14.823 9.9737 14.5107 9.66132C14.1983 9.34894 13.8274 9.10115 13.4193 8.93209C13.0112 8.76304 12.5737 8.67603 12.1319 8.67603C11.2398 8.67603 10.3841 9.03045 9.75324 9.66132C9.12237 10.2922 8.76794 11.1478 8.76794 12.04C8.76794 12.9322 9.12237 13.7879 9.75324 14.4187C10.3841 15.0496 11.2398 15.404 12.1319 15.404Z"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M20.983 15.094C20.5868 16.2334 19.975 17.2859 19.181 18.194L17.057 17.712C16.2514 18.4345 15.2944 18.9676 14.256 19.272L13.682 21.351C13.1439 21.4475 12.5986 21.4973 12.052 21.5C11.3681 21.5008 10.6864 21.4236 10.02 21.27L9.41097 19.124C8.50335 18.7895 7.66902 18.2825 6.95397 17.631L4.85397 18.171C4.02114 17.1978 3.39602 16.0646 3.01697 14.841L4.56697 13.119C4.4255 12.2384 4.4489 11.3391 4.63597 10.467L3.10697 8.87202C3.55144 7.62092 4.2559 6.47817 5.17397 5.51902L7.34397 6.05902C7.94149 5.57993 8.60716 5.19267 9.31897 4.91002L9.89297 2.78602C10.6019 2.60242 11.3307 2.50604 12.063 2.49902C12.648 2.49902 13.233 2.55302 13.808 2.65902L14.359 4.77202C15.189 5.04102 15.967 5.45202 16.655 5.98902L18.837 5.42602C19.7173 6.31326 20.4118 7.36714 20.88 8.52602L19.4 10.133C19.6806 11.2343 19.7039 12.3853 19.468 13.497L20.983 15.094Z"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <ul class="options">
+            <li>
+                <p>Language</p>
+                <div class="icon-container">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12Z"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M13 2.04999C13 2.04999 16 5.99999 16 12C16 18 13 21.95 13 21.95M11 21.95C11 21.95 8 18 8 12C8 5.99999 11 2.04999 11 2.04999M2.63 15.5H21.37M2.63 8.49999H21.37"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </li>
+            <li (click)="changeTheme()">
+                <p>@if (userTheme !== 'active') {Dark Theme} @else {Light Mode}</p>
+                <button id="theme-switch"
+                    class="icon-container rounded-[50%] border transition-[border-color] duration-[0.5s] ease-[ease-in-out] p-px border-solid border-transparent"
+                    >
+                    <!-- dark icon -->
+                    <svg class="transition-[stroke] duration-[.5s]" viewBox="0 0 18 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 2.25C8.1049 3.14511 7.60203 4.35913 7.60203 5.625C7.60203 6.89087 8.1049 8.10489 9 9C9.89511 9.89511 11.1091 10.398 12.375 10.398C13.6409 10.398 14.8549 9.89511 15.75 9C15.75 10.335 15.3541 11.6401 14.6124 12.7501C13.8707 13.8601 12.8165 14.7253 11.5831 15.2362C10.3497 15.7471 8.99252 15.8808 7.68314 15.6203C6.37377 15.3599 5.17104 14.717 4.22703 13.773C3.28303 12.829 2.64015 11.6262 2.3797 10.3169C2.11925 9.00749 2.25292 7.65029 2.76382 6.41689C3.27471 5.18349 4.13987 4.12928 5.2499 3.38758C6.35994 2.64588 7.66498 2.25 9 2.25Z"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <!-- light icon -->
+                    <svg class="transition-[stroke] duration-[.5s]" viewBox="0 0 18 18" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_176_2)">
+                            <path
+                                d="M9 1.5V3M9 15V16.5M3.6975 3.6975L4.755 4.755M13.245 13.245L14.3025 14.3025M1.5 9H3M15 9H16.5M4.755 13.245L3.6975 14.3025M14.3025 3.6975L13.245 4.755M12 9C12 10.6569 10.6569 12 9 12C7.34315 12 6 10.6569 6 9C6 7.34315 7.34315 6 9 6C10.6569 6 12 7.34315 12 9Z"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_176_2">
+                                <rect width="18" height="18" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+            </li>
         </ul>
     </div>
 </nav>
