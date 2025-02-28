@@ -1,4 +1,4 @@
-import { Component, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, inject, SimpleChange, SimpleChanges } from '@angular/core';
 import { ThemesService } from '../../../services/themes.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ThemesService } from '../../../services/themes.service';
 })
 export class NavBarComponent {
   settingsMenu = false;
-  userTheme: string | null = '';
+  
   navbarItems: any[] = [
     { ref: 'aboutme', section: $localize`About Me` },
     { ref: 'tech', section: $localize`Technologies` },
@@ -18,19 +18,6 @@ export class NavBarComponent {
     // {ref: 'experience', section: 'Experience'},
     { ref: 'education', section: $localize`Education` }
   ]
-  constructor(
-    private _themesService: ThemesService
-  ) {
-    this.userTheme = this._themesService.getLightMode();
-    if (this._themesService.getLightMode() === 'active') {
-      this._themesService.ativeLightMode();
-    }
-  }
-
-  changeTheme() {
-    this._themesService.getLightMode() !== "active" ? this._themesService.ativeLightMode() : this._themesService.disableLightMode();
-    this.userTheme = this._themesService.getLightMode();
-  }
 
   openNav() {
     const hamburgerContainer = document.querySelector('.hamburger-container');
@@ -53,5 +40,5 @@ export class NavBarComponent {
 
   toggleMenu() {
     this.settingsMenu = !this.settingsMenu;
-}
+  }
 }
