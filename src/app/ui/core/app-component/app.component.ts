@@ -18,10 +18,26 @@ export class AppComponent implements OnInit {
     const currentLang = this.languageService.currentLang;
     const currentPath = window.location.pathname;
 
-    // if the language is not in the URL, redirect
+    // Si no hay idioma válido en URL ni localStorage, redirigir
+    if (!currentLang) {
+      this.handleNoLanguageFallback();
+      return;
+    }
+
+    // Si la URL no incluye el idioma, redirigir
     if (!currentPath.startsWith(`/${currentLang}/`)) {
       this.languageService.redirectToLang(currentLang);
     }
   }
 
+  private handleNoLanguageFallback(): void {
+    // Opción 1: Redirigir a un idioma basado en el navegador
+    const browserLang = navigator.language.split('-')[0]; // Ej: "es" de "es-ES"
+    const lang = ['es', 'en'].includes(browserLang) ? browserLang : 'es'; // Fallback opcional
+
+    // Opción 2: Redirigir a una página de selección de idioma
+    // window.location.href = '/select-language';
+
+    this.languageService.redirectToLang(lang);
+  }
 }
