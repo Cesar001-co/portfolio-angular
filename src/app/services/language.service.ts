@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 })
 export class LanguageService {
 
-  private readonly defaultLang = 'es';
+  private readonly defaultLang = 'en';
   private readonly supportedLangs = ['es', 'en'];
 
   constructor() { }
