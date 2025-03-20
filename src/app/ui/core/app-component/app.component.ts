@@ -18,8 +18,10 @@ export class AppComponent implements OnInit {
     const currentLang = this.languageService.currentLang;
     const currentPath = window.location.pathname;
 
+    // if the language is not in the URL, redirect
     if (!currentPath.startsWith(`/${currentLang}/`)) {
       this.languageService.redirectToLang(currentLang);
     }
   }
+
 }

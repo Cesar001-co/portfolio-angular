@@ -6,14 +6,22 @@ import { Router } from '@angular/router';
 })
 export class LanguageService {
 
-  private readonly defaultLang = 'en';
-  private readonly supportedLangs = ['es', 'en'];
+  private readonly supportedLangs = ['es', 'en']; // used languages
 
-  constructor() { }
+  private router = inject(Router);
 
-  get currentLang(): string {
-    const lang = localStorage.getItem('lang') || this.defaultLang;
-    return this.supportedLangs.includes(lang) ? lang : this.defaultLang;
+  get currentLang(): any {
+     // get the language from the URL
+     const langFromUrl = window.location.pathname.split('/')[1];
+    
+     // if the language is supported, return it
+     if (this.supportedLangs.includes(langFromUrl)) {
+       return langFromUrl;
+     }
+ 
+     // if the language is not supported, check if it is stored in the local storage
+     const langFromStorage = localStorage.getItem('lang')?? 'en';
+     return this.supportedLangs.includes(langFromStorage) ? langFromStorage : null;
   }
 
   setLanguage(lang: string): void {
@@ -25,7 +33,7 @@ export class LanguageService {
 
   public redirectToLang(lang: string): void {
     const currentPath = window.location.pathname;
-    const cleanPath = currentPath.replace(/^\/(es|en)\//, '');
+    const cleanPath = currentPath.replace(/^\/(es|en)\//, ''); // Limpiar ruta actual
     const newUrl = `/${lang}/${cleanPath}`;
     window.location.href = newUrl;
   }
