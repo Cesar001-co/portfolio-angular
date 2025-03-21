@@ -1,37 +1,37 @@
 import { inject, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
+  // used languages
+  private readonly supportedLangs = ['es', 'en'];
+  private router = inject(Router);
 
-  private readonly supportedLangs = ['es', 'en']; // used languages
+  getBrowserLang(): string | null {
+    const browserLang = navigator.language.split('-')[0];
+    return this.supportedLangs.includes(browserLang) ? browserLang : null;
+  }
 
-  get currentLang(): any {
-    // get the language from the URL
-    const langFromUrl = window.location.pathname.split('/')[1];
+  initializeLanguage(): void {
+    const storedLang = localStorage.getItem('lang');
+    const browserLang = this.getBrowserLang();
+    const defaultLang = storedLang || browserLang || 'en';
 
-    // if the language is supported, return it
-    if (this.supportedLangs.includes(langFromUrl)) {
-      return langFromUrl;
-    }
+    // if the language is not in the URL, redirect
+    const currentPath = window.location.pathname;
+    if (currentPath.startsWith(`/${defaultLang}/`)) return;
 
-    // if the language is not supported, check if it is stored in the local storage
-    const langFromStorage = localStorage.getItem('lang')!;
-    return this.supportedLangs.includes(langFromStorage) ? langFromStorage : null;
+    // Navigate to the default language
+    this.router.navigate([`/${defaultLang}${currentPath}`]);
   }
 
   setLanguage(lang: string): void {
     if (!this.supportedLangs.includes(lang)) return;
-
+    
     localStorage.setItem('lang', lang);
-    this.redirectToLang(lang);
-  }
-
-  public redirectToLang(lang: string): void {
-    const currentPath = window.location.pathname;
-    const cleanPath = currentPath.replace(/^\/(es|en)\//, ''); // Limpiar ruta actual
-    const newUrl = `/${lang}/${cleanPath}`;
-    window.location.href = newUrl;
+    const currentPath = this.router.url.replace(/^\/(es|en)/, '');
+    this.router.navigate([`/${lang}${currentPath}`]);
   }
 }

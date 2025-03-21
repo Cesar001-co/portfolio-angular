@@ -15,7 +15,7 @@ export class SettingsButtonComponent {
 
   constructor( ) {
     /* get current language */
-    this.language = localStorage.getItem('lang');
+    this.language = this.languageService.getBrowserLang();
     this.userTheme = this._themesService.getLightMode();
     if (this._themesService.getLightMode() === 'active') {
       this._themesService.ativeLightMode();
