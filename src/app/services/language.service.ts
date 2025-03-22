@@ -6,14 +6,26 @@ import { Router } from '@angular/router';
 })
 export class LanguageService {
 
-  private readonly defaultLang = 'es';
+  private readonly defaultLang = navigator.language.split('-')[0];
   private readonly supportedLangs = ['es', 'en'];
 
   constructor() { }
 
-  get currentLang(): string {
+  currentLang(): string {
     const lang = localStorage.getItem('lang') || this.defaultLang;
     return this.supportedLangs.includes(lang) ? lang : this.defaultLang;
+  }
+
+  getCurrentNavigationLang(): string {
+    const langFromUrl = window.location.pathname.split('/')[1];
+
+    // If the language is supported, return it
+    if (this.supportedLangs.includes(langFromUrl)) {
+      return langFromUrl;
+    }else {
+      // If the language is not supported, return the default language
+      return this.defaultLang;
+    }
   }
 
   setLanguage(lang: string): void {
@@ -23,7 +35,7 @@ export class LanguageService {
     this.redirectToLang(lang);
   }
 
-  public redirectToLang(lang: string): void {
+  redirectToLang(lang: string): void {
     const currentPath = window.location.pathname;
     const cleanPath = currentPath.replace(/^\/(es|en)\//, '');
     const newUrl = `/${lang}/${cleanPath}`;
