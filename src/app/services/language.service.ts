@@ -1,35 +1,26 @@
-import { inject, Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
 
-  private readonly defaultLang = navigator.language.split('-')[0];
   private readonly supportedLangs = ['es', 'en'];
-  private router = inject(Router);
-
-  getBrowserLang(): string | null {
+  private readonly defaultNavigatiorLang = this.getBrowserLang();
+  
+  getBrowserLang(): string {
     const browserLang = navigator.language.split('-')[0];
-    return this.supportedLangs.includes(browserLang) ? browserLang : null;
+    return this.supportedLangs.includes(browserLang) ? browserLang : 'en';
   }
 
-  currentLang(): string {
-    const lang = localStorage.getItem('lang') || this.defaultLang;
-    return this.supportedLangs.includes(lang) ? lang : this.defaultLang;
+  getCurrentLang(): string {
+    const lang = localStorage.getItem('lang') || this.defaultNavigatiorLang;
+    return this.supportedLangs.includes(lang) ? lang : this.defaultNavigatiorLang;
   }
 
   getCurrentNavigationLang(): string {
     const langFromUrl = window.location.pathname.split('/')[1];
-
-    // If the language is supported, return it
-    if (this.supportedLangs.includes(langFromUrl)) {
-      return langFromUrl;
-    }else {
-      // If the language is not supported, return the default language
-      return this.defaultLang;
-    }
+    return this.supportedLangs.includes(langFromUrl) ? langFromUrl : this.defaultNavigatiorLang;
   }
 
   setLanguage(lang: string): void {

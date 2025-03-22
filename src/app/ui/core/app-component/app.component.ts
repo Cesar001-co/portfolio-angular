@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   private languageService = inject(LanguageService);
 
   ngOnInit(): void {
-    const currentLang = this.languageService.currentLang();
+    const currentLang = this.languageService.getCurrentLang();
     const currentPath = window.location.pathname;
 
     if (!currentPath.startsWith(`/${currentLang}/`)) {
