@@ -13,8 +13,16 @@ import { SettingsButtonComponent } from '../../design/settings-button/settings-b
 export class AppComponent implements OnInit {
   private languageService = inject(LanguageService);
 
-
   ngOnInit(): void {
+<<<<<<< HEAD
     this.languageService.initializeLanguage();
+=======
+    const currentLang = this.languageService.currentLang();
+    const currentPath = window.location.pathname;
+
+    if (!currentPath.startsWith(`/${currentLang}/`)) {
+      this.languageService.redirectToLang(currentLang);
+    }
+>>>>>>> feature-language-button
   }
 }
