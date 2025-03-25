@@ -3,15 +3,15 @@
   publish = "dist/portfolio/browser"
 
 [[redirects]]
-  from = "/"
-  to = "/es/"
+  from = "/*"
+  to = "/es/home"
   status = 302
   force = false
   conditions = {Language = ["es"]}
 
 [[redirects]]
-  from = "/"
-  to = "/en/"
+  from = "/*"
+  to = "/en/home"
   status = 302
   force = false
   conditions = {Language = ["en"]}

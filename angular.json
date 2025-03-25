@@ -69,12 +69,12 @@
             "es": {
               "baseHref": "/es/",
               "localize": ["es"],
-              "outputPath": "dist/portforlio/es"
-            },
+              "outputPath": "dist/portforlio/browser/es"
+            },  
             "en": {
               "baseHref": "/en/",
               "localize": ["en"],
-              "outputPath": "dist/portforlio/en"
+              "outputPath": "dist/portforlio/browser/en"
             },
             "production": {
               "budgets": [
