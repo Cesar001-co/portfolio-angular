@@ -4,14 +4,16 @@
 
 [[redirects]]
   from = "/*"
-  to = "/es/:splat"
+  to = "/es/"
   status = 302
+  force = false
   conditions = {Language = ["es"]}
 
 [[redirects]]
   from = "/*"
-  to = "/en/:splat"
+  to = "/en/"
   status = 302
+  force = false
   conditions = {Language = ["en"]}
 
 # Client-side routing (SPA)
