@@ -9,41 +9,44 @@ export class LanguageService {
   private readonly defaultNavigatiorLang = this.getBrowserLang();
 
   private router = inject(Router);
-  
+
+  // Get the browser language
   getBrowserLang(): string {
-    // Get the browser language
     const browserLang = navigator.language.split('-')[0];
     // Check if the browser language is supported if not return the default language
     return this.supportedLangs.includes(browserLang) ? browserLang : 'en';
   }
 
-  // Get the current language from local storage or return the default language
-  getCurrentLang(): string {
-    const lang = localStorage.getItem('lang') || this.defaultNavigatiorLang;
-    return this.supportedLangs.includes(lang) ? lang : this.defaultNavigatiorLang;
+  // Get the current language from local storage
+  getLocalStorageLang(): string | null {
+    const lang = localStorage.getItem('lang');
+    return lang ? lang : null;
   }
 
+  // Get the current language from the url or return the default
   getCurrentNavigationLang(): string {
     const langFromUrl = window.location.pathname.split('/')[1];
     return this.supportedLangs.includes(langFromUrl) ? langFromUrl : this.defaultNavigatiorLang;
   }
 
-  setLanguage(lang: string): void {
-    if (!this.supportedLangs.includes(lang)) return;
-    
-    localStorage.setItem('lang', lang);
-    this.redirectToLang(lang);
+  setLanguage(lang: string) {
+    if (this.supportedLangs.includes(lang)) {
+      localStorage.setItem('lang', lang);
+      this.redirectToLang(lang);
+    };
   }
 
-  redirectToLang(lang: string): void {
-    // const currentPath = window.location.pathname;
-    // const cleanPath = currentPath.replace(/^\/(es|en)\//, '');
-    // const newUrl = `/${lang}/${cleanPath}`;
-    // window.location.href = newUrl;
+  redirectToLang(lang: string) {
+    if (lang != this.getCurrentNavigationLang()) {
+      const currentPath = window.location.pathname;
+      const cleanPath = currentPath.replace(/^\/(es|en)\//, '');
+      const newUrl = `/${lang}/${cleanPath}`;
+      window.location.href = newUrl;
+    }
 
-    const currentPath = this.router.url.split('/').slice(2).join('/') || '';
-    window.location.href = `/${lang}/${currentPath}`;
-    
+    // const currentPath = this.router.url.split('/').slice(2).join('/');
+    // window.location.href = `/${lang}/${currentPath}`;
+
     // this.router.navigate([`/${lang}`, currentPath]);
   }
 }

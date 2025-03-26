@@ -14,11 +14,18 @@ export class AppComponent implements OnInit {
   private languageService = inject(LanguageService);
 
   ngOnInit(): void {
-    const currentLang = this.languageService.getCurrentLang();
+    const currentLang = this.languageService.getCurrentNavigationLang();
     const currentPath = window.location.pathname;
-    
-    if (!currentPath.startsWith(`/${currentLang}/`)) {
-      this.languageService.redirectToLang(currentLang);
+    console.log(!currentPath.startsWith(`/${currentLang}/`));
+
+    if (currentPath.startsWith(`/${currentLang}/`)) {
+      const localStorageLang = this.languageService.getLocalStorageLang();
+      // verify if the language is in the local storage
+      if (localStorageLang) {
+        this.languageService.redirectToLang(localStorageLang);
+      } else {
+        this.languageService.redirectToLang(currentLang);
+      }
     }
   }
 }
