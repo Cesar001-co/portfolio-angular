@@ -38,14 +38,14 @@ export class LanguageService {
 
   redirectToLang(lang: string) {
     if (lang != this.getCurrentNavigationLang()) {
-      const currentPath = window.location.pathname;
-      const cleanPath = currentPath.replace(/^\/(es|en)\//, '');
-      const newUrl = `/${lang}/${cleanPath}`;
-      window.location.href = newUrl;
-    }
+      // const currentPath = window.location.pathname;
+      // const cleanPath = currentPath.replace(/^\/(es|en)\//, '');
+      // const newUrl = `/${lang}/${cleanPath}`;
+      // window.location.href = newUrl;
 
-    // const currentPath = this.router.url.split('/').slice(2).join('/');
-    // window.location.href = `/${lang}/${currentPath}`;
+      const currentPath = this.router.url.split('/').slice(2).join('/');
+      window.location.href = `/${lang}/${currentPath}`;
+    }
 
     // this.router.navigate([`/${lang}`, currentPath]);
   }
