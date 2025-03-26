@@ -21,10 +21,10 @@ export class AppComponent implements OnInit {
     if (currentPath.startsWith(`/${currentLang}/`)) {
       const localStorageLang = this.languageService.getLocalStorageLang();
       // verify if the language is in the local storage
-      if (localStorageLang) {
-        this.languageService.redirectToLang(localStorageLang);
-      } else {
+      if (localStorageLang && localStorageLang !== this.languageService.getCurrentNavigationLang()) {
         this.languageService.redirectToLang(currentLang);
+      } else if (localStorageLang !== null) {
+        this.languageService.redirectToLang(localStorageLang);
       }
     }
   }

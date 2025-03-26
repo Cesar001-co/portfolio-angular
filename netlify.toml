@@ -4,14 +4,14 @@
 
 [[redirects]]
   from = "/*"
-  to = "/es/home"
+  to = "/es/"
   status = 302
   force = false
   conditions = {Language = ["es"]}
 
 [[redirects]]
   from = "/*"
-  to = "/en/home"
+  to = "/en/"
   status = 302
   force = false
   conditions = {Language = ["en"]}
