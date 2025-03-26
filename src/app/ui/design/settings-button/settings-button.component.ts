@@ -32,6 +32,5 @@ export class SettingsButtonComponent {
 
   switchLanguage(lang: string): void {
     this.languageService.setLanguage(lang);
-    
   }
 }

@@ -41,8 +41,9 @@ export class LanguageService {
     // const newUrl = `/${lang}/${cleanPath}`;
     // window.location.href = newUrl;
 
-    const currentPath = this.router.url.split('/').slice(2).join('/') || 'home';
+    const currentPath = this.router.url.split('/').slice(2).join('/') || '';
     window.location.href = `/${lang}/${currentPath}`;
+    
     // this.router.navigate([`/${lang}`, currentPath]);
   }
 }

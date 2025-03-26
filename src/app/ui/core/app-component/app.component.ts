@@ -16,9 +16,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     const currentLang = this.languageService.getCurrentLang();
     const currentPath = window.location.pathname;
-    // console.log("currentLang", currentLang);
-    // console.log("currentPath", currentPath);
-    // console.log(currentPath.startsWith(`/${currentLang}/`));
     
     if (!currentPath.startsWith(`/${currentLang}/`)) {
       this.languageService.redirectToLang(currentLang);
