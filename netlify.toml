@@ -24,9 +24,3 @@
   from = "/en/*"
   to = "/en/index.html"
   status = 200
-
-# Redirección por defecto (si no coincide ningún idioma)
-[[redirects]]
-  from = "/*"
-  to = "/en/:splat"
-  status = 302
