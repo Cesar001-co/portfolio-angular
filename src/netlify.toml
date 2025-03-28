@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build -- --localize"
+  publish = "dist/portfolio/browser"
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/es/*"
+  to = "/es/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/en/index.html"
+  status = 200
