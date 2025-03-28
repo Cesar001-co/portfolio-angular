@@ -31,8 +31,8 @@ export class AppComponent implements OnInit {
     //   }
     // }
 
-    if (!currentPath.startsWith(`/${currentLang}/`)) {
-      this.languageService.redirectToLang(currentLang);
-    }
+    // if (!currentPath.startsWith(`/${currentLang}/`)) {
+    //   this.languageService.redirectToLang(currentLang);
+    // }
   }
 }
