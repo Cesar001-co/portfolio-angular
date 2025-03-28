@@ -4,25 +4,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/es/"
-  status = 302
-  force = false
-  conditions = {Language = ["es"]}
-
-[[redirects]]
-  from = "/*"
-  to = "/en/"
-  status = 302
-  force = false
-  conditions = {Language = ["en"]}
-
-# Client-side routing (SPA)
-[[redirects]]
-  from = "/es/*"
-  to = "/es/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/en/*"
-  to = "/en/index.html"
+  to = "/index.html"
   status = 200
