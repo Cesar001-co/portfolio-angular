@@ -32,7 +32,8 @@ export class AppComponent implements OnInit {
 
     if (currentPath.startsWith(`/${currentLang}/`)) {
       if (!this.languageService.isValidLanguage(currentLang) || currentLang !== preferredLang)  {
-        this.redirectToCorrectLanguage(preferredLang, currentPath);
+        // this.redirectToCorrectLanguage(preferredLang, currentPath);
+        this.languageService.setLanguage(currentLang);
       }
     }
   }
