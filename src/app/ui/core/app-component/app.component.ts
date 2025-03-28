@@ -19,16 +19,19 @@ export class AppComponent implements OnInit {
     const currentPath = window.location.pathname;
     const preferredLang = this.languageService.getPreferredLanguage();
     
-    // check if the current path starts with the current language example: /es/ or /en/
-    if (currentPath.startsWith(`/${currentLang}/`)) {
-      if (this.languageService.isValidLanguage(currentLang))  {
+    // // check if the current path starts with the current language example: /es/ or /en/
+    // if (currentPath.startsWith(`/${currentLang}/`)) {
+    //   if (this.languageService.isValidLanguage(currentLang))  {
 
-        if (currentLang !== preferredLang) {
-          this.languageService.setLanguage(currentLang);
-        }
-        // this.redirectToCorrectLanguage(preferredLang, currentPath);
+    //     if (currentLang !== preferredLang) {
+    //       this.languageService.setLanguage(currentLang);
+    //     }
+    //     // this.redirectToCorrectLanguage(preferredLang, currentPath);
         
-      }
+    //   }
+    // }
+    if (!currentPath.startsWith(`/${currentLang}/`)) {
+      this.languageService.redirectToLang(currentLang);
     }
   }
 
