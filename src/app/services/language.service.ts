@@ -23,8 +23,8 @@ export class LanguageService {
 
   // Get the current language from local storage
   getPreferredLanguage(): string {
-    // priority: local storage > browser language > default language
-    return localStorage.getItem('lang') || this.getBrowserLang() || 'en';
+    // priority: local storage > browser language
+    return localStorage.getItem('lang') || this.defaultNavigatiorLang;
   }
 
   // Get the current language from the url or return the default
@@ -49,7 +49,6 @@ export class LanguageService {
       console.log('current path'+currentPath);
       window.location.href = `/${lang}/${currentPath}`;
     }
-
     // this.router.navigate([`/${lang}`, currentPath]);
   }
 }
