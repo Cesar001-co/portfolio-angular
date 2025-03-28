@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
     const currentPath = window.location.pathname;
     const preferredLang = this.languageService.getPreferredLanguage();
     
-    // // check if the current path starts with the current language example: /es/ or /en/
-    // if (currentPath.startsWith(`/${currentLang}/`)) {
+    // check if the current path starts with the current language example: /es/ or /en/
+    // if (!currentPath.startsWith(`/${currentLang}/`)) {
     //   if (this.languageService.isValidLanguage(currentLang))  {
 
     //     if (currentLang !== preferredLang) {
@@ -30,17 +30,5 @@ export class AppComponent implements OnInit {
         
     //   }
     // }
-    if (!currentPath.startsWith(`/${currentLang}/`)) {
-      this.languageService.redirectToLang(currentLang);
-    }
-  }
-
-  private redirectToCorrectLanguage(targetLang: string, currentPath: string): void {
-    // Limpiar ruta y mantener parámetros de query
-    const cleanPath = currentPath.replace(/^\/(es|en)\//, '');
-    const newPath = `/${targetLang}/${cleanPath}`.replace(/\/+/g, '/');
-    
-    // Redirección con Router de Angular (sin recargar la página)
-    this.router.navigateByUrl(newPath, { replaceUrl: true });
   }
 }

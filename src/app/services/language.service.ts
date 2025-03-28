@@ -49,7 +49,7 @@ export class LanguageService {
     //   window.location.href = `/${lang}/${currentPath}`;
     // }
     // // this.router.navigate([`/${lang}`, currentPath]);
-    const currentPath = this.router.url.split('/').slice(2).join('/') || '';
+    const currentPath = this.router.url.split('/').slice(2).join('/');
     window.location.href = `/${lang}/${currentPath}`;
   }
 }
