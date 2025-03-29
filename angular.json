@@ -67,10 +67,14 @@
           },
           "configurations": {
             "es": {
-              "localize": ["es"]
+              "baseHref": "/es/",
+              "localize": ["es"],
+              "outputPath": "dist/portforlio/browser/es"
             },  
             "en": {
-              "localize": ["en"]
+              "baseHref": "/en/",
+              "localize": ["en"],
+              "outputPath": "dist/portforlio/browser/en"
             },
             "production": {
               "budgets": [

@@ -34,9 +34,8 @@ export class LanguageService {
   }
 
   setLanguage(lang: string) {
-    // localStorage.setItem('lang', lang);
-    // this.redirectToLang(lang);
-    this.switchLanguage(lang);
+    localStorage.setItem('lang', lang);
+    this.redirectToLang(lang);
   }
 
   redirectToLang(lang: string) {
@@ -52,11 +51,5 @@ export class LanguageService {
     // // this.router.navigate([`/${lang}`, currentPath]);
     const currentPath = this.router.url.split('/').slice(2).join('/');
     window.location.href = `/${lang}/${currentPath}`;
-  }
-
-  switchLanguage(lang: string) {
-    const currentPath = window.location.pathname;
-    const newPath = currentPath.replace(/^\/(en|es)/, `/${lang}`);
-    window.location.href = newPath;
   }
 }
