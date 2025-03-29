@@ -15,9 +15,9 @@ export class AppComponent implements OnInit {
   private router = inject(Router);
 
   ngOnInit(): void {
-    const currentLang = this.languageService.getCurrentNavigationLang();
-    const currentPath = window.location.pathname;
-    const preferredLang = this.languageService.getPreferredLanguage();
+    // const currentLang = this.languageService.getCurrentNavigationLang();
+    // const currentPath = window.location.pathname;
+    // const preferredLang = this.languageService.getPreferredLanguage();
     
     // // check if the current path starts with the current language example: /es/ or /en/
     // if (!currentPath.startsWith(`/${currentLang}/`)) {
@@ -31,8 +31,8 @@ export class AppComponent implements OnInit {
     //   }
     // }
 
-    if (!currentPath.startsWith(`/${currentLang}/`)) {
-      // this.languageService.redirectToLang(currentLang);
-    }
+    // if (!currentPath.startsWith(`/${currentLang}/`)) {
+    //   this.languageService.redirectToLang(currentLang);
+    // }
   }
 }
