@@ -1,10 +1,11 @@
 import { Component, inject, SimpleChange, SimpleChanges } from '@angular/core';
 import { ThemesService } from '../../../services/themes.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })
@@ -12,11 +13,11 @@ export class NavBarComponent {
   settingsMenu = false;
   
   navbarItems: any[] = [
-    { ref: 'aboutme', section: $localize`About Me` },
-    { ref: 'tech', section: $localize`Technologies` },
-    { ref: 'projects', section: $localize`Projects` },
+    { ref: 'aboutme', section: `About Me` },
+    { ref: 'tech', section: `Technologies` },
+    { ref: 'projects', section: `Projects` },
     // {ref: 'experience', section: 'Experience'},
-    { ref: 'education', section: $localize`Education` }
+    { ref: 'education', section: `Education` }
   ]
 
   openNav() {
@@ -40,5 +41,13 @@ export class NavBarComponent {
 
   toggleMenu() {
     this.settingsMenu = !this.settingsMenu;
+  }
+
+  // scroll to section
+  scrollTo(ref: string) {
+    const element = document.getElementById(ref);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

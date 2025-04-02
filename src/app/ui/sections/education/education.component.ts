@@ -14,6 +14,6 @@ export class EducationComponent {
   education: Education[] = educationList;
 
   endYear(year: number | null): string {
-    return year ? year.toString() : $localize `Present`;
+    return year ? year.toString() :  `Present`;
   }
 }

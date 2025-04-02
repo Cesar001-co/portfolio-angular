@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { LanguageService } from '../../../services/language.service';
 import { ThemesService } from '../../../services/themes.service';
 
 @Component({
@@ -14,15 +13,13 @@ export class SettingsButtonComponent {
   language: string | null ='';
 
   constructor( ) {
-    /* get current language */
-    this.language = this.languageService.getCurrentNavigationLang();
     this.userTheme = this._themesService.getLightMode();
     if (this._themesService.getLightMode() === 'active') {
       this._themesService.ativeLightMode();
     }
   }
 
-  private languageService = inject(LanguageService);
+  // private languageService = inject(LanguageService);
   private _themesService = inject(ThemesService);
 
   changeTheme() {
@@ -31,6 +28,6 @@ export class SettingsButtonComponent {
   }
 
   switchLanguage(lang: string): void {
-    this.languageService.setLanguage(lang);
+    // this.languageService.changeLanguage(lang);
   }
 }
