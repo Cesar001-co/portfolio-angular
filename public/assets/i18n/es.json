@@ -1,6 +1,19 @@
 {
-    "lang": {
-        "EN": "Ingles",
-        "ES": "Español"
+    "settings": {
+        "EN": "Inglés",
+        "ES": "Español",
+        "T_DARK": "Tema Oscuro",
+        "T_LIGHT": "Tema Claro"
+    },
+    "aboutme": {
+        "parf1": "Hola, mi nombre es",
+        "parf2": "Soy un",
+        "parf3": "Desarrollador Full-stack!",
+        "parf4": {
+            "junior": "Desarrollador junior",
+            "&": "y",
+            "prof": "Ingeniero Informático",
+            "desc": ", ansioso por crecer y mejorar mis habilidades a través de nuevas oportunidades."
+        }
     }
 }

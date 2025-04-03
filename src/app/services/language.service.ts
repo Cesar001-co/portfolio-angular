@@ -7,12 +7,20 @@ import { TranslateService } from '@ngx-translate/core';
 export class LanguageService {
   private translateService = inject(TranslateService);
 
-  private readonly supportedLangs = ['es', 'en'];
-  private browserLang = this.translateService.getBrowserLang();
+  private readonly supportedLangs = ['es', 'en']; // Supported Languages
 
-  languageSignal = signal<string>(
-    JSON.parse(window.localStorage.getItem('lang') ?? '"en"')
-  );
+  /* Verifys if there is a language in localStorage, if not look up for browser language */
+  private getInitialLanguage(): string {
+    const storedLang = window.localStorage.getItem('lang'); // Get Language from localStorage
+    if (storedLang) {
+      return JSON.parse(storedLang);
+    }
+
+    const browserLang = this.translateService.getBrowserLang(); // Get language from browser
+    return this.supportedLangs.includes(browserLang ?? '') ? browserLang! : 'en'; // use language from browser if is supported, if not use 'en'
+  }
+
+  languageSignal = signal<string>(this.getInitialLanguage());// Signal for language
 
   constructor() {
     effect(() => {
@@ -21,20 +29,15 @@ export class LanguageService {
     });
   }
 
-  updateLanguage(language: string) {
-    this.languageSignal.update(() => {
-      switch (language) {
-        case "en":
-          return "en";
-        case "es":
-          return "es";
-        default:
-          return "en";
-      }
-    });
-  }
-
+  /* Returns language from signal */
   getLanguage(): string {
     return this.languageSignal();
+  }
+
+  /* Uptdates language */
+  updateLanguage(language: string) {
+    if (this.supportedLangs.includes(language)) {
+      this.languageSignal.set(language);
+    }
   }
 }

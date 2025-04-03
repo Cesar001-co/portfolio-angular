@@ -1,6 +1,19 @@
 {
-    "lang": {
+    "settings": {
         "EN": "English",
-        "ES": "Spanish"
+        "ES": "Spanish",
+        "T_DARK": "Dark Theme",
+        "T_LIGHT": "Light Theme"
+    },
+    "aboutme": {
+        "parf1": "Hi, my name is",
+        "parf2": "I’m a",
+        "parf3": "Full-stack Developer!",
+        "parf4": {
+            "junior": "Junior developer",
+            "&": "and",
+            "prof": "Informatic Engineer",
+            "desc": ", eager to grow and enhance my skills through new opportunities."
+        }
     }
 }

@@ -1,10 +1,11 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'about-me',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [TranslateModule, NgOptimizedImage],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
