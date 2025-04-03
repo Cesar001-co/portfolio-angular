@@ -15,5 +15,10 @@
             "prof": "Informatic Engineer",
             "desc": ", eager to grow and enhance my skills through new opportunities."
         }
+    },
+    "social": {
+        "TOOLTIP": "Copy",
+        "CV": "CV",
+        "ALERT": "Mail copied to the clipboard."
     }
 }

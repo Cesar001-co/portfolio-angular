@@ -15,5 +15,10 @@
             "prof": "Ingeniero Informático",
             "desc": ", ansioso por crecer y mejorar mis habilidades a través de nuevas oportunidades."
         }
+    },
+    "social": {
+        "TOOLTIP": "Copiar",
+        "CV": "HV",
+        "ALERT": "Correo copiado al portapapeles."
     }
 }
