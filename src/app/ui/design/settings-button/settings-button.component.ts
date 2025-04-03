@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ThemesService } from '../../../services/themes.service';
+import { LanguageService } from '../../../services/language.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'settings-button',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './settings-button.component.html',
   styleUrl: './settings-button.component.scss'
 })
@@ -12,22 +14,27 @@ export class SettingsButtonComponent {
   userTheme: string | null = '';
   language: string | null ='';
 
+  private languageService = inject(LanguageService);
+  private themesService = inject(ThemesService);
+
   constructor( ) {
-    this.userTheme = this._themesService.getLightMode();
-    if (this._themesService.getLightMode() === 'active') {
-      this._themesService.ativeLightMode();
+    this.language = this.languageService.getLanguage();
+    this.userTheme = this.themesService.getLightMode();
+    if (this.themesService.getLightMode() === 'active') {
+      this.themesService.ativeLightMode();
     }
   }
 
-  // private languageService = inject(LanguageService);
-  private _themesService = inject(ThemesService);
-
   changeTheme() {
-    this._themesService.getLightMode() !== "active" ? this._themesService.ativeLightMode() : this._themesService.disableLightMode();
-    this.userTheme = this._themesService.getLightMode();
+    this.themesService.getLightMode() !== "active" ? this.themesService.ativeLightMode() : this.themesService.disableLightMode();
+    this.userTheme = this.themesService.getLightMode();
   }
 
   switchLanguage(lang: string): void {
-    // this.languageService.changeLanguage(lang);
+    if (this.languageService.languageSignal() !== lang) {
+      this.languageService.updateLanguage(lang);
+      this.language = lang;
+      console.log('Language change to', lang);
+    }
   }
 }

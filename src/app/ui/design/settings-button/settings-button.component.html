@@ -16,8 +16,8 @@
         </div>
         <ul class="options">
             <li>
-                <button [disabled]="language == 'en'" (click)="switchLanguage('en')">English</button>
-                <button [disabled]="language == 'es'" (click)="switchLanguage('es')">Spanish</button>
+                <button [disabled]="language?.match('en')" (click)="switchLanguage('en')">{{'lang.EN' | translate}}</button>
+                <button [disabled]="language?.match('es')" (click)="switchLanguage('es')">{{'lang.ES' | translate}}</button>
             </li>
             <li (click)="changeTheme()">
                 <p>@if (userTheme !== 'active') {Dark Theme} @else {Light Mode}</p>
