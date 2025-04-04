@@ -11,7 +11,7 @@ export class LanguageService {
 
   /* Verifys if there is a language in localStorage, if not look up for browser language */
   private getInitialLanguage(): string {
-    const storedLang = window.localStorage.getItem('lang'); // Get Language from localStorage
+    const storedLang = window.localStorage.getItem('language'); // Get Language from localStorage
     if (storedLang) {
       return JSON.parse(storedLang);
     }
@@ -24,7 +24,7 @@ export class LanguageService {
 
   constructor() {
     effect(() => {
-      window.localStorage.setItem('lang', JSON.stringify(this.languageSignal()));
+      window.localStorage.setItem('language', JSON.stringify(this.languageSignal()));
       this.translateService.use(this.languageSignal());
     });
   }
