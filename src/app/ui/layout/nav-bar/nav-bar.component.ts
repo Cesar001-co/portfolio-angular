@@ -1,11 +1,11 @@
-import { Component, inject, SimpleChange, SimpleChanges } from '@angular/core';
-import { ThemesService } from '../../../services/themes.service';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslateModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })
@@ -13,11 +13,11 @@ export class NavBarComponent {
   settingsMenu = false;
   
   navbarItems: any[] = [
-    { ref: 'aboutme', section: `About Me` },
-    { ref: 'tech', section: `Technologies` },
-    { ref: 'projects', section: `Projects` },
+    { ref: 'aboutme', section: 'ABOT' },
+    { ref: 'tech', section: 'TECH' },
+    { ref: 'projects', section: 'PROJ' },
     // {ref: 'experience', section: 'Experience'},
-    { ref: 'education', section: `Education` }
+    { ref: 'education', section: 'EDUC' }
   ]
 
   openNav() {
@@ -43,7 +43,7 @@ export class NavBarComponent {
     this.settingsMenu = !this.settingsMenu;
   }
 
-  // scroll to section
+  /* Scroll to section */
   scrollTo(ref: string) {
     const element = document.getElementById(ref);
     if (element) {

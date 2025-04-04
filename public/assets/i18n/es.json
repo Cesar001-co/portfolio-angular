@@ -20,5 +20,20 @@
         "TOOLTIP": "Copiar",
         "CV": "HV",
         "ALERT": "Correo copiado al portapapeles."
-    }
+    },
+    "sections": {
+        "ABOT": {
+            "TITLE": "Sobre Mí"
+        },
+        "TECH": {
+            "TITLE": "Tecnologías"
+        },
+        "PROJ": {
+            "TITLE": "Proyectos"
+        },
+        "EDUC": {
+            "TITLE": "Educación"
+        }
+    },
+    "footer": "Casi todos los derechos reservados."
 }

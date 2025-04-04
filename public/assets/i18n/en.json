@@ -20,5 +20,20 @@
         "TOOLTIP": "Copy",
         "CV": "CV",
         "ALERT": "Mail copied to the clipboard."
-    }
+    },
+    "sections": {
+        "ABOT": {
+            "TITLE": "About Me"
+        },
+        "TECH": {
+            "TITLE": "Technologies"
+        },
+        "PROJ": {
+            "TITLE": "Projects"
+        },
+        "EDUC": {
+            "TITLE": "Education"
+        }
+    },
+    "footer": "Most of the Rights Reserved."
 }

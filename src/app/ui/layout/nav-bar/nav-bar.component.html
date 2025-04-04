@@ -3,7 +3,7 @@
         @for (item of navbarItems; track $index) {
         <li class="title-secondary cursor-pointer">
             <a (click)="scrollTo(item.ref)">
-                {{item.section}}
+                {{'sections.' + item.section + '.TITLE' | translate}}
             </a>
         </li>
         }
@@ -22,7 +22,7 @@
             @for (item of navbarItems; track $index) {
             <li class="text-[var(--text-color)] p-4">
                 <a class="cursor-pointer" (click)="scrollTo(item.ref)" (click)="closeMenu()">
-                    {{item.section}}
+                    {{'sections.' + item.section + '.TITLE' | translate}}
                 </a>
             </li>
             }

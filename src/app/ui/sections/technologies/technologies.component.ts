@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Icons_frame, Icons_lang } from '../../../domain/icons/icons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'technologies',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './technologies.component.html',
   styleUrl: './technologies.component.scss'
 })

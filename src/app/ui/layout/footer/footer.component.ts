@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { SocialContainerComponent } from '../../design/social-container/social-container.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [SocialContainerComponent, TranslateModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
