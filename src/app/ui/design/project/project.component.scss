@@ -1,4 +1,4 @@
-.proyect {
+.project {
     max-width: 400px;
     width: 95%;
     padding: 0;
@@ -27,13 +27,13 @@
     }
 }
 
-.proyect-content {
+.project-content {
     .tech-container {
         .tech{
             border-radius: 15px;
             padding: .3rem .4rem;
-            background-color: var(--proyect-tech-bg);
-            color: var(--proyect-tech-cl);
+            background-color: var(--project-tech-bg);
+            color: var(--project-tech-cl);
             gap: 5px;
             .icon{
                 width: 17px;
@@ -44,19 +44,19 @@
 
 @media (max-width: 1000px) {
 
-    .proyect {
+    .project {
         margin-bottom: 2rem;
         .preview img {
             aspect-ratio: 16/10;
         }
-        .proyect-content {
+        .project-content {
             margin: 0;
         }
     }
 }
 
 @media (max-width: 600px) {
-    .proyect {
+    .project {
         width: 80%;
     }
 }

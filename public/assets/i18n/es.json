@@ -29,7 +29,8 @@
             "TITLE": "Tecnologías"
         },
         "PROJ": {
-            "TITLE": "Proyectos"
+            "TITLE": "Proyectos",
+            "PRESENT": "Presente"
         },
         "EDUC": {
             "TITLE": "Educación"

@@ -1,17 +1,17 @@
-<div class="proyect">
+<div class="project">
     <div class="preview">
-        <img src={{proyect.imgUrl}} alt='{{proyect.name}} img'>
+        <img src={{project.imgUrl}} alt='{{project.name}} img'>
     </div>
-    <div class="proyect-content m-2">
-        <h3 class="subtitle-prymary">{{proyect.name}}</h3>
-        <p class="description"><span class="font-bold">{{proyect.type}}</span> - {{proyect.description}}</p>
+    <div class="project-content m-2">
+        <h3 class="subtitle-prymary">{{project.name}}</h3>
+        <p class="description"><span class="font-bold">{{project.type}}</span> - {{project.description}}</p>
         <!-- tech -->
-        @if (proyect.techologies) {
-            <tech-icons [tech]="proyect.techologies"></tech-icons>
+        @if (project.techologies) {
+            <tech-icons [tech]="project.techologies"></tech-icons>
         }
         <div class="links flex gap-3">
-            @if (proyect.github) {
-            <button class="button-secondary flex items-center" (click)="openLink(proyect.github)">
+            @if (project.github) {
+            <button class="button-secondary flex items-center" (click)="openLink(project.github)">
                 <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M17.6572 25.8972V21.1886C17.8209 19.714 17.3981 18.2341 16.48 17.0686C20.0115 17.0686 23.5429 14.7143 23.5429 10.5943C23.6371 9.12286 23.2251 7.67497 22.3658 6.47428C22.6954 5.12057 22.6954 3.70799 22.3658 2.35428C22.3658 2.35428 21.1886 2.35428 18.8343 4.11999C15.7267 3.53142 12.5248 3.53142 9.41717 4.11999C7.06289 2.35428 5.88574 2.35428 5.88574 2.35428C5.5326 3.70799 5.5326 5.12057 5.88574 6.47428C5.02863 7.67012 4.61263 9.12614 4.7086 10.5943C4.7086 14.7143 8.24003 17.0686 11.7715 17.0686C11.3124 17.6454 10.971 18.3046 10.7709 19.0109C10.5708 19.7172 10.5119 20.4588 10.5943 21.1886M10.5943 21.1886V25.8972M10.5943 21.1886C5.2854 23.5429 4.7086 18.8343 2.35431 18.8343"
@@ -20,8 +20,8 @@
                 <p>GitHub</p>
             </button>
             }
-            @if (proyect.web) {
-            <button class="button-secondary flex items-center" (click)="openLink(proyect.web)">
+            @if (project.web) {
+            <button class="button-secondary flex items-center" (click)="openLink(project.web)">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M13 6L15 4C16 3 18 3 19 4L20 5C21 6 21 8 20 9L15 14C14 15 12 15 11 14M11 18L9 20C8 21 6 21 5 20L4 19C3 18 3 16 4 15L9 10C10 9 12 9 13 10"

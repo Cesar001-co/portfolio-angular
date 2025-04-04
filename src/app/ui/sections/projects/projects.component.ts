@@ -1,16 +1,25 @@
-import { Component } from '@angular/core';
-import { Proyect } from '../../../domain/models/proyects.interface';
-import { ProyectComponent } from '../../design/proyect/proyect.component';
-import { mainProyects } from '../../../domain/proyects/proyects';
+import { Component, effect, inject } from '@angular/core';
+import { Project } from '../../../domain/models/projects.interface';
+import { ProjectComponent } from '../../design/project/project.component';
+import { mainProjects_en, mainProjects_es } from '../../../domain/proyects/en_projects';
 import { TranslateModule } from '@ngx-translate/core';
+import { LanguageService } from '../../../services/language.service';
 
 @Component({
   selector: 'projects',
   standalone: true,
-  imports: [ProyectComponent, TranslateModule],
+  imports: [ProjectComponent, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
-  mainProyects: Proyect[] = mainProyects;
+  mainProyects: Project[] = [];
+
+  private languageService = inject(LanguageService);
+
+  constructor() {
+    effect(() => {
+      this.mainProyects = this.languageService.getLanguage() === 'es' ? mainProjects_es : mainProjects_en;
+    })
+  }
 }
