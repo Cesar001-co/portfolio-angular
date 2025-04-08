@@ -8,12 +8,6 @@
 
 }
 
-// Button light and dark mode
-/* .nav-container li:last-child {
-    width: 1rem;
-    margin-right: 1rem;
-} */
-
 .nav-container li:hover {
     color: var(--accent);
 
@@ -107,15 +101,10 @@
             background: var(--accent);
         }
     }
-
-    .menu a:hover {
-        color: var(--accent);
-    }
-
 }
 
 .open {
-    background-color: var(--translucid);
+    background-color: var(--hamburger-bg);
     backdrop-filter: blur(6px);
 
     #theme-switch {
@@ -124,9 +113,22 @@
 
     .menu ul {
         max-height: 100%;
+
+        a {
+            color: var(--hamburger-text);
+        }
     }
 }
 
+.menu li:hover {
+    background-color: var(--settings-btn-bg-hover);
+    a {
+        color: var(--accent) !important;
+    }
+}
+
+// media screens
+// Hamburger menu for mobile devices
 @media (min-width: 768px) {
     .hamburger-container {
         display: none;

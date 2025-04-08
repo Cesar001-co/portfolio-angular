@@ -6,8 +6,20 @@
   --secondary-color: #0d646e;
   --accent: #4cdbe6;
 
-  --translucid: #cccccc40;
+  /* Menu bar */
+  --translucid: #cccccc60;
+  
+  /* Hamburger Menu */
+  --hamburger-bg: #cccccc90;
+  --hamburger-text: #f5f8fa;
 
+  /* Settings button */
+  --settings-btn-bg: #5D5E60;
+  --settings-btn-bg-hover: #cccccc90;
+  --settings-disabled-btn: #cccccc;
+  --settings-disabled-hover-btn: #cccccc50;
+
+  /* option 2: secondary btn */
   // --button-secondary-bg: #0d646e;
   // --button-secondary-cl: #68def3;
   // --button-secondary-hover: #19a8b3;
@@ -19,7 +31,7 @@
   --project-tech-bg: #212220;
   --project-tech-cl: #B4BAB2;
 
-  //fuentes de texto
+  //fonts
   --font-family-primary: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
@@ -33,7 +45,18 @@
   --secondary-color: #91e8f2;
   --accent: #19a8b3;
 
-  --translucid: #a9a9a940;
+  /* Menu bar */
+  --translucid: #a9a9a960;
+  
+  /* Hamburger Menu */
+  --hamburger-bg: #a9a9a990;
+  --hamburger-text: #333333;
+
+  /* Settings button */
+  --settings-btn-bg: #E0E0E0;
+  --settings-btn-bg-hover: #bde7ec;
+  --settings-disabled-btn: #A0A0A0;
+  --settings-disabled-hover-btn: #D0D0D0;
 
   --button-secondary-bg: #bde7ec;
   --button-secondary-cl: #336e79;

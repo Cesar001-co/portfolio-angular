@@ -10,6 +10,7 @@
     </ul>
 </nav>
 
+<!-- Hamburger Menu -->
 <nav class="hamburger-container fixed top-0 z-1000 w-[100%]">
     <label class="burger m-6" for="burger">
         <input type="checkbox" id="burger" (change)="openNav()">
@@ -20,8 +21,8 @@
     <div class="menu w-full justify-center">
         <ul class="text-center ">
             @for (item of navbarItems; track $index) {
-            <li class="text-[var(--text-color)] p-4">
-                <a class="cursor-pointer" (click)="scrollTo(item.ref)" (click)="closeMenu()">
+            <li class="text-[var(--text-color)] p-4 cursor-pointer" (click)="scrollTo(item.ref)" (click)="closeMenu()">
+                <a class="cursor-pointer">
                     {{'sections.' + item.section + '.TITLE' | translate}}
                 </a>
             </li>

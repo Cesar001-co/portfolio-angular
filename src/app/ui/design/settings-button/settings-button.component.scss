@@ -7,7 +7,7 @@
         padding: .5rem .7rem;
         justify-content: flex-end;
         cursor: pointer;
-        background-color: #cccccc50;
+        background-color: var(--settings-btn-bg);
         border-radius: 18px;
         width: fit-content;
         overflow: hidden;
@@ -20,7 +20,6 @@
             white-space: nowrap;
             transition: opacity 0.2s ease-out, max-width 0.3s ease-out, color 0.3s ease-out;
         }
-
     }
 
     svg {
@@ -34,10 +33,7 @@
         display: none;
         position: absolute;
 
-        // flex-direction: column;
-        // align-items: flex-end;
-
-        background-color: #cccccc50;
+        background-color: var(--settings-btn-bg);
         position: relative;
         overflow: hidden;
         border-radius: 18px;
@@ -46,17 +42,10 @@
             width: 100%;
             display: flex;
             align-items: center;
-            // justify-content: flex-end;
             gap: 1rem;
             padding: 0.5rem;
             cursor: pointer;
             transition: color 0.3s ease-in-out;
-
-            // div {
-            //     display: flex;
-            //     justify-content: center;
-            //     align-items: center;
-            // }
         }
     }
 
@@ -70,7 +59,7 @@
 }
 
 .options li:last-child:hover {
-    background-color: #cccccc50;
+    background-color: var(--settings-btn-bg-hover);
     color: var(--accent);
 
     svg {
@@ -113,12 +102,12 @@
     }
 
     button:disabled {
-        color: #cccccc !important;
-        background-color: #cccccc50;
+        color: var(--settings-disabled-btn) !important;
+        background-color: var(--settings-disabled-hover-btn);
     }
 }
 
 .options li:first-child button:hover{
-    background-color: #cccccc50;
+    background-color: var(--settings-btn-bg-hover);
     color: var(--accent);
 }
