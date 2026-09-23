@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
 
 import { HeaderComponent } from './layout/header.component';
 import { FooterComponent } from './layout/footer.component';
@@ -9,7 +8,6 @@ import { FooterComponent } from './layout/footer.component';
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    ButtonModule,
     HeaderComponent,
     FooterComponent
   ],
@@ -22,6 +20,4 @@ import { FooterComponent } from './layout/footer.component';
   `,
   styles: ``
 })
-export class AppComponent {
-  title = 'portfolio';
-}
+export class AppComponent {}

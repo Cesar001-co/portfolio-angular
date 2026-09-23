@@ -1,2 +1,8 @@
+/*
+ * Orden de capas: PrimeNG va entre base y utilities para que
+ * las utilidades de Tailwind puedan sobrescribir estilos de componentes.
+ */
+@layer theme, base, primeng, components, utilities;
+
 @import "tailwindcss";
 @plugin "tailwindcss-primeui";
