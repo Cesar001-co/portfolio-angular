@@ -12,7 +12,9 @@ import { HERO_CONTENT } from './hero.config';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { id: SECTION_IDS.home, class: 'block' }
+  // Fondo a ancho completo en el host: primary translúcido que tiñe el fondo de ambos temas
+  // y se funde (transparent) con el fondo de la página.
+  host: { id: SECTION_IDS.home, class: 'block bg-linear-to-b from-primary/25 via-primary/10 to-transparent' }
 })
 export class HeroComponent {
   protected readonly content = HERO_CONTENT;
