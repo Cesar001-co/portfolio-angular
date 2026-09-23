@@ -1,1 +1,58 @@
-<p>hero works!</p>
+<section class="mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-14 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:gap-10">
+  <!-- Texto -->
+  <div class="flex flex-col items-start gap-8">
+    <h1 class="text-4xl leading-tight font-bold tracking-tight text-color sm:text-5xl lg:text-6xl">
+      {{ content.title.lead }}
+      <span class="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">{{ content.title.highlight }}</span>{{ content.title.trail }}
+    </h1>
+
+    <div class="flex flex-wrap gap-3">
+      @for (cta of content.ctas; track cta.section) {
+        <a routerLink="/" [fragment]="cta.section" class="btn btn-lg"
+          [class.btn-primary]="cta.variant === 'primary'" [class.btn-secondary]="cta.variant === 'secondary'">
+          {{ cta.label }}
+        </a>
+      }
+    </div>
+
+    <ul class="flex flex-wrap gap-2" aria-label="Tecnologías principales">
+      @for (tech of content.technologies; track tech) {
+        <li class="chip chip-accent">{{ tech }}</li>
+      }
+    </ul>
+
+    <dl class="flex gap-12 border-t border-primary/15 pt-6">
+      @for (stat of content.stats; track stat.label) {
+        <div class="flex flex-col-reverse gap-1">
+          <dt class="text-sm text-muted-color">{{ stat.label }}</dt>
+          <dd class="text-3xl font-bold text-color">{{ stat.value }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+
+  <!-- Foto -->
+  <figure class="relative isolate mx-auto w-full max-w-sm">
+    <div class="absolute inset-0 -z-10 scale-110 rounded-full bg-primary/15 blur-3xl" aria-hidden="true"></div>
+
+    <div class="rounded-3xl bg-secondary p-2 shadow-2xl shadow-primary/10 ring-1 ring-primary/25">
+      <img [ngSrc]="profile.avatar" width="330" height="332" priority
+        class="aspect-square w-full rounded-2xl object-cover" [alt]="'Foto de ' + profile.name" />
+    </div>
+
+    @if (profile.availableForWork) {
+      <span class="absolute -top-3 right-4 flex items-center gap-2 rounded-full border border-primary/25 bg-app-background/90 px-3 py-1 text-xs font-medium text-color backdrop-blur">
+        <span class="relative flex size-2" aria-hidden="true">
+          <span class="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex size-2 rounded-full bg-primary"></span>
+        </span>
+        Disponible
+      </span>
+    }
+
+    <figcaption class="absolute -bottom-6 -left-3 rounded-xl border border-primary/25 bg-app-background/90 px-4 py-2.5 shadow-lg backdrop-blur sm:-left-6">
+      <p class="text-sm font-semibold text-color">{{ profile.name }}</p>
+      <p class="text-xs text-muted-color">{{ profile.role }}</p>
+    </figcaption>
+  </figure>
+</section>

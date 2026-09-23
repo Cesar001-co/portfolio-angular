@@ -9,6 +9,10 @@ export interface SocialLink {
 
 export const PROFILE = {
   name: 'Cesar Rodriguez',
+  role: 'Full-stack Developer',
+  avatar: 'assets/avatar.jpg',
+  /** Muestra la insignia "Disponible" en el hero. */
+  availableForWork: true,
   email: 'cesarcamilo001@gmail.com',
   // TODO(i18n): elegir el documento según el idioma activo (es → HV, en → CV).
   resume: {

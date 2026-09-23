@@ -1,0 +1,13 @@
+/*
+ * Chips / etiquetas del sistema de diseño.
+ * Uso: class="chip chip-accent"
+ */
+@layer components {
+  .chip {
+    @apply inline-flex h-8 items-center rounded-full border px-3.5 text-sm font-medium;
+  }
+
+  .chip-accent {
+    @apply border-accent/40 bg-accent/15 text-accent;
+  }
+}

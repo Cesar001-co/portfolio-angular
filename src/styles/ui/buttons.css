@@ -1,6 +1,6 @@
 /*
  * Botones del sistema de diseño. Sirven para <button> y <a>.
- * Uso: class="btn btn-primary" | "btn btn-secondary" | "btn btn-secondary btn-icon"
+ * Uso: class="btn btn-primary" | "btn btn-secondary" | "btn btn-secondary btn-icon" | "btn btn-primary btn-lg"
  *
  * Los estados (:hover, :focus-visible) se escriben como selectores planos en lugar de
  * variantes dentro de @apply: las variantes generan CSS anidado (&:hover) que Beasties
@@ -33,5 +33,10 @@
 
   .btn-icon {
     @apply w-9 px-0;
+  }
+
+  /* Tamaño grande para llamadas a la acción (hero, contacto). */
+  .btn-lg {
+    @apply h-12 px-6 text-base;
   }
 }

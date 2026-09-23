@@ -8,15 +8,17 @@
 
 /* Componentes globales del sistema de diseño */
 @import "./ui/buttons.css";
+@import "./ui/chips.css";
 
 @plugin "tailwindcss-primeui";
 
 /*
  * Tokens propios del preset expuestos como utilidades de Tailwind:
- * bg-secondary, text-secondary, bg-app-background, etc.
+ * bg-secondary, text-accent, bg-app-background, etc.
  * (primary y surface-* ya los provee tailwindcss-primeui).
  */
 @theme inline {
   --color-secondary: var(--p-app-secondary);
   --color-app-background: var(--p-app-background);
+  --color-accent: var(--p-app-accent);
 }
