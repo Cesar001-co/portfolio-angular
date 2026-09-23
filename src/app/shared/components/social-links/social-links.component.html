@@ -1,0 +1,37 @@
+<div class="group relative">
+  <button type="button" class="btn btn-primary" (click)="copyEmail()"
+    [attr.aria-label]="'Copiar correo ' + email">
+    <svg viewBox="0 0 28 28" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M25.667 8.167 15.202 14.817a2.33 2.33 0 0 1-2.404 0L2.333 8.167M4.667 4.667h18.666c1.289 0 2.334 1.044 2.334 2.333v14c0 1.289-1.045 2.333-2.334 2.333H4.667A2.333 2.333 0 0 1 2.333 21V7c0-1.289 1.045-2.333 2.334-2.333Z" />
+    </svg>
+    <span>{{ email }}</span>
+  </button>
+  <!-- TODO(i18n) -->
+  <span role="status" class="tooltip" [class.tooltip--visible]="copied()">
+    {{ copied() ? '¡Copiado!' : 'Copiar' }}
+  </span>
+</div>
+
+<a class="btn btn-secondary" [href]="resume.path" target="_blank" rel="noopener">
+  <svg viewBox="0 0 28 28" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16.333 2.333V7a2.333 2.333 0 0 0 2.334 2.333h4.666M17.5 21a3.5 3.5 0 0 0-7 0m3.5-3.5a2.333 2.333 0 1 0 0-4.667 2.333 2.333 0 0 0 0 4.667ZM17.5 2.333H7a2.333 2.333 0 0 0-2.333 2.334v18.666A2.333 2.333 0 0 0 7 25.667h14a2.333 2.333 0 0 0 2.333-2.334V8.167L17.5 2.333Z" />
+  </svg>
+  <span>{{ resume.label }}</span>
+</a>
+
+@for (social of socials; track social.id) {
+  <a class="btn btn-secondary btn-icon" [href]="social.url" target="_blank" rel="noopener" [attr.aria-label]="social.label" [attr.title]="social.label">
+    @switch (social.id) {
+      @case ('github') {
+        <svg viewBox="0 0 29 29" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17.657 25.897v-4.709a5.6 5.6 0 0 0-1.177-4.12c3.531 0 7.063-2.354 7.063-6.474a6.3 6.3 0 0 0-1.177-4.12 6.15 6.15 0 0 0 0-4.12s-1.177 0-3.531 1.766a24.4 24.4 0 0 0-9.417 0C7.063 2.354 5.886 2.354 5.886 2.354a6.15 6.15 0 0 0 0 4.12 6.3 6.3 0 0 0-1.177 4.12c0 4.12 3.531 6.474 7.063 6.474a5.6 5.6 0 0 0-1.177 4.12m0 0v4.709m0-4.709c-5.309 2.354-5.886-2.354-8.24-2.354" />
+        </svg>
+      }
+      @case ('linkedin') {
+        <svg viewBox="0 0 28 28" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18.667 9.333a7 7 0 0 1 7 7V24.5H21v-8.167a2.333 2.333 0 0 0-4.667 0V24.5h-4.666v-8.167a7 7 0 0 1 7-7ZM7 10.5H2.333v14H7v-14ZM4.667 7a2.333 2.333 0 1 0 0-4.667 2.333 2.333 0 0 0 0 4.667Z" />
+        </svg>
+      }
+    }
+  </a>
+}

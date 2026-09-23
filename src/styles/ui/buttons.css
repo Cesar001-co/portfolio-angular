@@ -1,0 +1,37 @@
+/*
+ * Botones del sistema de diseño. Sirven para <button> y <a>.
+ * Uso: class="btn btn-primary" | "btn btn-secondary" | "btn btn-secondary btn-icon"
+ *
+ * Los estados (:hover, :focus-visible) se escriben como selectores planos en lugar de
+ * variantes dentro de @apply: las variantes generan CSS anidado (&:hover) que Beasties
+ * (inlining de CSS crítico en build) no sabe interpretar.
+ */
+@layer components {
+  .btn {
+    @apply inline-flex h-9 items-center justify-center gap-2 rounded-full border px-3 text-sm font-semibold transition-colors;
+  }
+
+  .btn:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  .btn-primary {
+    @apply border-transparent bg-primary text-primary-contrast;
+  }
+
+  .btn-primary:hover {
+    @apply bg-primary-emphasis;
+  }
+
+  .btn-secondary {
+    @apply border-primary/40 bg-secondary text-primary;
+  }
+
+  .btn-secondary:hover {
+    @apply border-primary bg-primary/15;
+  }
+
+  .btn-icon {
+    @apply w-9 px-0;
+  }
+}

@@ -5,6 +5,10 @@
 @layer theme, base, primeng, components, utilities;
 
 @import "tailwindcss";
+
+/* Componentes globales del sistema de diseño */
+@import "./ui/buttons.css";
+
 @plugin "tailwindcss-primeui";
 
 /*

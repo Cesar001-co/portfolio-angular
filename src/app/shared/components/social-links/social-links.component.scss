@@ -1,0 +1,12 @@
+@reference "../../../../styles/tailwind.css";
+
+// Dentro de `components` para que las utilidades del template tengan prioridad.
+@layer components {
+  .tooltip {
+    @apply pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded-md bg-surface-800 px-2 py-1 text-xs whitespace-nowrap text-surface-0 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100;
+  }
+
+  .tooltip--visible {
+    @apply opacity-100;
+  }
+}
