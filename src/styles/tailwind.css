@@ -9,6 +9,7 @@
 /* Componentes globales del sistema de diseño */
 @import "./ui/buttons.css";
 @import "./ui/chips.css";
+@import "./ui/cards.css";
 
 @plugin "tailwindcss-primeui";
 

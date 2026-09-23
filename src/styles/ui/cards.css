@@ -1,0 +1,19 @@
+/*
+ * Tarjetas del sistema de diseño.
+ * Uso: class="card" | "card card-interactive" (resalta al hacer hover)
+ *
+ * Estados como selectores planos (ver nota en buttons.css).
+ */
+@layer components {
+  .card {
+    @apply rounded-2xl border border-primary/15 bg-secondary/60 p-5;
+  }
+
+  .card-interactive {
+    @apply transition duration-300;
+  }
+
+  .card-interactive:hover {
+    @apply -translate-y-0.5 border-primary/40 shadow-lg shadow-primary/5;
+  }
+}
