@@ -1,0 +1,60 @@
+<header class="border-b border-surface-800 bg-app-background/80 backdrop-blur-md">
+  <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Principal">
+    <a routerLink="/" [fragment]="homeSection" (click)="closeMenu()"
+      class="flex size-10 items-center justify-center rounded-full bg-secondary ring-1 ring-primary/30 transition hover:ring-primary"
+      aria-label="Ir al inicio">
+      <img src="dev.svg" alt="" class="size-6" width="24" height="24" />
+    </a>
+
+    <div class="flex items-center gap-2 md:gap-6">
+      <ul class="hidden items-center gap-8 md:flex">
+        @for (item of navItems; track item.section) {
+          <li>
+            <a routerLink="/" [fragment]="item.section" class="nav-link">{{ item.label }}</a>
+          </li>
+        }
+      </ul>
+
+      <button type="button" class="icon-button" (click)="theme.toggle()"
+        [attr.aria-label]="theme.isDark() ? 'Activar tema claro' : 'Activar tema oscuro'"
+        [attr.title]="theme.isDark() ? 'Tema claro' : 'Tema oscuro'">
+        @if (theme.isDark()) {
+          <!-- Sol -->
+          <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        } @else {
+          <!-- Luna -->
+          <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+          </svg>
+        }
+      </button>
+
+      <button type="button" class="icon-button md:hidden" (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()" aria-controls="mobile-menu"
+        [attr.aria-label]="menuOpen() ? 'Cerrar menú' : 'Abrir menú'">
+        <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          @if (menuOpen()) {
+            <path d="M6 6l12 12M18 6L6 18" />
+          } @else {
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          }
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  @if (menuOpen()) {
+    <ul id="mobile-menu" class="flex flex-col gap-1 border-t border-surface-800 px-4 py-3 md:hidden">
+      @for (item of navItems; track item.section) {
+        <li>
+          <a routerLink="/" [fragment]="item.section" (click)="closeMenu()" class="nav-link block rounded-md px-3 py-2 hover:bg-secondary">
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  }
+</header>

@@ -1,5 +1,10 @@
 // Estilos base del documento. Los valores vienen del preset de PrimeNG
 // (src/app/core/theme/app.preset.ts) expuestos como variables --p-*.
+html {
+  // Scroll suave al navegar por secciones (el offset del header lo aplica ViewportScroller).
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   background-color: var(--p-app-background);

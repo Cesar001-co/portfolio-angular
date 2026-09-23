@@ -14,8 +14,8 @@ import { ContactComponent } from '../../components/contact/contact.component';
   <app-hero />
   <app-about />
   <app-skills />
-  <app-experience />
   <app-projects-preview />
+  <app-experience />
   <app-contact />
   `,
 })

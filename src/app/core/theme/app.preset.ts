@@ -7,12 +7,21 @@ import { BRAND, DARK_SURFACE_SCALE, PRIMARY_SCALE } from './palette';
  * Preset de la app basado en Lara.
  * - primary: común a ambos esquemas.
  * - colorScheme.dark: superficies y tokens propios (--p-app-*).
- * - colorScheme.light: pendiente de definir.
+ * - colorScheme.light: valores provisionales hasta definir la paleta clara.
  */
 export const AppPreset = definePreset(Lara, {
   semantic: {
     primary: PRIMARY_SCALE,
     colorScheme: {
+      light: {
+        // TODO(theme): reemplazar por la paleta clara definitiva.
+        extend: {
+          app: {
+            background: '#ffffff',
+            secondary: PRIMARY_SCALE[50],
+          },
+        },
+      },
       dark: {
         surface: {
           0: '#ffffff',
