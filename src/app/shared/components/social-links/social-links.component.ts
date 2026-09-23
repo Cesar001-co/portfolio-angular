@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, input, signal } from '@angular/core';
 
 import { PROFILE } from '@core/profile/profile';
 
@@ -10,9 +10,16 @@ const COPY_FEEDBACK_MS = 2000;
   templateUrl: './social-links.component.html',
   styleUrl: './social-links.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'flex flex-wrap items-center justify-center gap-3' },
+  host: {
+    class: 'flex flex-wrap items-center gap-3',
+    '[class.justify-center]': "align() === 'center'",
+    '[class.justify-start]': "align() === 'start'",
+  },
 })
 export class SocialLinksComponent {
+  /** Alineación horizontal del grupo: centrado (footer) o al inicio (hero). */
+  readonly align = input<'center' | 'start'>('center');
+
   protected readonly email = PROFILE.email;
   protected readonly resume = PROFILE.resume.es;
   protected readonly socials = PROFILE.socials;

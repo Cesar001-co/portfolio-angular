@@ -22,4 +22,5 @@
   --color-app-background: var(--p-app-background);
   --color-accent: var(--p-app-accent);
   --color-accent-muted: var(--p-app-accent-muted);
+  --color-on-accent-muted: var(--p-app-on-accent-muted);
 }

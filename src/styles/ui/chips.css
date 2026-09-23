@@ -8,6 +8,6 @@
   }
 
   .chip-accent {
-    @apply border-transparent bg-accent-muted text-primary;
+    @apply border-transparent bg-accent-muted text-on-accent-muted;
   }
 }

@@ -14,7 +14,8 @@ import { FooterComponent } from '@layout/footer/footer.component';
   ],
   template: `
   <app-header />
-  <main>
+  <!-- El header es fijo: el padding reserva su altura para que no tape el contenido -->
+  <main class="pt-(--app-header-height)">
     <router-outlet />
   </main>
   <app-footer />

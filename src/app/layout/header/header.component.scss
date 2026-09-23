@@ -3,10 +3,40 @@
 // Dentro de `components` para que las utilidades del template (p. ej. md:hidden) tengan prioridad.
 @layer components {
   .nav-link {
-    @apply text-sm font-medium text-muted-color transition-colors hover:text-primary focus-visible:text-primary focus-visible:outline-none;
+    @apply text-sm font-medium text-muted-color transition-colors duration-300 hover:text-color focus-visible:text-color focus-visible:outline-none;
+  }
+
+  // Subrayado animado (solo navegación de escritorio): crece desde el centro al hacer hover/focus.
+  .nav-link--underline {
+    @apply relative py-1;
+
+    // CSS plano (sin @apply) para no inflar el presupuesto de estilos del componente.
+    &::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      bottom: -0.125rem;
+      height: 0.125rem;
+      border-radius: 9999px;
+      background-color: var(--p-primary-color);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 300ms ease-out;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
   }
 
   .icon-button {
     @apply flex size-9 items-center justify-center rounded-full text-muted-color transition-colors hover:bg-secondary hover:text-primary focus-visible:outline-2 focus-visible:outline-primary;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link--underline::after {
+    transition: none;
   }
 }

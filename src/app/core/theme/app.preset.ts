@@ -20,7 +20,9 @@ export const AppPreset = definePreset(Lara, {
             background: '#ffffff',
             secondary: PRIMARY_SCALE[50],
             accent: BRAND.accent,
-            accentMuted: BRAND.accentMuted,
+            // Chips: verde pálido con texto verde oscuro (contraste 4.94:1, AA).
+            accentMuted: PRIMARY_SCALE[100],
+            onAccentMuted: PRIMARY_SCALE[700],
           },
         },
       },
@@ -35,6 +37,7 @@ export const AppPreset = definePreset(Lara, {
             secondary: BRAND.secondary,
             accent: BRAND.accent,
             accentMuted: BRAND.accentMuted,
+            onAccentMuted: BRAND.primary,
           },
         },
       },
