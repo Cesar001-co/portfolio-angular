@@ -1,6 +1,6 @@
 /*
  * Botones del sistema de diseño. Sirven para <button> y <a>.
- * Uso: class="btn btn-primary" | "btn btn-secondary" | "btn btn-secondary btn-icon" | "btn btn-primary btn-lg"
+ * Uso: class="btn btn-primary" | "btn btn-secondary" | "btn btn-secondary btn-icon" | "btn btn-ghost" | "btn btn-primary btn-lg"
  *
  * Los estados (:hover, :focus-visible) se escriben como selectores planos en lugar de
  * variantes dentro de @apply: las variantes generan CSS anidado (&:hover) que Beasties
@@ -29,6 +29,15 @@
 
   .btn-secondary:hover {
     @apply border-primary bg-primary/15;
+  }
+
+  /* Sin apariencia en reposo; solo muestra fondo al hacer hover. */
+  .btn-ghost {
+    @apply border-transparent bg-transparent text-color;
+  }
+
+  .btn-ghost:hover {
+    @apply bg-secondary;
   }
 
   .btn-icon {

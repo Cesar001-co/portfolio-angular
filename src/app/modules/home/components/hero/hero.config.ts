@@ -3,7 +3,7 @@ import { SECTION_IDS, SectionId } from '@core/navigation/sections';
 export interface HeroCta {
   label: string;
   section: SectionId;
-  variant: 'primary' | 'secondary';
+  variant: 'primary' | 'ghost';
 }
 
 export interface HeroStat {
@@ -20,9 +20,11 @@ export const HERO_CONTENT = {
   },
   ctas: [
     { label: 'Ver proyectos', section: SECTION_IDS.projects, variant: 'primary' },
-    { label: 'Contactarme', section: SECTION_IDS.contact, variant: 'secondary' },
+    { label: 'Contactarme', section: SECTION_IDS.contact, variant: 'ghost' },
   ] satisfies HeroCta[],
-  technologies: ['NestJS', 'Angular', 'Spring Boot', 'IA'],
+  /** Indicador inferior: baja a la sección siguiente al hero. */
+  scrollCta: { label: 'Desliza', section: SECTION_IDS.about },
+  technologies:['NestJS', 'Angular', 'Spring Boot', 'IA'],
   stats: [
     { value: '2+', label: 'Años de experiencia' },
     { value: '8+', label: 'Proyectos entregados' },

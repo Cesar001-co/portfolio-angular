@@ -21,4 +21,5 @@
   --color-secondary: var(--p-app-secondary);
   --color-app-background: var(--p-app-background);
   --color-accent: var(--p-app-accent);
+  --color-accent-muted: var(--p-app-accent-muted);
 }

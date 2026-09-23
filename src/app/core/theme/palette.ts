@@ -11,8 +11,10 @@ export const BRAND = {
   primary: '#73D586',
   secondary: '#1B2B1D',
   background: '#111210',
-  /** Variante para chips/etiquetas (p. ej. tecnologías del hero). */
+  /** Acento (p. ej. degradado del título del hero). */
   accent: '#57A265',
+  /** Fondo de chips/etiquetas; texto en primary (contraste 5.79:1, AA). */
+  accentMuted: '#27462d',
 } as const;
 
 /** Escala primaria generada desde BRAND.primary (tono 131.6°, anclado en 400). */
