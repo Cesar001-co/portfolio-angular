@@ -6,3 +6,13 @@
 
 @import "tailwindcss";
 @plugin "tailwindcss-primeui";
+
+/*
+ * Tokens propios del preset expuestos como utilidades de Tailwind:
+ * bg-secondary, text-secondary, bg-app-background, etc.
+ * (primary y surface-* ya los provee tailwindcss-primeui).
+ */
+@theme inline {
+  --color-secondary: var(--p-app-secondary);
+  --color-app-background: var(--p-app-background);
+}

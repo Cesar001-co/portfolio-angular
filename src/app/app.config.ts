@@ -3,11 +3,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideRouter } from '@angular/router';
 
 import { providePrimeNG } from 'primeng/config';
-import Lara from '@primeng/themes/lara';
 
+import { AppPreset } from '@core/theme/app.preset';
 import { routes } from './app.routes';
-
-
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,7 +17,7 @@ export const appConfig: ApplicationConfig = {
 
     providePrimeNG({
       theme: {
-        preset: Lara,
+        preset: AppPreset,
         options: {
           // Debe coincidir con el orden declarado en src/styles/tailwind.css
           cssLayer: {

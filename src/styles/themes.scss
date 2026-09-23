@@ -1,0 +1,7 @@
+// Estilos base del documento. Los valores vienen del preset de PrimeNG
+// (src/app/core/theme/app.preset.ts) expuestos como variables --p-*.
+html,
+body {
+  background-color: var(--p-app-background);
+  color: var(--p-text-color);
+}
