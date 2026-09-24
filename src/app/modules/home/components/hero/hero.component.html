@@ -26,7 +26,8 @@
         @for (stat of content.stats; track stat.label) {
           <div class="flex flex-col-reverse gap-1">
             <dt class="text-sm text-muted-color">{{ stat.label | translate }}</dt>
-            <dd class="text-3xl font-bold text-color">{{ stat.value }}</dd>
+            <!-- tabular-nums: los dígitos tienen el mismo ancho y el conteo no hace "bailar" el texto -->
+            <dd class="text-3xl font-bold text-color tabular-nums" [appCountUp]="stat.value" [suffix]="stat.suffix"></dd>
           </div>
         }
       </dl>
@@ -60,6 +61,16 @@
           {{ 'hero.available' | translate }}
         </span>
       }
+
+      <!-- Ubicación con bandera (SVG: Windows no dibuja emojis de banderas) -->
+      <span class="absolute -bottom-3 right-4 flex items-center gap-2 rounded-full border border-primary/25 bg-app-background/90 px-3 py-1 text-xs font-medium text-color backdrop-blur">
+        <svg viewBox="0 0 3 2" class="h-3 w-[1.125rem] shrink-0 overflow-hidden rounded-[2px] ring-1 ring-black/10" aria-hidden="true">
+          <rect width="3" height="1" fill="#FCD116" />
+          <rect y="1" width="3" height="0.5" fill="#003893" />
+          <rect y="1.5" width="3" height="0.5" fill="#CE1126" />
+        </svg>
+        {{ profile.location }}
+      </span>
 
       <figcaption class="absolute -bottom-6 -left-3 rounded-xl border border-primary/25 bg-app-background/90 px-4 py-2.5 shadow-lg backdrop-blur sm:-left-6">
         <p class="text-sm font-semibold text-color">{{ profile.name }}</p>

@@ -7,11 +7,12 @@ import { Skeleton } from 'primeng/skeleton';
 import { SECTION_IDS } from '@core/navigation/sections';
 import { PROFILE } from '@core/profile/profile';
 import { SocialLinksComponent } from '@shared/components/social-links/social-links.component';
+import { CountUpDirective } from '@shared/directives/count-up.directive';
 import { HERO_CONTENT } from './hero.config';
 
 @Component({
   selector: 'app-hero',
-  imports: [RouterLink, NgOptimizedImage, TranslatePipe, Skeleton, SocialLinksComponent],
+  imports: [RouterLink, NgOptimizedImage, TranslatePipe, Skeleton, SocialLinksComponent, CountUpDirective],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

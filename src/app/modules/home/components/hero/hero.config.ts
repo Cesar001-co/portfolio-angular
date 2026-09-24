@@ -8,7 +8,9 @@ export interface HeroCta {
 }
 
 export interface HeroStat {
-  value: string;
+  /** Número final de la animación de conteo (0 → value). */
+  value: number;
+  suffix?: string;
   label: string;
 }
 
@@ -27,7 +29,7 @@ export const HERO_CONTENT = {
   /** Nombres propios: no se traducen. */
   technologies: ['NestJS', 'Angular', 'Spring Boot', 'IA'],
   stats: [
-    { value: '2+', label: 'hero.stats.years' },
-    { value: '8+', label: 'hero.stats.projects' },
+    { value: 2, suffix: '+', label: 'hero.stats.years' },
+    { value: 8, suffix: '+', label: 'hero.stats.projects' },
   ] satisfies HeroStat[],
 } as const;
