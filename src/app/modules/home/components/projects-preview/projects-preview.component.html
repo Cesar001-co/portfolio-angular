@@ -1,1 +1,18 @@
-<p>projects-preview works!</p>
+<section class="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+  <app-section-heading [title]="content.heading.title" [subtitle]="content.heading.subtitle" />
+
+  <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    @for (project of projects; track project.id) {
+      <li><app-project-card [project]="project" /></li>
+    }
+  </ul>
+
+  <div class="mt-12 flex justify-center">
+    <a [routerLink]="content.cta.route" class="btn btn-secondary btn-lg rounded-lg">
+      {{ content.cta.label }}
+      <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </svg>
+    </a>
+  </div>
+</section>

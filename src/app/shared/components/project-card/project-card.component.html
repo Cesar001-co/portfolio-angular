@@ -1,0 +1,49 @@
+@let p = project();
+
+<!-- bg-transparent: la tarjeta toma el fondo de la sección; solo el borde la delimita -->
+<article class="card card-interactive group flex h-full flex-col overflow-hidden bg-transparent p-0">
+  <div class="relative overflow-hidden border-b border-primary/15">
+    <img [ngSrc]="p.image.src" [width]="p.image.width" [height]="p.image.height" [alt]="'Vista previa de ' + p.name"
+      class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+    <!-- Difuminado verde que sube desde la base de la imagen al hacer hover -->
+    <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-primary/45 via-primary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      aria-hidden="true"></div>
+  </div>
+
+  <div class="flex flex-1 flex-col gap-3 p-5">
+    <div>
+      <p class="text-xs font-medium tracking-wide text-muted-color uppercase">{{ p.category }}</p>
+      <h3 class="mt-1 text-xl font-bold text-primary">{{ p.name }}</h3>
+    </div>
+
+    <p class="text-sm leading-relaxed text-muted-color">{{ p.description }}</p>
+
+    <ul class="flex flex-wrap gap-1.5" aria-label="Tecnologías">
+      @for (tech of p.techs; track tech) {
+        <li><app-tech-badge [id]="tech" size="sm" /></li>
+      }
+    </ul>
+
+    <!-- mt-auto: los enlaces quedan alineados al fondo aunque las descripciones difieran en largo -->
+    @if (p.links.github || p.links.web) {
+      <div class="mt-auto flex flex-wrap gap-3 pt-2">
+        @if (p.links.github) {
+          <a class="btn btn-secondary" [href]="p.links.github" target="_blank" rel="noopener" [attr.aria-label]="p.name + ' en GitHub'">
+            <svg viewBox="0 0 29 29" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17.657 25.897v-4.709a5.6 5.6 0 0 0-1.177-4.12c3.531 0 7.063-2.354 7.063-6.474a6.3 6.3 0 0 0-1.177-4.12 6.15 6.15 0 0 0 0-4.12s-1.177 0-3.531 1.766a24.4 24.4 0 0 0-9.417 0C7.063 2.354 5.886 2.354 5.886 2.354a6.15 6.15 0 0 0 0 4.12 6.3 6.3 0 0 0-1.177 4.12c0 4.12 3.531 6.474 7.063 6.474a5.6 5.6 0 0 0-1.177 4.12m0 0v4.709m0-4.709c-5.309 2.354-5.886-2.354-8.24-2.354" />
+            </svg>
+            GitHub
+          </a>
+        }
+        @if (p.links.web) {
+          <a class="btn btn-secondary" [href]="p.links.web" target="_blank" rel="noopener" [attr.aria-label]="'Ver ' + p.name + ' en vivo'">
+            <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            </svg>
+            Ver sitio en vivo
+          </a>
+        }
+      </div>
+    }
+  </div>
+</article>
