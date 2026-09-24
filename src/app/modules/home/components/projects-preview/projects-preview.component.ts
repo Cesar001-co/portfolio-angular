@@ -11,7 +11,7 @@ import { PROJECTS_PREVIEW_CONTENT } from './projects-preview.config';
   selector: 'app-projects-preview',
   imports: [RouterLink, SectionHeadingComponent, ProjectCardComponent],
   templateUrl: './projects-preview.component.html',
-  styleUrl: './projects-preview.component.scss',
+  styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
   // Fondo principal: alterna con el verde de Skills.
   host: { id: SECTION_IDS.projects, class: 'block bg-app-background' }
