@@ -113,6 +113,12 @@
         "category": "Mobile app",
         "description": "Android app for veterinary clinics and pet owners to manage the care of pets and animals."
       }
+    },
+    "page": {
+      "title": "Projects",
+      "subtitle": "All my projects. Filter by technology to find what you are looking for.",
+      "techsLabel": "Filter by technology",
+      "results": "Results: {{count}}"
     }
   },
   "experience": {
@@ -181,7 +187,6 @@
   "comingSoon": {
     "title": "Coming soon",
     "backHome": "Back to home",
-    "projects": "I'm putting together the full list of projects. In the meantime, you can check out the featured ones on the home page.",
     "notFound": "This page doesn't exist yet, but I'm working on it."
   },
   "footer": {

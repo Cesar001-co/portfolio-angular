@@ -1,0 +1,13 @@
+<ul class="flex flex-wrap gap-2" [attr.aria-label]="'projects.page.techsLabel' | translate">
+  @for (tech of techs(); track tech) {
+    @let active = selected() === tech;
+    <li>
+      <button type="button" class="chip cursor-pointer transition-colors"
+        [class.chip-accent]="active"
+        [class]="active ? '' : 'border-primary/25 text-muted-color hover:border-primary hover:text-primary'"
+        [attr.aria-pressed]="active" (click)="toggle(tech)">
+        {{ catalog[tech].name }}
+      </button>
+    </li>
+  }
+</ul>

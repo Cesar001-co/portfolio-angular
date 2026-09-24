@@ -113,6 +113,12 @@
         "category": "Aplicación móvil",
         "description": "Aplicación Android para gestionar el cuidado de mascotas y animales por parte de clínicas veterinarias y sus dueños."
       }
+    },
+    "page": {
+      "title": "Proyectos",
+      "subtitle": "Todos mis proyectos. Filtra por tecnología para encontrar lo que buscas.",
+      "techsLabel": "Filtrar por tecnología",
+      "results": "Resultados: {{count}}"
     }
   },
   "experience": {
@@ -181,7 +187,6 @@
   "comingSoon": {
     "title": "Próximamente",
     "backHome": "Volver al inicio",
-    "projects": "Estoy preparando el listado completo de proyectos. Mientras tanto, puedes ver los destacados en el inicio.",
     "notFound": "Esta página todavía no existe, pero estoy trabajando en ello."
   },
   "footer": {
