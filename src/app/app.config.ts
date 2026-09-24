@@ -1,3 +1,4 @@
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter, withInMemoryScrolling, withRouterConfig } from '@angular/router';
@@ -19,6 +20,9 @@ export const appConfig: ApplicationConfig = {
       // Permite volver a una sección aunque la URL ya tenga ese fragment.
       withRouterConfig({ onSameUrlNavigation: 'reload' })
     ),
+
+    // HTTP (formulario de contacto → Formspree)
+    provideHttpClient(withFetch()),
 
     provideAnimationsAsync(),
 
