@@ -2,12 +2,32 @@
 
 <!-- bg-transparent: la tarjeta toma el fondo de la sección; solo el borde la delimita -->
 <article class="card card-interactive group flex h-full flex-col overflow-hidden bg-transparent p-0">
-  <div class="relative overflow-hidden border-b border-primary/15">
-    <img [ngSrc]="p.image.src" [width]="p.image.width" [height]="p.image.height" [alt]="'Vista previa de ' + p.name"
-      class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+  <div class="relative aspect-video overflow-hidden border-b border-primary/15">
+    <!-- Imágenes apiladas: solo la activa es visible (crossfade). Las extra se montan tras el primer hover. -->
+    @for (image of p.images; track image.src; let i = $index) {
+      @if (i === 0 || galleryRequested()) {
+        <!-- disableOptimizedSrcset: sin image loader configurado, `fill` exige srcset y lanza NG02952 -->
+        <img [ngSrc]="image.src" fill disableOptimizedSrcset
+          [alt]="i === 0 ? 'Vista previa de ' + p.name : ''"
+          class="object-cover transition-[opacity,scale] duration-700 group-hover:scale-105"
+          [class.opacity-0]="i !== activeIndex()" />
+      }
+    }
+
     <!-- Difuminado verde que sube desde la base de la imagen al hacer hover -->
     <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-primary/45 via-primary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
       aria-hidden="true"></div>
+
+    <!-- Indicador de la imagen activa -->
+    @if (p.images.length > 1) {
+      <div class="pointer-events-none absolute inset-x-0 bottom-3 flex justify-center gap-1.5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+        aria-hidden="true">
+        @for (image of p.images; track image.src; let i = $index) {
+          <span class="h-1.5 rounded-full transition-all duration-500"
+            [class]="i === activeIndex() ? 'w-4 bg-primary' : 'w-1.5 bg-white/60'"></span>
+        }
+      </div>
+    }
   </div>
 
   <div class="flex flex-1 flex-col gap-3 p-5">

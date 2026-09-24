@@ -12,7 +12,12 @@ export const PROJECTS: readonly Project[] = [
     category: 'Página web',
     description:
       'Herramienta para medir la usabilidad de un producto de software, basada en los principios heurísticos propuestos por Jakob Nielsen.',
-    image: { src: 'assets/projects/nuxten.jpg', width: 475, height: 297 },
+    images: [
+      { src: 'assets/projects/nuxten.jpg' },
+      { src: 'assets/projects/nuxten01.jpg' },
+      { src: 'assets/projects/nuxten02.jpg' },
+      { src: 'assets/projects/nuxten03.jpg' },
+    ],
     techs: ['spring-boot', 'angular', 'postgresql', 'firebase'],
     links: {
       github: 'https://github.com/Cesar001-co/nuxten_project',
@@ -26,7 +31,10 @@ export const PROJECTS: readonly Project[] = [
     category: 'Aplicación móvil',
     description:
       'Aplicación Android para gestionar el cuidado de mascotas y animales por parte de clínicas veterinarias y sus dueños.',
-    image: { src: 'assets/projects/sickpet.jpg', width: 475, height: 297 },
+    images: [
+      { src: 'assets/projects/sickpet.jpg' },
+      { src: 'assets/projects/sickpet01.jpg' },
+    ],
     techs: ['ionic', 'firebase'],
     links: {
       github: 'https://github.com/Cesar001-co/SickPetCode',

@@ -2,9 +2,6 @@ import { TechId } from '@core/tech/tech-catalog';
 
 export interface ProjectImage {
   src: string;
-  /** Dimensiones reales del archivo (NgOptimizedImage las exige para evitar saltos de layout). */
-  width: number;
-  height: number;
 }
 
 export interface Project {
@@ -13,7 +10,8 @@ export interface Project {
   /** Tipo de proyecto: "Página web", "Aplicación móvil", ... */
   category: string;
   description: string;
-  image: ProjectImage;
+  /** La primera es la portada; el resto se alterna en la tarjeta al hacer hover. */
+  images: readonly [ProjectImage, ...ProjectImage[]];
   techs: readonly TechId[];
   links: {
     github?: string;
