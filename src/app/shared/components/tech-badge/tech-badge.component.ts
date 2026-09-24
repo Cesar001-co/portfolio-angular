@@ -13,7 +13,9 @@ export type TechBadgeSize = 'md' | 'sm';
   selector: 'app-tech-badge',
   imports: [],
   template: `
-    @if (tech().hasIcon) {
+    @if (!showIcon()) {
+      <!-- Solo texto -->
+    } @else if (tech().hasIcon) {
       <span class="tech-icon shrink-0 bg-current" [class]="iconSize()" [style.mask-image]="iconMask()" aria-hidden="true"></span>
     } @else {
       <svg viewBox="0 0 24 24" class="shrink-0" [class]="iconSize()" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -39,6 +41,8 @@ export class TechBadgeComponent {
   readonly id = input.required<TechId>();
   /** md: secciones (Skills). sm: compacto (tarjetas de proyecto). */
   readonly size = input<TechBadgeSize>('md');
+  /** false: solo el nombre (listas largas donde los íconos recargan, p. ej. Educación). */
+  readonly showIcon = input(true);
 
   protected readonly tech = computed(() => TECH_CATALOG[this.id()]);
   protected readonly iconMask = computed(() => `url(${techIconUrl(this.id())})`);

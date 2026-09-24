@@ -25,6 +25,7 @@ export const TECH_CATALOG = {
   // Frameworks y librerías
   angular: { name: 'Angular', hasIcon: true },
   nestjs: { name: 'NestJS', hasIcon: true },
+  nodejs: { name: 'Node.js', hasIcon: false }, // TODO(icons): falta nodejs.svg
   'spring-boot': { name: 'Spring Boot', hasIcon: true },
   fastapi: { name: 'FastAPI', hasIcon: true },
   ionic: { name: 'Ionic', hasIcon: true },
