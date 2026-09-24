@@ -1,4 +1,5 @@
 @let p = project();
+@let textKey = 'projects.items.' + p.id;
 
 <!-- bg-transparent: la tarjeta toma el fondo de la sección; solo el borde la delimita -->
 <article class="card card-interactive group flex h-full flex-col overflow-hidden bg-transparent p-0">
@@ -8,7 +9,7 @@
       @if (i === 0 || galleryRequested()) {
         <!-- disableOptimizedSrcset: sin image loader configurado, `fill` exige srcset y lanza NG02952 -->
         <img [ngSrc]="image.src" fill disableOptimizedSrcset
-          [alt]="i === 0 ? 'Vista previa de ' + p.name : ''"
+          [alt]="i === 0 ? ('projects.card.previewAlt' | translate: { name: p.name }) : ''"
           class="object-cover transition-[opacity,scale] duration-700 group-hover:scale-105"
           [class.opacity-0]="i !== activeIndex()" />
       }
@@ -32,13 +33,13 @@
 
   <div class="flex flex-1 flex-col gap-3 p-5">
     <div>
-      <p class="text-xs font-medium tracking-wide text-muted-color uppercase">{{ p.category }}</p>
+      <p class="text-xs font-medium tracking-wide text-muted-color uppercase">{{ textKey + '.category' | translate }}</p>
       <h3 class="mt-1 text-xl font-bold text-primary">{{ p.name }}</h3>
     </div>
 
-    <p class="text-sm leading-relaxed text-muted-color">{{ p.description }}</p>
+    <p class="text-sm leading-relaxed text-muted-color">{{ textKey + '.description' | translate }}</p>
 
-    <ul class="flex flex-wrap gap-1.5" aria-label="Tecnologías">
+    <ul class="flex flex-wrap gap-1.5" [attr.aria-label]="'projects.card.techsAria' | translate">
       @for (tech of p.techs; track tech) {
         <li><app-tech-badge [id]="tech" size="sm" /></li>
       }
@@ -48,7 +49,7 @@
     @if (p.links.github || p.links.web) {
       <div class="mt-auto flex flex-wrap gap-3 pt-2">
         @if (p.links.github) {
-          <a class="btn btn-secondary" [href]="p.links.github" target="_blank" rel="noopener" [attr.aria-label]="p.name + ' en GitHub'">
+          <a class="btn btn-secondary" [href]="p.links.github" target="_blank" rel="noopener" [attr.aria-label]="'projects.card.githubAria' | translate: { name: p.name }">
             <svg viewBox="0 0 29 29" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M17.657 25.897v-4.709a5.6 5.6 0 0 0-1.177-4.12c3.531 0 7.063-2.354 7.063-6.474a6.3 6.3 0 0 0-1.177-4.12 6.15 6.15 0 0 0 0-4.12s-1.177 0-3.531 1.766a24.4 24.4 0 0 0-9.417 0C7.063 2.354 5.886 2.354 5.886 2.354a6.15 6.15 0 0 0 0 4.12 6.3 6.3 0 0 0-1.177 4.12c0 4.12 3.531 6.474 7.063 6.474a5.6 5.6 0 0 0-1.177 4.12m0 0v4.709m0-4.709c-5.309 2.354-5.886-2.354-8.24-2.354" />
             </svg>
@@ -56,11 +57,11 @@
           </a>
         }
         @if (p.links.web) {
-          <a class="btn btn-secondary" [href]="p.links.web" target="_blank" rel="noopener" [attr.aria-label]="'Ver ' + p.name + ' en vivo'">
+          <a class="btn btn-secondary" [href]="p.links.web" target="_blank" rel="noopener" [attr.aria-label]="'projects.card.liveAria' | translate: { name: p.name }">
             <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
             </svg>
-            Ver sitio en vivo
+            {{ 'projects.card.live' | translate }}
           </a>
         }
       </div>

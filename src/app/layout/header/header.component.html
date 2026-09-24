@@ -1,10 +1,10 @@
 <!-- La línea inferior es una sombra (no un borde) para no alterar la altura del header. -->
 <header class="transition-[background-color,box-shadow,backdrop-filter] duration-300"
   [class]="solid() ? 'bg-app-background/80 shadow-[0_1px_0_0] shadow-primary/15 backdrop-blur-md' : 'bg-transparent'">
-  <nav class="mx-auto flex h-(--app-header-height) max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Principal">
+  <nav class="mx-auto flex h-(--app-header-height) max-w-6xl items-center justify-between px-4 sm:px-6" [attr.aria-label]="'nav.aria' | translate">
     <a routerLink="/" [fragment]="homeSection" (click)="closeMenu()"
       class="flex size-10 items-center justify-center rounded-full bg-secondary ring-1 ring-primary/30 transition hover:ring-primary"
-      aria-label="Ir al inicio">
+      [attr.aria-label]="'nav.goHome' | translate">
       <img src="dev.svg" alt="" class="size-6" width="24" height="24" />
     </a>
 
@@ -12,14 +12,24 @@
       <ul class="hidden items-center gap-8 md:flex">
         @for (item of navItems; track item.section) {
           <li>
-            <a routerLink="/" [fragment]="item.section" class="nav-link nav-link--underline">{{ item.label }}</a>
+            <a routerLink="/" [fragment]="item.section" class="nav-link nav-link--underline">{{ item.label | translate }}</a>
           </li>
         }
       </ul>
 
+      <!-- Idioma: muestra el código del idioma al que se cambia (EN en español, ES en inglés) -->
+      <button type="button" class="icon-button w-auto gap-1.5 px-2.5 text-xs font-semibold tracking-wide" (click)="language.toggle()"
+        [attr.aria-label]="'nav.language.switch' | translate" [attr.title]="'nav.language.switch' | translate">
+        <svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+        </svg>
+        {{ 'nav.language.target' | translate }}
+      </button>
+
       <button type="button" class="icon-button" (click)="theme.toggle()"
-        [attr.aria-label]="theme.isDark() ? 'Activar tema claro' : 'Activar tema oscuro'"
-        [attr.title]="theme.isDark() ? 'Tema claro' : 'Tema oscuro'">
+        [attr.aria-label]="(theme.isDark() ? 'nav.theme.toLight' : 'nav.theme.toDark') | translate"
+        [attr.title]="(theme.isDark() ? 'nav.theme.light' : 'nav.theme.dark') | translate">
         @if (theme.isDark()) {
           <!-- Sol -->
           <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
@@ -36,7 +46,7 @@
 
       <button type="button" class="icon-button md:hidden" (click)="toggleMenu()"
         [attr.aria-expanded]="menuOpen()" aria-controls="mobile-menu"
-        [attr.aria-label]="menuOpen() ? 'Cerrar menú' : 'Abrir menú'">
+        [attr.aria-label]="(menuOpen() ? 'nav.closeMenu' : 'nav.openMenu') | translate">
         <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
           @if (menuOpen()) {
             <path d="M6 6l12 12M18 6L6 18" />
@@ -53,7 +63,7 @@
       @for (item of navItems; track item.section) {
         <li>
           <a routerLink="/" [fragment]="item.section" (click)="closeMenu()" class="nav-link block rounded-md px-3 py-2 hover:bg-secondary">
-            {{ item.label }}
+            {{ item.label | translate }}
           </a>
         </li>
       }

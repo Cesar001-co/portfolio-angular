@@ -1,7 +1,9 @@
 import { ViewportScroller } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ElementRef, afterNextRender, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
+import { LanguageService } from '@core/i18n/language.service';
 import { SECTION_IDS } from '@core/navigation/sections';
 import { ThemeService } from '@core/theme/theme.service';
 import { NAV_ITEMS } from './header.config';
@@ -11,7 +13,7 @@ const SCROLL_THRESHOLD = 8;
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,6 +25,7 @@ const SCROLL_THRESHOLD = 8;
 })
 export class HeaderComponent {
   protected readonly theme = inject(ThemeService);
+  protected readonly language = inject(LanguageService);
   protected readonly navItems = NAV_ITEMS;
   protected readonly homeSection = SECTION_IDS.home;
   protected readonly menuOpen = signal(false);

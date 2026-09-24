@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { SECTION_IDS } from '@core/navigation/sections';
 import { featuredProjects } from '@core/projects/projects.data';
@@ -9,7 +10,7 @@ import { PROJECTS_PREVIEW_CONTENT } from './projects-preview.config';
 
 @Component({
   selector: 'app-projects-preview',
-  imports: [RouterLink, SectionHeadingComponent, ProjectCardComponent],
+  imports: [RouterLink, TranslatePipe, SectionHeadingComponent, ProjectCardComponent],
   templateUrl: './projects-preview.component.html',
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,

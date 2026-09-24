@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { PROFILE } from '@core/profile/profile';
 import { SocialLinksComponent } from '@shared/components/social-links/social-links.component';
 
 @Component({
   selector: 'app-footer',
-  imports: [SocialLinksComponent],
+  imports: [TranslatePipe, SocialLinksComponent],
   templateUrl: './footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'block' },

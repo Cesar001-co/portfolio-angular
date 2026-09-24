@@ -2,20 +2,20 @@
 @let message = form.controls.message;
 
 <section class="mx-auto grid max-w-6xl gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
-  <app-section-heading [title]="content.heading.title" [subtitle]="content.heading.subtitle" />
+  <app-section-heading [title]="content.heading.title | translate" [subtitle]="content.heading.subtitle | translate" />
 
   <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="card flex flex-col gap-5 bg-secondary/40 p-6">
     <!-- Correo -->
     <div class="flex flex-col gap-2">
-      <label for="contact-email" class="text-sm font-medium text-color">{{ content.fields.email.label }}</label>
+      <label for="contact-email" class="text-sm font-medium text-color">{{ content.fields.email.label | translate }}</label>
       <input pInputText id="contact-email" type="email" formControlName="email" autocomplete="email"
-        [placeholder]="content.fields.email.placeholder" [attr.aria-invalid]="showError('email')"
+        [placeholder]="content.fields.email.placeholder | translate" [attr.aria-invalid]="showError('email')"
         [attr.aria-describedby]="showError('email') ? 'contact-email-error' : null" class="w-full" />
       @if (showError('email')) {
         <small id="contact-email-error" class="text-sm text-red-400">
-          @if (email.hasError('required')) { {{ content.errors.emailRequired }} }
-          @else if (email.hasError('email')) { {{ content.errors.emailInvalid }} }
-          @else { {{ email.getError('server') }} }
+          @if (email.hasError('required')) { {{ content.errors.emailRequired | translate }} }
+          @else if (email.hasError('email')) { {{ content.errors.emailInvalid | translate }} }
+          @else { {{ email.getError('server') | translate }} }
         </small>
       }
     </div>
@@ -23,17 +23,17 @@
     <!-- Mensaje -->
     <div class="flex flex-col gap-2">
       <div class="flex items-baseline justify-between">
-        <label for="contact-message" class="text-sm font-medium text-color">{{ content.fields.message.label }}</label>
+        <label for="contact-message" class="text-sm font-medium text-color">{{ content.fields.message.label | translate }}</label>
         <span class="text-xs text-muted-color" aria-hidden="true">{{ message.value.length }}/{{ content.messageMaxLength }}</span>
       </div>
       <textarea pTextarea id="contact-message" formControlName="message" rows="6"
-        [placeholder]="content.fields.message.placeholder" [attr.aria-invalid]="showError('message')"
+        [placeholder]="content.fields.message.placeholder | translate" [attr.aria-invalid]="showError('message')"
         [attr.aria-describedby]="showError('message') ? 'contact-message-error' : null" class="w-full resize-y"></textarea>
       @if (showError('message')) {
         <small id="contact-message-error" class="text-sm text-red-400">
-          @if (message.hasError('required')) { {{ content.errors.messageRequired }} }
-          @else if (message.hasError('maxlength')) { {{ content.errors.messageTooLong }} }
-          @else { {{ message.getError('server') }} }
+          @if (message.hasError('required')) { {{ content.errors.messageRequired | translate }} }
+          @else if (message.hasError('maxlength')) { {{ content.errors.messageTooLong | translate }} }
+          @else { {{ message.getError('server') | translate }} }
         </small>
       }
     </div>
@@ -44,15 +44,20 @@
     <!-- Estado del envío (anunciado a lectores de pantalla) -->
     <div aria-live="polite">
       @if (status() === 'success') {
-        <p-message severity="success">{{ content.success }}</p-message>
-      } @else if (formError()) {
-        <p-message severity="error">{{ formError() }}</p-message>
+        <p-message severity="success">{{ content.success | translate }}</p-message>
+      } @else if (formErrors().length) {
+        <p-message severity="error">
+          @for (error of formErrors(); track $index) {
+            <!-- messageKey: error propio (i18n); message: texto devuelto por Formspree -->
+            <span>{{ error.messageKey ? (error.messageKey | translate) : error.message }}</span>
+          }
+        </p-message>
       }
     </div>
 
     <button type="submit" class="btn btn-primary btn-lg self-start rounded-lg" [disabled]="status() === 'sending'"
       [class.opacity-70]="status() === 'sending'">
-      {{ status() === 'sending' ? content.submit.sending : content.submit.idle }}
+      {{ (status() === 'sending' ? content.submit.sending : content.submit.idle) | translate }}
       <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13" />
       </svg>

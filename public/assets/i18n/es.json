@@ -1,0 +1,190 @@
+{
+  "app": {
+    "title": "Cesar.dev",
+    "blurTitle": "¡No te vayas! ¡Vuelve! 😱"
+  },
+  "nav": {
+    "aria": "Principal",
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Skills",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "goHome": "Ir al inicio",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "theme": {
+      "toLight": "Activar tema claro",
+      "toDark": "Activar tema oscuro",
+      "light": "Tema claro",
+      "dark": "Tema oscuro"
+    },
+    "language": {
+      "switch": "Cambiar idioma a inglés",
+      "target": "EN"
+    }
+  },
+  "profile": {
+    "role": "Full-stack Developer"
+  },
+  "social": {
+    "copyEmail": "Copiar correo {{email}}",
+    "copy": "Copiar",
+    "copied": "¡Copiado!"
+  },
+  "hero": {
+    "title": {
+      "lead": "Transformando tus ideas en",
+      "highlight": "soluciones web",
+      "trail": "."
+    },
+    "ctas": {
+      "projects": "Ver proyectos",
+      "contact": "Contactarme"
+    },
+    "scroll": "Desliza",
+    "techsAria": "Tecnologías principales",
+    "stats": {
+      "years": "Años de experiencia",
+      "projects": "Proyectos entregados"
+    },
+    "available": "Disponible",
+    "photoAlt": "Foto de {{name}}"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Quién soy, cómo trabajo y qué me motiva.",
+    "paragraphs": [
+      "**Ingeniero Informático** apasionado por construir software que resuelve problemas reales. Me especializo en **desarrollo FullStack con Angular, NestJS/Spring Boot y PostgreSQL**, y disfruto tanto diseñar la arquitectura de un sistema como resolver diferentes problemas.",
+      "En mi última experiencia lideré el desarrollo del sistema de **Kapulus International**, una plataforma de gestión de eventos que escalé de **4.000 a más de 100.000 usuarios**, incluyendo seguridad, biometría (reconocimiento facial) y analítica en tiempo real.",
+      "Me interesa especialmente el diseño de **arquitecturas escalables**, la creación de algoritmos y, más recientemente, cómo integrar **herramientas de IA** en el flujo de desarrollo.",
+      "Soy una persona íntegra, curiosa y con atención al detalle — me autoexijo aprender constantemente y disfruto trabajar en equipo."
+    ]
+  },
+  "services": {
+    "title": "Servicios",
+    "subtitle": "Soluciones a la medida de tu negocio.",
+    "items": {
+      "custom-development": {
+        "title": "Desarrollo personalizado",
+        "description": "Aplicaciones web a medida, con arquitectura escalable y pensadas para crecer con tu negocio."
+      },
+      "support": {
+        "title": "Soporte y mantenimiento",
+        "description": "Actualizaciones, corrección de errores y monitoreo para mantener tu sistema estable y seguro."
+      },
+      "informative-sites": {
+        "title": "Sitios web informativos",
+        "description": "Sitios rápidos, responsivos y optimizados para presentar tu marca y atraer clientes."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Tecnologías con las que trabajo día a día.",
+    "groups": {
+      "languages": "Lenguajes",
+      "frameworks": "Frameworks",
+      "databases": "Databases",
+      "devops-tools": "DevOps & Tools",
+      "cloud-infra": "Cloud / Infra"
+    }
+  },
+  "projects": {
+    "featured": {
+      "title": "Proyectos destacados",
+      "subtitle": "Una selección de proyectos en los que he trabajado.",
+      "cta": "Ver todos los proyectos"
+    },
+    "card": {
+      "previewAlt": "Vista previa de {{name}}",
+      "techsAria": "Tecnologías",
+      "githubAria": "{{name}} en GitHub",
+      "live": "Ver sitio en vivo",
+      "liveAria": "Ver {{name}} en vivo"
+    },
+    "items": {
+      "nuxten": {
+        "category": "Página web",
+        "description": "Herramienta para medir la usabilidad de un producto de software, basada en los principios heurísticos propuestos por Jakob Nielsen."
+      },
+      "sickpet": {
+        "category": "Aplicación móvil",
+        "description": "Aplicación Android para gestionar el cuidado de mascotas y animales por parte de clínicas veterinarias y sus dueños."
+      }
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "subtitle": "Más de 2 años construyendo software.",
+    "opensNewTab": "{{name}} (abre en una pestaña nueva)",
+    "items": {
+      "kapulus": {
+        "role": "Coordinador de Tecnología · Full Stack Developer",
+        "period": "2025 – 2026",
+        "highlights": [
+          "Lideré el desarrollo del sistema de registro de eventos de la compañía, escalándolo de 4.000 a más de 100.000 usuarios sin degradación de rendimiento.",
+          "Impulsé la modernización técnica de la plataforma (migraciones de stack, refuerzo de seguridad y biometría) y la evolución del producto hacia analítica en tiempo real."
+        ]
+      },
+      "freelance": {
+        "role": "Freelance",
+        "period": "2023 – Actualidad",
+        "highlights": [
+          "Diseño, implementación y despliegue de aplicaciones web, SPAs y microservicios personalizados para clientes independientes."
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "subtitle": "Formación académica y aprendizaje continuo.",
+    "techsAria": "Tecnologías aprendidas",
+    "items": {
+      "computer-engineering": {
+        "title": "Ingeniero en Informática",
+        "period": "08/2018 – 01/2025"
+      },
+      "online-courses": {
+        "title": "FullStack Developer · Backend Development",
+        "period": "2023 – Actualidad"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes una idea o un proyecto en mente? Escríbeme y conversemos.",
+    "fields": {
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "tu@correo.com"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntame sobre tu proyecto…"
+      }
+    },
+    "errors": {
+      "emailRequired": "Ingresa tu correo.",
+      "emailInvalid": "Ingresa un correo válido.",
+      "messageRequired": "Escribe tu mensaje.",
+      "messageTooLong": "El mensaje es demasiado largo.",
+      "network": "No se pudo enviar el mensaje. Revisa tu conexión e inténtalo de nuevo."
+    },
+    "submit": {
+      "idle": "Enviar mensaje",
+      "sending": "Enviando…"
+    },
+    "success": "¡Gracias! Tu mensaje fue enviado, te responderé pronto."
+  },
+  "comingSoon": {
+    "title": "Próximamente",
+    "backHome": "Volver al inicio",
+    "projects": "Estoy preparando el listado completo de proyectos. Mientras tanto, puedes ver los destacados en el inicio.",
+    "notFound": "Esta página todavía no existe, pero estoy trabajando en ello."
+  },
+  "footer": {
+    "rights": "Casi todos los derechos reservados."
+  }
+}

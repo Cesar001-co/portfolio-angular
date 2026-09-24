@@ -1,12 +1,14 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, input, signal } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
+import { LanguageService } from '@core/i18n/language.service';
 import { PROFILE } from '@core/profile/profile';
 
 const COPY_FEEDBACK_MS = 2000;
 
 @Component({
   selector: 'app-social-links',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './social-links.component.html',
   styleUrl: './social-links.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,8 +22,11 @@ export class SocialLinksComponent {
   /** Alineación horizontal del grupo: centrado (footer) o al inicio (hero). */
   readonly align = input<'center' | 'start'>('center');
 
+  private readonly language = inject(LanguageService);
+
   protected readonly email = PROFILE.email;
-  protected readonly resume = PROFILE.resume.es;
+  /** HV en español, CV en inglés. */
+  protected readonly resume = computed(() => PROFILE.resume[this.language.current()]);
   protected readonly socials = PROFILE.socials;
   protected readonly copied = signal(false);
 

@@ -1,0 +1,190 @@
+{
+  "app": {
+    "title": "Cesar.dev",
+    "blurTitle": "Don't go! Come back! 😱"
+  },
+  "nav": {
+    "aria": "Main",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "goHome": "Go to home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "theme": {
+      "toLight": "Switch to light theme",
+      "toDark": "Switch to dark theme",
+      "light": "Light theme",
+      "dark": "Dark theme"
+    },
+    "language": {
+      "switch": "Switch language to Spanish",
+      "target": "ES"
+    }
+  },
+  "profile": {
+    "role": "Full-stack Developer"
+  },
+  "social": {
+    "copyEmail": "Copy email {{email}}",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "hero": {
+    "title": {
+      "lead": "Turning your ideas into",
+      "highlight": "web solutions",
+      "trail": "."
+    },
+    "ctas": {
+      "projects": "View projects",
+      "contact": "Contact me"
+    },
+    "scroll": "Scroll",
+    "techsAria": "Main technologies",
+    "stats": {
+      "years": "Years of experience",
+      "projects": "Projects delivered"
+    },
+    "available": "Available",
+    "photoAlt": "Photo of {{name}}"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "Who I am, how I work and what drives me.",
+    "paragraphs": [
+      "**Computer Engineer** passionate about building software that solves real problems. I specialize in **FullStack development with Angular, NestJS/Spring Boot and PostgreSQL**, and I enjoy designing a system's architecture as much as solving all kinds of problems.",
+      "In my latest role I led the development of the **Kapulus International** system, an event management platform I scaled from **4,000 to over 100,000 users**, including security, biometrics (facial recognition) and real-time analytics.",
+      "I'm especially interested in designing **scalable architectures**, building algorithms and, more recently, integrating **AI tools** into the development workflow.",
+      "I'm a person of integrity, curious and detail-oriented — I push myself to keep learning and I enjoy working as part of a team."
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Solutions tailored to your business.",
+    "items": {
+      "custom-development": {
+        "title": "Custom development",
+        "description": "Tailor-made web applications with a scalable architecture, built to grow with your business."
+      },
+      "support": {
+        "title": "Support and maintenance",
+        "description": "Updates, bug fixes and monitoring to keep your system stable and secure."
+      },
+      "informative-sites": {
+        "title": "Informational websites",
+        "description": "Fast, responsive and optimized websites to showcase your brand and attract clients."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I work with every day.",
+    "groups": {
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "databases": "Databases",
+      "devops-tools": "DevOps & Tools",
+      "cloud-infra": "Cloud / Infra"
+    }
+  },
+  "projects": {
+    "featured": {
+      "title": "Featured projects",
+      "subtitle": "A selection of projects I've worked on.",
+      "cta": "View all projects"
+    },
+    "card": {
+      "previewAlt": "{{name}} preview",
+      "techsAria": "Technologies",
+      "githubAria": "{{name}} on GitHub",
+      "live": "View live site",
+      "liveAria": "View {{name}} live"
+    },
+    "items": {
+      "nuxten": {
+        "category": "Website",
+        "description": "Tool to measure the usability of a software product, based on the heuristic principles proposed by Jakob Nielsen."
+      },
+      "sickpet": {
+        "category": "Mobile app",
+        "description": "Android app for veterinary clinics and pet owners to manage the care of pets and animals."
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Over 2 years building software.",
+    "opensNewTab": "{{name}} (opens in a new tab)",
+    "items": {
+      "kapulus": {
+        "role": "Technology Coordinator · Full Stack Developer",
+        "period": "2025 – 2026",
+        "highlights": [
+          "Led the development of the company's event registration system, scaling it from 4,000 to over 100,000 users with no performance degradation.",
+          "Drove the platform's technical modernization (stack migrations, stronger security and biometrics) and the product's evolution toward real-time analytics."
+        ]
+      },
+      "freelance": {
+        "role": "Freelance",
+        "period": "2023 – Present",
+        "highlights": [
+          "Design, implementation and deployment of custom web applications, SPAs and microservices for independent clients."
+        ]
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic background and continuous learning.",
+    "techsAria": "Technologies learned",
+    "items": {
+      "computer-engineering": {
+        "title": "Computer Engineer",
+        "period": "08/2018 – 01/2025"
+      },
+      "online-courses": {
+        "title": "FullStack Developer · Backend Development",
+        "period": "2023 – Present"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have an idea or a project in mind? Write to me and let's talk.",
+    "fields": {
+      "email": {
+        "label": "Email",
+        "placeholder": "you@email.com"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project…"
+      }
+    },
+    "errors": {
+      "emailRequired": "Enter your email.",
+      "emailInvalid": "Enter a valid email.",
+      "messageRequired": "Write your message.",
+      "messageTooLong": "The message is too long.",
+      "network": "The message couldn't be sent. Check your connection and try again."
+    },
+    "submit": {
+      "idle": "Send message",
+      "sending": "Sending…"
+    },
+    "success": "Thanks! Your message was sent, I'll get back to you soon."
+  },
+  "comingSoon": {
+    "title": "Coming soon",
+    "backHome": "Back to home",
+    "projects": "I'm putting together the full list of projects. In the meantime, you can check out the featured ones on the home page.",
+    "notFound": "This page doesn't exist yet, but I'm working on it."
+  },
+  "footer": {
+    "rights": "Almost all rights reserved."
+  }
+}

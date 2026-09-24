@@ -1,9 +1,8 @@
 <footer class="border-t border-surface-800">
   <div class="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 px-4 py-8 sm:px-6 lg:flex-row lg:gap-6">
     <app-social-links />
-    <!-- TODO(i18n) -->
     <p class="text-center text-sm text-muted-color">
-      © {{ year }} <span class="font-semibold text-primary">{{ name }}</span>. Casi todos los derechos reservados.
+      © {{ year }} <span class="font-semibold text-primary">{{ name }}</span>. {{ 'footer.rights' | translate }}
     </p>
   </div>
 </footer>

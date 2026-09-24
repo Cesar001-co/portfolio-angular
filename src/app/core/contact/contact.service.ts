@@ -9,9 +9,13 @@ export interface ContactMessage {
   message: string;
 }
 
-/** Error normalizado de Formspree. `field` presente cuando el error es de un campo concreto. */
+/**
+ * Error normalizado. `field` presente cuando el error es de un campo concreto.
+ * `messageKey` (clave i18n) para errores propios; `message` para el texto que devuelve Formspree.
+ */
 export interface ContactError {
-  message: string;
+  message?: string;
+  messageKey?: string;
   field?: keyof ContactMessage;
 }
 
@@ -40,7 +44,7 @@ export class ContactService {
   private toContactErrors(error: HttpErrorResponse): ContactError[] {
     const errors = (error.error as FormspreeErrorResponse | null)?.errors;
     if (!errors?.length) {
-      return [{ message: 'No se pudo enviar el mensaje. Revisa tu conexión e inténtalo de nuevo.' }];
+      return [{ messageKey: 'contact.errors.network' }];
     }
     return errors.map(({ field, message }) => ({
       message,

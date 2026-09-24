@@ -3,20 +3,20 @@
     <!-- Texto -->
     <div class="flex flex-col items-start gap-8">
       <h1 class="text-4xl leading-tight font-bold tracking-tight text-color sm:text-5xl lg:text-6xl">
-        {{ content.title.lead }}
-        <span class="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">{{ content.title.highlight }}</span>{{ content.title.trail }}
+        {{ content.title.lead | translate }}
+        <span class="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">{{ content.title.highlight | translate }}</span>{{ content.title.trail | translate }}
       </h1>
 
       <div class="flex flex-wrap gap-3">
         @for (cta of content.ctas; track cta.section) {
           <a routerLink="/" [fragment]="cta.section" class="btn btn-lg rounded-lg"
             [class.btn-primary]="cta.variant === 'primary'" [class.btn-ghost]="cta.variant === 'ghost'">
-            {{ cta.label }}
+            {{ cta.label | translate }}
           </a>
         }
       </div>
 
-      <ul class="flex flex-wrap gap-2" aria-label="Tecnologías principales">
+      <ul class="flex flex-wrap gap-2" [attr.aria-label]="'hero.techsAria' | translate">
         @for (tech of content.technologies; track tech) {
           <li class="chip chip-accent">{{ tech }}</li>
         }
@@ -25,7 +25,7 @@
       <dl class="flex gap-12 border-t border-primary/15 pt-6">
         @for (stat of content.stats; track stat.label) {
           <div class="flex flex-col-reverse gap-1">
-            <dt class="text-sm text-muted-color">{{ stat.label }}</dt>
+            <dt class="text-sm text-muted-color">{{ stat.label | translate }}</dt>
             <dd class="text-3xl font-bold text-color">{{ stat.value }}</dd>
           </div>
         }
@@ -40,7 +40,7 @@
 
       <div class="rounded-3xl bg-secondary p-2 shadow-2xl shadow-primary/10 ring-1 ring-primary/25">
         <img [ngSrc]="profile.avatar" width="330" height="332" priority
-          class="aspect-square w-full rounded-2xl object-cover" [alt]="'Foto de ' + profile.name" />
+          class="aspect-square w-full rounded-2xl object-cover" [alt]="'hero.photoAlt' | translate: { name: profile.name }" />
       </div>
 
       @if (profile.availableForWork) {
@@ -49,13 +49,13 @@
             <span class="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75"></span>
             <span class="relative inline-flex size-2 rounded-full bg-primary"></span>
           </span>
-          Disponible
+          {{ 'hero.available' | translate }}
         </span>
       }
 
       <figcaption class="absolute -bottom-6 -left-3 rounded-xl border border-primary/25 bg-app-background/90 px-4 py-2.5 shadow-lg backdrop-blur sm:-left-6">
         <p class="text-sm font-semibold text-color">{{ profile.name }}</p>
-        <p class="text-xs text-muted-color">{{ profile.role }}</p>
+        <p class="text-xs text-muted-color">{{ profile.roleKey | translate }}</p>
       </figcaption>
     </figure>
   </div>
@@ -63,8 +63,8 @@
   <!-- Indicador de scroll hacia la siguiente sección -->
   <a routerLink="/" [fragment]="content.scrollCta.section"
     class="mx-auto mb-6 flex flex-col items-center gap-1 text-xs text-muted-color transition-colors hover:text-primary"
-    [attr.aria-label]="content.scrollCta.label">
-    <span>{{ content.scrollCta.label }}</span>
+    [attr.aria-label]="content.scrollCta.label | translate">
+    <span>{{ content.scrollCta.label | translate }}</span>
     <span class="flex size-10 animate-bounce items-center justify-center rounded-full border border-primary/30 text-primary" aria-hidden="true">
       <svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 5v14M6 13l6 6 6-6" />

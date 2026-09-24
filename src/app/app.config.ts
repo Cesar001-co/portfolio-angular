@@ -1,10 +1,15 @@
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, inject, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter, withInMemoryScrolling, withRouterConfig } from '@angular/router';
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
+import { firstValueFrom } from 'rxjs';
 
 import { providePrimeNG } from 'primeng/config';
 
+import { DEFAULT_LANGUAGE, I18N_ASSETS_PREFIX } from '@core/i18n/language.constants';
+import { LanguageService } from '@core/i18n/language.service';
 import { AppPreset } from '@core/theme/app.preset';
 import { DARK_MODE_CLASS } from '@core/theme/theme.constants';
 import { routes } from './app.routes';
@@ -21,8 +26,16 @@ export const appConfig: ApplicationConfig = {
       withRouterConfig({ onSameUrlNavigation: 'reload' })
     ),
 
-    // HTTP (formulario de contacto → Formspree)
+    // HTTP (formulario de contacto → Formspree, archivos de traducción)
     provideHttpClient(withFetch()),
+
+    // i18n en tiempo de ejecución (ngx-translate): textos en public/assets/i18n/<lang>.json
+    provideTranslateService({
+      loader: provideTranslateHttpLoader({ prefix: I18N_ASSETS_PREFIX, suffix: '.json' }),
+      fallbackLang: DEFAULT_LANGUAGE,
+    }),
+    // Espera el idioma inicial antes de pintar: evita mostrar claves sin traducir.
+    provideAppInitializer(() => firstValueFrom(inject(LanguageService).init())),
 
     provideAnimationsAsync(),
 

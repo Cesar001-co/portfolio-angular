@@ -1,19 +1,19 @@
 <section class="mx-auto grid max-w-6xl gap-14 px-4 py-24 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
   <!-- Sobre mí -->
   <div>
-    <app-section-heading [title]="about.heading.title" [subtitle]="about.heading.subtitle" />
+    <app-section-heading [title]="about.heading.title | translate" [subtitle]="about.heading.subtitle | translate" />
 
     <div class="mt-8 flex flex-col gap-5 leading-relaxed text-muted-color">
-      @for (paragraph of about.paragraphs; track $index) {
-        <!-- En una sola línea: los saltos entre fragmentos se renderizarían como espacios (p. ej. "PostgreSQL ,") -->
-        <p>@for (segment of paragraph; track $index) {@if (segment.strong) {<strong class="font-semibold text-color">{{ segment.text }}</strong>} @else {<span>{{ segment.text }}</span>}}</p>
+      <!-- Lista de párrafos del JSON de i18n; **énfasis** se renderiza con RichTextComponent -->
+      @for (paragraph of about.paragraphsKey | translate; track $index) {
+        <p><app-rich-text [text]="paragraph" /></p>
       }
     </div>
   </div>
 
   <!-- Servicios -->
   <div>
-    <app-section-heading [title]="services.heading.title" [subtitle]="services.heading.subtitle" />
+    <app-section-heading [title]="services.heading.title | translate" [subtitle]="services.heading.subtitle | translate" />
 
     <ul class="mt-8 flex flex-col gap-4">
       @for (service of services.items; track service.id) {
@@ -35,8 +35,8 @@
             </svg>
           </span>
           <div>
-            <h3 class="font-semibold text-color">{{ service.title }}</h3>
-            <p class="mt-1 text-sm leading-relaxed text-muted-color">{{ service.description }}</p>
+            <h3 class="font-semibold text-color">{{ 'services.items.' + service.id + '.title' | translate }}</h3>
+            <p class="mt-1 text-sm leading-relaxed text-muted-color">{{ 'services.items.' + service.id + '.description' | translate }}</p>
           </div>
         </li>
       }

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 import { InputText } from 'primeng/inputtext';
 import { Message } from 'primeng/message';
 import { Textarea } from 'primeng/textarea';
@@ -14,7 +15,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule, InputText, Textarea, Message, SectionHeadingComponent],
+  imports: [ReactiveFormsModule, TranslatePipe, InputText, Textarea, Message, SectionHeadingComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,7 +29,7 @@ export class ContactComponent {
   protected readonly content = CONTACT_CONTENT;
   protected readonly status = signal<SubmitStatus>('idle');
   /** Errores devueltos por Formspree que no pertenecen a un campo concreto. */
-  protected readonly formError = signal<string | null>(null);
+  protected readonly formErrors = signal<ContactError[]>([]);
 
   protected readonly form = inject(NonNullableFormBuilder).group({
     email: ['', [Validators.required, Validators.email]],
@@ -42,7 +43,7 @@ export class ContactComponent {
     this.form.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
       if (this.status() === 'success' || this.status() === 'error') {
         this.status.set('idle');
-        this.formError.set(null);
+        this.formErrors.set([]);
       }
     });
   }
@@ -66,7 +67,7 @@ export class ContactComponent {
     }
 
     this.status.set('sending');
-    this.formError.set(null);
+    this.formErrors.set([]);
 
     this.contactService
       .send({ email, message })
@@ -83,16 +84,16 @@ export class ContactComponent {
 
   private handleErrors(errors: ContactError[]): void {
     this.status.set('error');
-    const general: string[] = [];
+    const general: ContactError[] = [];
     for (const error of errors) {
       if (error.field) {
         const control = this.form.controls[error.field];
-        control.setErrors({ server: error.message });
+        control.setErrors({ server: error.message ?? error.messageKey });
         control.markAsTouched();
       } else {
-        general.push(error.message);
+        general.push(error);
       }
     }
-    this.formError.set(general.join(' ') || null);
+    this.formErrors.set(general);
   }
 }

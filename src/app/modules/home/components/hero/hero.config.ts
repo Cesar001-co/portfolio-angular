@@ -1,5 +1,6 @@
 import { SECTION_IDS, SectionId } from '@core/navigation/sections';
 
+/** Los campos `label`/`title` son claves i18n (public/assets/i18n/*.json). */
 export interface HeroCta {
   label: string;
   section: SectionId;
@@ -11,22 +12,22 @@ export interface HeroStat {
   label: string;
 }
 
-// TODO(i18n): reemplazar textos por claves de traducción.
 export const HERO_CONTENT = {
   title: {
-    lead: 'Transformando tus ideas en',
-    highlight: 'soluciones web',
-    trail: '.',
+    lead: 'hero.title.lead',
+    highlight: 'hero.title.highlight',
+    trail: 'hero.title.trail',
   },
   ctas: [
-    { label: 'Ver proyectos', section: SECTION_IDS.projects, variant: 'primary' },
-    { label: 'Contactarme', section: SECTION_IDS.contact, variant: 'ghost' },
+    { label: 'hero.ctas.projects', section: SECTION_IDS.projects, variant: 'primary' },
+    { label: 'hero.ctas.contact', section: SECTION_IDS.contact, variant: 'ghost' },
   ] satisfies HeroCta[],
   /** Indicador inferior: baja a la sección siguiente al hero. */
-  scrollCta: { label: 'Desliza', section: SECTION_IDS.about },
-  technologies:['NestJS', 'Angular', 'Spring Boot', 'IA'],
+  scrollCta: { label: 'hero.scroll', section: SECTION_IDS.about },
+  /** Nombres propios: no se traducen. */
+  technologies: ['NestJS', 'Angular', 'Spring Boot', 'IA'],
   stats: [
-    { value: '2+', label: 'Años de experiencia' },
-    { value: '8+', label: 'Proyectos entregados' },
+    { value: '2+', label: 'hero.stats.years' },
+    { value: '8+', label: 'hero.stats.projects' },
   ] satisfies HeroStat[],
 } as const;

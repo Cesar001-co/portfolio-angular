@@ -1,21 +1,18 @@
-// TODO(i18n): reemplazar textos por claves de traducción.
+/** Textos: claves i18n (public/assets/i18n/*.json → contact.*). */
 export const CONTACT_CONTENT = {
-  heading: {
-    title: 'Contacto',
-    subtitle: '¿Tienes una idea o un proyecto en mente? Escríbeme y conversemos.',
-  },
+  heading: { title: 'contact.title', subtitle: 'contact.subtitle' },
   fields: {
-    email: { label: 'Correo electrónico', placeholder: 'tu@correo.com' },
-    message: { label: 'Mensaje', placeholder: 'Cuéntame sobre tu proyecto…' },
+    email: { label: 'contact.fields.email.label', placeholder: 'contact.fields.email.placeholder' },
+    message: { label: 'contact.fields.message.label', placeholder: 'contact.fields.message.placeholder' },
   },
   /** Longitud máxima del mensaje (se muestra contador). */
   messageMaxLength: 2000,
   errors: {
-    emailRequired: 'Ingresa tu correo.',
-    emailInvalid: 'Ingresa un correo válido.',
-    messageRequired: 'Escribe tu mensaje.',
-    messageTooLong: 'El mensaje es demasiado largo.',
+    emailRequired: 'contact.errors.emailRequired',
+    emailInvalid: 'contact.errors.emailInvalid',
+    messageRequired: 'contact.errors.messageRequired',
+    messageTooLong: 'contact.errors.messageTooLong',
   },
-  submit: { idle: 'Enviar mensaje', sending: 'Enviando…' },
-  success: '¡Gracias! Tu mensaje fue enviado, te responderé pronto.',
+  submit: { idle: 'contact.submit.idle', sending: 'contact.submit.sending' },
+  success: 'contact.success',
 } as const;

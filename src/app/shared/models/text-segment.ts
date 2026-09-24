@@ -1,10 +1,8 @@
 /**
- * Fragmento de texto enriquecido. Un párrafo es una lista de fragmentos;
- * `strong` resalta el fragmento. Evita usar innerHTML para textos con énfasis.
+ * Fragmento de texto enriquecido; `strong` resalta el fragmento.
+ * Se genera a partir del formato "**énfasis**" de los JSON de i18n (ver RichTextComponent).
  */
 export interface TextSegment {
   text: string;
   strong?: boolean;
 }
-
-export type RichParagraph = readonly TextSegment[];

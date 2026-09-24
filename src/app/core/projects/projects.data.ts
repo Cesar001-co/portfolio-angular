@@ -4,14 +4,10 @@ import { Project } from './project.model';
  * Fuente única de proyectos: la consumen el home (destacados) y la página /projects.
  * Imágenes en public/assets/projects/.
  */
-// TODO(i18n): category y description por idioma.
 export const PROJECTS: readonly Project[] = [
   {
     id: 'nuxten',
     name: 'Nuxten',
-    category: 'Página web',
-    description:
-      'Herramienta para medir la usabilidad de un producto de software, basada en los principios heurísticos propuestos por Jakob Nielsen.',
     images: [
       { src: 'assets/projects/nuxten.jpg' },
       { src: 'assets/projects/nuxten01.jpg' },
@@ -28,9 +24,6 @@ export const PROJECTS: readonly Project[] = [
   {
     id: 'sickpet',
     name: 'SickPet',
-    category: 'Aplicación móvil',
-    description:
-      'Aplicación Android para gestionar el cuidado de mascotas y animales por parte de clínicas veterinarias y sus dueños.',
     images: [
       { src: 'assets/projects/sickpet.jpg' },
       { src: 'assets/projects/sickpet01.jpg' },

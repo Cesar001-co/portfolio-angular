@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { SECTION_IDS } from '@core/navigation/sections';
 import { SectionHeadingComponent } from '@shared/components/section-heading/section-heading.component';
@@ -7,7 +8,7 @@ import { SKILLS_CONTENT } from './skills.config';
 
 @Component({
   selector: 'app-skills',
-  imports: [SectionHeadingComponent, TechBadgeComponent],
+  imports: [TranslatePipe, SectionHeadingComponent, TechBadgeComponent],
   templateUrl: './skills.component.html',
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,

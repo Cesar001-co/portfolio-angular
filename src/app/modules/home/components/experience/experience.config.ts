@@ -1,5 +1,11 @@
 import { TechId } from '@core/tech/tech-catalog';
 
+/**
+ * Estructura de Experiencia y Educación. Los textos traducibles viven en public/assets/i18n/*.json:
+ * - experience.items.<id>.role / .period / .highlights (lista)
+ * - education.items.<id>.title / .period
+ * Aquí quedan solo nombres propios, enlaces y datos no traducibles.
+ */
 export interface Company {
   name: string;
   /** Sitio de la empresa: si existe, el nombre se muestra como enlace. */
@@ -7,70 +13,43 @@ export interface Company {
 }
 
 export interface ExperienceItem {
+  /** Id estable: también es la clave de sus textos i18n. */
   id: string;
-  role: string;
   company?: Company;
-  period: string;
   location?: string;
-  highlights: readonly string[];
 }
 
 export interface EducationItem {
+  /** Id estable: también es la clave de sus textos i18n. */
   id: string;
-  title: string;
   institution: string;
-  period: string;
   location?: string;
   techs?: readonly TechId[];
 }
 
-// TODO(i18n): reemplazar textos por claves de traducción.
 export const EXPERIENCE_CONTENT = {
-  heading: {
-    title: 'Experiencia',
-    subtitle: 'Más de 2 años construyendo software que corre en producción.',
-  },
+  heading: { title: 'experience.title', subtitle: 'experience.subtitle' },
   items: [
     {
       id: 'kapulus',
-      role: 'Coordinador de Tecnología · Full Stack Developer',
       company: { name: 'Kapulus International', url: 'https://kapulusinternational.com/' },
-      period: '2025 – 2026',
       location: 'Colombia',
-      highlights: [
-        'Lideré el desarrollo del sistema de registro de eventos de la compañía, escalándolo de 4.000 a más de 100.000 usuarios sin degradación de rendimiento.',
-        'Impulsé la modernización técnica de la plataforma (migraciones de stack, refuerzo de seguridad y biometría) y la evolución del producto hacia analítica en tiempo real.',
-      ],
     },
-    {
-      id: 'freelance',
-      role: 'Freelance',
-      period: '2023 – Actualidad',
-      highlights: [
-        'Diseño, implementación y despliegue de aplicaciones web, SPAs y microservicios personalizados para clientes independientes.',
-      ],
-    },
+    { id: 'freelance' },
   ] satisfies ExperienceItem[],
 } as const;
 
 export const EDUCATION_CONTENT = {
-  heading: {
-    title: 'Educación',
-    subtitle: 'Formación académica y aprendizaje continuo.',
-  },
+  heading: { title: 'education.title', subtitle: 'education.subtitle' },
   items: [
     {
       id: 'computer-engineering',
-      title: 'Ingeniero en Informática',
       institution: 'Institución Universitaria Colegio Mayor del Cauca',
-      period: '08/2018 – 01/2025',
       location: 'Colombia',
     },
     {
       id: 'online-courses',
-      title: 'FullStack Developer · Backend Development',
       institution: 'DevTalles, Udemy, Academia X, Platzi',
-      period: '2023 – Actualidad',
       techs: [
         'nestjs', 'nodejs', 'fastapi', 'typescript', 'angular', 'claude-code', 'java',
         'spring-boot', 'javascript', 'html', 'css', 'postgresql', 'tailwind', 'python',

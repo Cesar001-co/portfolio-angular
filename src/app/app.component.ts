@@ -1,6 +1,7 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
 
 import { HeaderComponent } from '@layout/header/header.component';
 import { FooterComponent } from '@layout/footer/footer.component';
@@ -23,20 +24,17 @@ import { FooterComponent } from '@layout/footer/footer.component';
   styles: ``
 })
 export class AppComponent {
+  private readonly titleService = inject(Title);
+  private readonly translate = inject(TranslateService);
 
-  private readonly previusTitle: string = 'Cesar.dev';
-  
-  constructor (
-    private titleService: Title
-  ) {}
-
+  // Título de la pestaña traducido: cambia al perder/recuperar el foco de la ventana.
   @HostListener('window:blur')
   onBlur() {
-    this.titleService.setTitle(`¡No te vayas! ¡Vuelve! 😱`);
+    this.titleService.setTitle(this.translate.instant('app.blurTitle'));
   }
 
   @HostListener('window:focus')
   onFocus() {
-    this.titleService.setTitle(this.previusTitle);
+    this.titleService.setTitle(this.translate.instant('app.title'));
   }
 }

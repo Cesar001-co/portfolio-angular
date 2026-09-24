@@ -1,5 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, input, signal } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { Project } from '@core/projects/project.model';
 import { TechBadgeComponent } from '@shared/components/tech-badge/tech-badge.component';
@@ -13,7 +14,7 @@ const SLIDE_INTERVAL_MS = 1600;
  */
 @Component({
   selector: 'app-project-card',
-  imports: [NgOptimizedImage, TechBadgeComponent],
+  imports: [NgOptimizedImage, TranslatePipe, TechBadgeComponent],
   templateUrl: './project-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {

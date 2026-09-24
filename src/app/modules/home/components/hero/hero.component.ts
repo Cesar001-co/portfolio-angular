@@ -1,6 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { SECTION_IDS } from '@core/navigation/sections';
 import { PROFILE } from '@core/profile/profile';
@@ -9,7 +10,7 @@ import { HERO_CONTENT } from './hero.config';
 
 @Component({
   selector: 'app-hero',
-  imports: [RouterLink, NgOptimizedImage, SocialLinksComponent],
+  imports: [RouterLink, NgOptimizedImage, TranslatePipe, SocialLinksComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,10 +1,7 @@
-// TODO(i18n): reemplazar textos por claves de traducción.
+/** Textos: claves i18n (public/assets/i18n/*.json). */
 export const PROJECTS_PREVIEW_CONTENT = {
-  heading: {
-    title: 'Proyectos destacados',
-    subtitle: 'Una selección de proyectos en los que he trabajado.',
-  },
+  heading: { title: 'projects.featured.title', subtitle: 'projects.featured.subtitle' },
   /** Cuántos proyectos destacados se muestran en el home. */
   limit: 2,
-  cta: { label: 'Ver todos los proyectos', route: '/projects' },
+  cta: { label: 'projects.featured.cta', route: '/projects' },
 } as const;

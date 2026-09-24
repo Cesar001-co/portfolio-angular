@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { ComingSoonComponent } from '@shared/components/coming-soon/coming-soon.component';
+
+// TODO(projects): reemplazar por el listado completo (PROJECTS de @core/projects/projects.data).
 @Component({
   selector: 'app-projects',
-  imports: [],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  imports: [ComingSoonComponent],
+  template: `<app-coming-soon message="comingSoon.projects" />`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectsComponent {
-
-}
+export class ProjectsComponent {}
