@@ -1,1 +1,17 @@
-<p>skills works!</p>
+<section class="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+  <app-section-heading [title]="content.heading.title" [subtitle]="content.heading.subtitle" />
+
+  <!-- Una tarjeta por categoría; el fondo más oscuro la separa del verde de la sección -->
+  <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    @for (group of content.groups; track group.id) {
+      <article class="card card-interactive bg-app-background/50">
+        <h3 class="mb-4 text-sm font-semibold tracking-wide text-muted-color uppercase">{{ group.label }}</h3>
+        <ul class="flex flex-wrap gap-2" [attr.aria-label]="group.label">
+          @for (tech of group.techs; track tech) {
+            <li><app-tech-badge [id]="tech" /></li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>
