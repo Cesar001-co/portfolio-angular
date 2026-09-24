@@ -9,13 +9,14 @@ import { Textarea } from 'primeng/textarea';
 import { ContactError, ContactService } from '@core/contact/contact.service';
 import { SECTION_IDS } from '@core/navigation/sections';
 import { SectionHeadingComponent } from '@shared/components/section-heading/section-heading.component';
+import { SocialLinksComponent } from '@shared/components/social-links/social-links.component';
 import { CONTACT_CONTENT } from './contact.config';
 
 type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule, TranslatePipe, InputText, Textarea, Message, SectionHeadingComponent],
+  imports: [ReactiveFormsModule, TranslatePipe, InputText, Textarea, Message, SectionHeadingComponent, SocialLinksComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

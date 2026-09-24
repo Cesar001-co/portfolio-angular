@@ -17,6 +17,7 @@ export interface ResumeFile {
 
 export const PROFILE = {
   name: 'Cesar Rodriguez',
+  location: 'Colombia',
   /** Clave i18n del rol. */
   roleKey: 'profile.role',
   avatar: 'assets/avatar.jpg',

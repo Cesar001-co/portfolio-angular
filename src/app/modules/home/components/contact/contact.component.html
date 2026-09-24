@@ -2,7 +2,11 @@
 @let message = form.controls.message;
 
 <section class="mx-auto grid max-w-6xl gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
-  <app-section-heading [title]="content.heading.title | translate" [subtitle]="content.heading.subtitle | translate" />
+  <!-- Izquierda: encabezado + canales directos (correo, HV/CV, redes) -->
+  <div class="flex flex-col gap-8">
+    <app-section-heading [title]="content.heading.title | translate" [subtitle]="content.heading.subtitle | translate" />
+    <app-social-links align="start" />
+  </div>
 
   <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="card flex flex-col gap-5 bg-secondary/40 p-6">
     <!-- Correo -->

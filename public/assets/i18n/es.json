@@ -185,6 +185,7 @@
     "notFound": "Esta página todavía no existe, pero estoy trabajando en ello."
   },
   "footer": {
-    "rights": "Casi todos los derechos reservados."
+    "aboutSite": "Sobre este website:",
+    "builtWith": "Construido con {{techs}}."
   }
 }
