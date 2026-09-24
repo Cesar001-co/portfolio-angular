@@ -4,6 +4,11 @@
 <!-- bg-transparent: la tarjeta toma el fondo de la sección; solo el borde la delimita -->
 <article class="card card-interactive group flex h-full flex-col overflow-hidden bg-transparent p-0">
   <div class="relative aspect-video overflow-hidden border-b border-primary/15">
+    <!-- Skeleton mientras la imagen activa no ha cargado (portada inicial o imagen extra aún en camino) -->
+    @if (!activeImageLoaded()) {
+      <p-skeleton class="absolute inset-0 z-10" width="100%" height="100%" borderRadius="0" />
+    }
+
     <!-- Imágenes apiladas: solo la activa es visible (crossfade). Las extra se montan tras el primer hover. -->
     @for (image of p.images; track image.src; let i = $index) {
       @if (i === 0 || galleryRequested()) {
@@ -11,6 +16,7 @@
         <img [ngSrc]="image.src" fill disableOptimizedSrcset
           [alt]="i === 0 ? ('projects.card.previewAlt' | translate: { name: p.name }) : ''"
           class="object-cover transition-[opacity,scale] duration-700 group-hover:scale-105"
+          (load)="markLoaded(image.src)" (error)="markLoaded(image.src)"
           [class.opacity-0]="i !== activeIndex()" />
       }
     }

@@ -1,6 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, input, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Skeleton } from 'primeng/skeleton';
 
 import { Project } from '@core/projects/project.model';
 import { TechBadgeComponent } from '@shared/components/tech-badge/tech-badge.component';
@@ -14,7 +15,7 @@ const SLIDE_INTERVAL_MS = 1600;
  */
 @Component({
   selector: 'app-project-card',
-  imports: [NgOptimizedImage, TranslatePipe, TechBadgeComponent],
+  imports: [NgOptimizedImage, TranslatePipe, Skeleton, TechBadgeComponent],
   templateUrl: './project-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
@@ -32,6 +33,12 @@ export class ProjectCardComponent {
   /** Las imágenes extra se descargan solo tras el primer hover (no penalizan la carga inicial). */
   protected readonly galleryRequested = signal(false);
 
+  /** Imágenes ya cargadas (load o error); mientras la activa no lo esté, se muestra el skeleton. */
+  private readonly loadedImages = signal<ReadonlySet<string>>(new Set());
+  protected readonly activeImageLoaded = computed(() =>
+    this.loadedImages().has(this.project().images[this.activeIndex()].src),
+  );
+
   private timer?: ReturnType<typeof setInterval>;
 
   constructor() {
@@ -46,6 +53,10 @@ export class ProjectCardComponent {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     this.timer = setInterval(() => this.activeIndex.update(i => (i + 1) % total), SLIDE_INTERVAL_MS);
+  }
+
+  protected markLoaded(src: string): void {
+    this.loadedImages.update(loaded => new Set(loaded).add(src));
   }
 
   protected stopSlideshow(): void {

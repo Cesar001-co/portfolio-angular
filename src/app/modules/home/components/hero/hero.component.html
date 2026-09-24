@@ -39,8 +39,16 @@
       <div class="absolute inset-0 -z-10 scale-110 rounded-full bg-primary/15 blur-3xl" aria-hidden="true"></div>
 
       <div class="rounded-3xl bg-secondary p-2 shadow-2xl shadow-primary/10 ring-1 ring-primary/25">
-        <img [ngSrc]="profile.avatar" width="330" height="332" priority
-          class="aspect-square w-full rounded-2xl object-cover" [alt]="'hero.photoAlt' | translate: { name: profile.name }" />
+        <div class="relative aspect-square overflow-hidden rounded-2xl">
+          <!-- Skeleton hasta que la foto termina de cargar (load o error) -->
+          @if (!avatarLoaded()) {
+            <p-skeleton class="absolute inset-0" width="100%" height="100%" borderRadius="1rem" />
+          }
+          <img [ngSrc]="profile.avatar" width="330" height="332" priority
+            (load)="avatarLoaded.set(true)" (error)="avatarLoaded.set(true)"
+            class="size-full object-cover transition-opacity duration-500" [class.opacity-0]="!avatarLoaded()"
+            [alt]="'hero.photoAlt' | translate: { name: profile.name }" />
+        </div>
       </div>
 
       @if (profile.availableForWork) {

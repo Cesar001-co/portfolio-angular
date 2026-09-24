@@ -1,7 +1,8 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Skeleton } from 'primeng/skeleton';
 
 import { SECTION_IDS } from '@core/navigation/sections';
 import { PROFILE } from '@core/profile/profile';
@@ -10,7 +11,7 @@ import { HERO_CONTENT } from './hero.config';
 
 @Component({
   selector: 'app-hero',
-  imports: [RouterLink, NgOptimizedImage, TranslatePipe, SocialLinksComponent],
+  imports: [RouterLink, NgOptimizedImage, TranslatePipe, Skeleton, SocialLinksComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,4 +26,6 @@ import { HERO_CONTENT } from './hero.config';
 export class HeroComponent {
   protected readonly content = HERO_CONTENT;
   protected readonly profile = PROFILE;
+  /** false mientras la foto carga: se muestra el skeleton. */
+  protected readonly avatarLoaded = signal(false);
 }
