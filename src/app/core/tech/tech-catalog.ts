@@ -26,7 +26,7 @@ export const TECH_CATALOG = {
   angular: { name: 'Angular', hasIcon: true },
   nestjs: { name: 'NestJS', hasIcon: true },
   'spring-boot': { name: 'Spring Boot', hasIcon: true },
-  fastapi: { name: 'FastAPI', hasIcon: false }, // TODO(icons): falta fastapi.svg
+  fastapi: { name: 'FastAPI', hasIcon: true },
   ionic: { name: 'Ionic', hasIcon: true },
   tailwind: { name: 'Tailwind', hasIcon: true },
   // Bases de datos y servicios
