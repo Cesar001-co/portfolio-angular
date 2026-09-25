@@ -105,6 +105,30 @@
       "liveAria": "View {{name}} live"
     },
     "items": {
+      "entrepanes": {
+        "category": "Web dashboard",
+        "description": "Admin panel for the Entre Panes B2B 2026 event (KAPULUS). It manages registrants, captured from Meta Ads and web forms with automatic deduplication, and tracks the field visits staff make to businesses before the event: a public form to log each visit with photo and location, a live map and full export to Excel."
+      },
+      "casosClinicos": {
+        "category": "on:cure Summit 2026",
+        "description": "Platform for the on:cure Summit 2026: on iPads, squads of doctors discuss real clinical cases (patient, dilemma and questions) and record their consensus; a moderator controls the flow from a console and a main screen shows the results live. Exclusive use of KAPULUS."
+      },
+      "onlineRegister": {
+        "category": "Web API",
+        "description": "Intermediary API (mailbox-style) that receives event attendee registrations from any external source, stores them with their dynamic fields and exposes them in batches of up to 20 so the main system (Kapulus Event Manager) can consume them, register them and then mark them as processed."
+      },
+      "eventManager3": {
+        "category": "Kapulus International",
+        "description": "Previous version of Kapulus' event management system: attendee registration, zone-based access control and badge printing (AngularJS, Node.js 8 and PostgreSQL 8)."
+      },
+      "eventManager4": {
+        "category": "Kapulus International",
+        "description": "Current version of Kapulus' event management system. It was migrated to a modern stack, its security and data protection were strengthened, and it was scaled to handle over 100,000 users per event. It covers the whole flow end to end: attendee registration, zone-based access control, badge printing and live statistics, with facial recognition and online registration."
+      },
+      "statistics": {
+        "category": "Web dashboard",
+        "description": "Real-time statistics dashboard for Kapulus events. It gathers each event's data (registration, access control, zones, facial recognition, etc.) and generates a link so the client can make decisions during the event based on the data shown. It updates itself via WebSocket, with no need to refresh the page."
+      },
       "nuxten": {
         "category": "Website",
         "description": "Tool to measure the usability of a software product, based on the heuristic principles proposed by Jakob Nielsen."

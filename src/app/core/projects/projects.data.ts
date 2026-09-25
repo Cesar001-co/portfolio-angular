@@ -16,7 +16,7 @@ export const PROJECTS: readonly Project[] = [
       { src: 'assets/projects/eventmanager_05.png' },
       { src: 'assets/projects/eventmanager_06.png' },
     ],
-    techs: ['angular', 'nestjs', 'postgresql', 'python', 'fastapi', 'python', 'docker'],
+    techs: ['angular', 'nestjs', 'postgresql', 'python', 'fastapi', 'docker'],
     links: { },
     featured: true,
   },
@@ -56,7 +56,7 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     id: 'casosClinicos',
-    name: 'Casos Clinicos',
+    name: 'Casos Clínicos',
     images: [
       { src: 'assets/projects/casosclinicos_01.png' },
       { src: 'assets/projects/casosclinicos_02.png' },
@@ -68,7 +68,7 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     id: 'entrepanes',
-    name: 'Entre panes Dashboard',
+    name: 'Entre Panes Dashboard',
     images: [
       { src: 'assets/projects/entrepanes_01.png' },
       { src: 'assets/projects/entrepanes_02.png' },
