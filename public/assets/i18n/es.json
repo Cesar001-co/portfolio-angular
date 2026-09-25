@@ -105,6 +105,30 @@
       "liveAria": "Ver {{name}} en vivo"
     },
     "items": {
+      "entrepanes": {
+        "category": "Aplicación web dashboard",
+        "description": "Es un panel de administración para el evento Entre Panes B2B 2026 (KAPULUS): permite gestionar inscritos (captados desde Meta Ads y formularios web, con deduplicación automática), y controlar las visitas de campo que hacen los colaboradores a comercios antes del evento — formulario público para registrar cada visita con foto y ubicación, mapa en vivo, y exportación de todo a Excel."
+      },
+      "casosClinicos": {
+        "category": "on:cure Summit 2026",
+        "description": "Es una plataforma para el on:cure Summit 2026: en iPads, squads de médicos discuten casos clínicos reales (paciente, dilema, preguntas) y registran su consenso; un moderador controla el avance desde una consola, y una pantalla principal proyecta los resultados en vivo. Uso exclusivo KAPULUS."
+      },
+      "onlineRegister": {
+        "category": "Web Api",
+        "description": "Es una API intermediaria (buzón): recibe inscripciones de asistentes a un evento desde cualquier fuente externa, las guarda con sus campos dinámicos, y las expone en lotes de hasta 20 para que el sistema principal (Kapulus event manager) las consuma y las dé de alta, marcándolas luego como procesadas."
+      },
+      "eventManager3": {
+        "category": "Kapulus International",
+        "description": "Kapulus Event Manager v3.7.1 es la version antigua del sistema de gestión de eventos: maneja registro de asistentes, control de acceso por zonas, impresión de escarapelas (Angular 1, Node.js 8, PostgreSql 8)."
+      },
+      "eventManager4": {
+        "category": "Kapulus International",
+        "description": "Kapulus Event Manager v4 es la version actualizada donde si migro a tecnolgias mas recientes, implementacion de seguridad y proteccion de la informacion, escalado para manejar mas de 100.000 usuarios por evento, es sistema usado para la gestión de eventos: maneja registro de asistentes, control de acceso por zonas, impresión de escarapelas y estadísticas en vivo, con reconocimiento facial y registros online, plataforma usada por Kapulus para organizar y controlar el ingreso/registro de gente en sus eventos, de punta a punta."
+      },
+      "statistics": {
+        "category": "Aplicación web dashboard",
+        "description": "Es un dashboard de estadísticas en tiempo real para eventos de Kapulus: por cada evento (registro, control de acceso, zonas, reconocimiento facial, etc.) almacena información de un evento y genera un link de acceso par el cliente pueda tomar decisiones durante el evento deacuerdo a la información mostrada, actualizándose sola vía WebSocket sin que nadie tenga que refrescar la página."
+      },
       "nuxten": {
         "category": "Página web",
         "description": "Herramienta para medir la usabilidad de un producto de software, basada en los principios heurísticos propuestos por Jakob Nielsen."
