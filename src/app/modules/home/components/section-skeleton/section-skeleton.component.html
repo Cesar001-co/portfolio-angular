@@ -1,0 +1,96 @@
+<!-- Encabezado de sección (título + subtítulo): común a todas las variantes -->
+<ng-template #heading>
+  <p-skeleton width="12rem" height="2.5rem" borderRadius="0.5rem" />
+  <p-skeleton styleClass="mt-3" width="18rem" height="1rem" />
+</ng-template>
+
+<div class="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+  @switch (variant()) {
+    <!-- Sobre mí: párrafos | tarjetas de servicios -->
+    @case ('about') {
+      <div class="grid gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+        <div>
+          <ng-container [ngTemplateOutlet]="heading" />
+          <div class="mt-8 flex flex-col gap-3">
+            @for (line of [1, 2, 3, 4, 5, 6, 7, 8]; track line) {
+              <p-skeleton [width]="line % 4 === 0 ? '70%' : '100%'" height="1rem" />
+            }
+          </div>
+        </div>
+        <div>
+          <ng-container [ngTemplateOutlet]="heading" />
+          <div class="mt-8 flex flex-col gap-4">
+            @for (card of [1, 2, 3]; track card) {
+              <p-skeleton height="6.5rem" borderRadius="1rem" />
+            }
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Skills: rejilla de tarjetas por categoría -->
+    @case ('skills') {
+      <ng-container [ngTemplateOutlet]="heading" />
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        @for (card of [1, 2, 3, 4, 5]; track card) {
+          <p-skeleton height="9rem" borderRadius="1rem" />
+        }
+      </div>
+    }
+
+    <!-- Proyectos destacados: tarjetas con imagen + botón -->
+    @case ('projects') {
+      <ng-container [ngTemplateOutlet]="heading" />
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        @for (card of [1, 2]; track card) {
+          <p-skeleton height="34rem" borderRadius="1rem" />
+        }
+      </div>
+      <div class="mt-12 flex justify-center">
+        <p-skeleton width="14rem" height="3rem" borderRadius="0.5rem" />
+      </div>
+    }
+
+    <!-- Experiencia: línea de tiempo | tarjetas de educación -->
+    @case ('experience') {
+      <div class="grid gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+        <div>
+          <ng-container [ngTemplateOutlet]="heading" />
+          <div class="mt-10 flex flex-col gap-10 border-l border-primary/25 pl-6">
+            @for (job of [1, 2]; track job) {
+              <div class="flex flex-col gap-2">
+                <p-skeleton width="60%" height="1.25rem" />
+                <p-skeleton width="35%" height="1rem" />
+                <p-skeleton height="1rem" />
+                <p-skeleton width="85%" height="1rem" />
+              </div>
+            }
+          </div>
+        </div>
+        <div>
+          <ng-container [ngTemplateOutlet]="heading" />
+          <div class="mt-10 flex flex-col gap-4">
+            <p-skeleton height="5.5rem" borderRadius="1rem" />
+            <p-skeleton height="11rem" borderRadius="1rem" />
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Contacto: encabezado + enlaces | formulario -->
+    @case ('contact') {
+      <div class="grid gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+        <div class="flex flex-col gap-8">
+          <div><ng-container [ngTemplateOutlet]="heading" /></div>
+          <div class="flex flex-wrap gap-3">
+            <p-skeleton width="14rem" height="2.25rem" borderRadius="9999px" />
+            <p-skeleton width="4rem" height="2.25rem" borderRadius="9999px" />
+            <p-skeleton size="2.25rem" shape="circle" />
+            <p-skeleton size="2.25rem" shape="circle" />
+          </div>
+        </div>
+        <p-skeleton height="23rem" borderRadius="1rem" />
+      </div>
+    }
+  }
+</div>

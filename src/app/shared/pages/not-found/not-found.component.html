@@ -5,9 +5,17 @@
     <p class="max-w-md leading-relaxed text-muted-color">{{ 'notFound.message' | translate }}</p>
   </div>
 
-  <!-- Lulu: 600px (versión optimizada del original de 2000px) -->
-  <img ngSrc="assets/not_found_600.png" width="600" height="900" priority
-    class="h-72 w-auto drop-shadow-2xl sm:h-80" [alt]="'notFound.dogAlt' | translate" />
+  <!-- Lulu: 600px (versión optimizada del original de 2000px). Contenedor con la proporción
+       de la foto (2:3) para que el skeleton ocupe exactamente su espacio mientras carga. -->
+  <div class="relative aspect-[2/3] h-72 sm:h-80">
+    @if (!imageLoaded()) {
+      <p-skeleton class="absolute inset-0" width="100%" height="100%" borderRadius="1.5rem" />
+    }
+    <img ngSrc="assets/not_found_600.png" width="600" height="900" priority
+      (load)="imageLoaded.set(true)" (error)="imageLoaded.set(true)"
+      class="size-full drop-shadow-2xl transition-opacity duration-500" [class.opacity-0]="!imageLoaded()"
+      [alt]="'notFound.dogAlt' | translate" />
+  </div>
 
   <div class="flex flex-wrap justify-center gap-3">
     <a routerLink="/" class="btn btn-primary btn-lg rounded-lg">

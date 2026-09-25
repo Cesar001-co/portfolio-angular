@@ -7,7 +7,6 @@ import { Message } from 'primeng/message';
 import { Textarea } from 'primeng/textarea';
 
 import { ContactError, ContactService } from '@core/contact/contact.service';
-import { SECTION_IDS } from '@core/navigation/sections';
 import { SectionHeadingComponent } from '@shared/components/section-heading/section-heading.component';
 import { SocialLinksComponent } from '@shared/components/social-links/social-links.component';
 import { CONTACT_CONTENT } from './contact.config';
@@ -21,7 +20,8 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
   styleUrl: './contact.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   // Fondo principal: alterna con el verde de Experiencia.
-  host: { id: SECTION_IDS.contact, class: 'block bg-app-background' }
+  // El id de ancla (#contact) lo pone el home: esta sección se carga con @defer.
+  host: { class: 'block bg-app-background' }
 })
 export class ContactComponent {
   private readonly contactService = inject(ContactService);

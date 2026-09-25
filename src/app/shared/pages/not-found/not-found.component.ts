@@ -1,7 +1,8 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Skeleton } from 'primeng/skeleton';
 
 /**
  * Página 404 (ruta comodín). Estilo "perros de Amazon": mensaje y una foto amable,
@@ -9,10 +10,13 @@ import { TranslatePipe } from '@ngx-translate/core';
  */
 @Component({
   selector: 'app-not-found',
-  imports: [NgOptimizedImage, RouterLink, TranslatePipe],
+  imports: [NgOptimizedImage, RouterLink, TranslatePipe, Skeleton],
   templateUrl: './not-found.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   // Mismo recurso que el hero: se extiende bajo el header fijo para que el degradado se vea tras él.
   host: { class: 'block -mt-(--app-header-height) pt-(--app-header-height) bg-linear-to-b from-primary/15 via-transparent to-transparent' },
 })
-export class NotFoundComponent {}
+export class NotFoundComponent {
+  /** false mientras la foto carga: se muestra el skeleton. */
+  protected readonly imageLoaded = signal(false);
+}
