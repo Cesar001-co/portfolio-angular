@@ -1,0 +1,18 @@
+# Configuración de despliegue en Netlify (tiene prioridad sobre la configuración del panel).
+
+[build]
+  command = "npm run build"
+  # El builder `application` de Angular genera el sitio en dist/<proyecto>/browser
+  publish = "dist/portfolio/browser"
+
+[build.environment]
+  # Angular 19 requiere Node 18.19+ / 20.11+ / 22+
+  NODE_VERSION = "20"
+
+# SPA: el servidor solo tiene index.html; las rutas (/projects, /cualquier-cosa) las resuelve Angular.
+# Sin esta regla, abrir o recargar una ruta directamente devuelve el 404 propio de Netlify.
+# Los archivos reales (assets, js, css) se sirven igual: Netlify solo aplica la regla si no existe el archivo.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
