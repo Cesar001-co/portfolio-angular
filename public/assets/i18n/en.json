@@ -1,4 +1,7 @@
 {
+  "common": {
+    "backHome": "Back to home"
+  },
   "app": {
     "title": "Cesar.dev",
     "blurTitle": "Don't go! Come back! 😱"
@@ -208,10 +211,11 @@
     },
     "success": "Thanks! Your message was sent, I'll get back to you soon."
   },
-  "comingSoon": {
-    "title": "Coming soon",
-    "backHome": "Back to home",
-    "notFound": "This page doesn't exist yet, but I'm working on it."
+  "notFound": {
+    "title": "Sorry",
+    "message": "We couldn't find the page you're looking for.",
+    "dogAlt": "Lulu, a cocker spaniel, sitting with her tongue out",
+    "projects": "View projects"
   },
   "footer": {
     "aboutSite": "About this website:",

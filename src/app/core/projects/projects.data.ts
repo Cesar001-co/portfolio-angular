@@ -70,8 +70,8 @@ export const PROJECTS: readonly Project[] = [
     id: 'entrepanes',
     name: 'Entre Panes Dashboard',
     images: [
-      { src: 'assets/projects/entrepanes_01.png' },
       { src: 'assets/projects/entrepanes_02.png' },
+      { src: 'assets/projects/entrepanes_01.png' },
       { src: 'assets/projects/entrepanes_03.png' }
     ],
     techs: ['claude-code'],
