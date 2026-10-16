@@ -62,7 +62,7 @@ export const PROJECTS: readonly Project[] = [
       { src: 'assets/projects/casosclinicos_02.png' },
       { src: 'assets/projects/casosclinicos_03.png' }
     ],
-    techs: ['docker'],
+    techs: ['docker', 'react'],
     links: { },
     featured: false,
   },
@@ -74,7 +74,7 @@ export const PROJECTS: readonly Project[] = [
       { src: 'assets/projects/entrepanes_01.png' },
       { src: 'assets/projects/entrepanes_03.png' }
     ],
-    techs: ['claude-code'],
+    techs: ['claude-code', 'react'],
     links: { },
     featured: false,
   },

@@ -24,6 +24,7 @@ export const TECH_CATALOG = {
   sql: { name: 'SQL', hasIcon: true },
   // Frameworks y librerías
   angular: { name: 'Angular', hasIcon: true },
+  react: { name: 'React', hasIcon: true },
   nestjs: { name: 'NestJS', hasIcon: true },
   nodejs: { name: 'Node.js', hasIcon: false },
   expressjs: { name: 'Express.js', hasIcon: false },

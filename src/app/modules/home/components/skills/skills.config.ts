@@ -10,7 +10,7 @@ export const SKILLS_CONTENT = {
   heading: { title: 'skills.title', subtitle: 'skills.subtitle' },
   groups: [
     { id: 'languages', techs: ['java', 'typescript', 'sql', 'html', 'css', 'python'] },
-    { id: 'frameworks', techs: ['angular', 'nestjs', 'spring-boot', 'fastapi'] },
+    { id: 'frameworks', techs: ['angular', 'nestjs', 'spring-boot', 'fastapi', 'react'] },
     { id: 'databases', techs: ['postgresql', 'mysql', 'mongodb'] },
     { id: 'devops-tools', techs: ['docker', 'github', 'figma', 'claude-code'] },
     { id: 'cloud-infra', techs: ['dokploy', 'vercel'] },
